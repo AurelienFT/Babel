@@ -26,6 +26,7 @@ target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets 
 set(
     SERVER_SOURCES_FILES
     "Server/Sources/Main.cpp"
+    "Server/Sources/User.cpp"
 )
 
 add_executable(
