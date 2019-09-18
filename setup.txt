@@ -2,6 +2,6 @@ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-c
 conan remote add epitech "https://api.bintray.com/conan/epitech/public-conan"
 conan remote add conan-center "https://conan.bintray.com"
 cd build && conan install .. && cmake .. && make && cd ..
-FAIRE UN FICHIER DE CONF "qt.conf" avec comme contenu :
+FAIRE UN FICHIER DE CONF A LA RACINE "qt.conf" avec comme contenu :
 [Paths]
 Plugins=/path/to/home/.conan/data/Qt/5.11.2/bincrafters/stable/package/092e5212177a716c7f4082b9b05c5650f6e409d9/plugins

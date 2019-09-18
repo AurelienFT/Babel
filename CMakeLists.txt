@@ -26,6 +26,7 @@ target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets 
 set(
     SERVER_SOURCES_FILES
     "Server/Sources/Main.cpp"
+    "Server/Sources/DatabaseMessageHandling.cpp"
     "Server/Sources/User.cpp"
 )
 
@@ -33,3 +34,6 @@ add_executable(
     babel_server
     ${SERVER_SOURCES_FILES}
 )
+
+target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources")
+target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
