@@ -35,5 +35,20 @@ add_executable(
     ${SERVER_SOURCES_FILES}
 )
 
+add_executable(
+    audio_test
+    "Client/Sources/AudioTest.cpp"
+)
+
+target_include_directories(audio_test PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+target_link_libraries(audio_test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
+
+add_executable(
+    audio_test2
+    "Client/Sources/AudioTest.cpp"
+)
+
+target_include_directories(audio_test2 PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+target_link_libraries(audio_test2 pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
 target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
