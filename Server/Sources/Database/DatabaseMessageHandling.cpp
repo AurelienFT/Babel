@@ -28,11 +28,13 @@ void DatabaseMessageHandling::createDiscussion()
     std::string errorMessage = "ouais";
 
     sqlRequest =    std::string("CREATE TABLE MESSAGES (") +
-                    std::string("ID INT PRIMARY KEY NOT NULL, ") +
-                    std::string("SENDER INT NOT NULL, ") +
-                    std::string("DISCUSSION INT NOT NULL, ") +
-                    std::string("DATE INT NOT NULL, ") +
-                    std::string("MESSAGE TEXT NOT NULL);");
+                    std::string("ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, ") +
+                    std::string("SENDER INTEGER NOT NULL, ") +
+                    std::string("DISCUSSION INTEGER NOT NULL, ") +
+                    std::string("SENDDATE DATE NOT NULL, ") +
+                    std::string("MESSAGE TEXT NOT NULL, ") +
+                    std::string("FOREIGN KEY(SENDER) REFERENCES USERS(ID) ON DELETE CASCADE, ") +
+                    std::string("FOREIGN KEY(DISCUSSION) REFERENCES DISCUSSIONS(ID) ON DELETE CASCADE);");
     
     if (_database->exec(sqlRequest, createCallback, 0, errorMessage.c_str())) {
         //error message
@@ -46,14 +48,14 @@ int /*DatabaseMessageHandling::*/addCallback(void *notUsed, int argc, char **arg
     return 0;
 }
 
-void DatabaseMessageHandling::addMessage(const int &id, const int &sender, const int &group, const std::string &messageData)
+void DatabaseMessageHandling::addMessage(const int &sender, const int &group, const std::string &messageData)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
 
-    sqlRequest =    std::string("INSERT INTO MESSAGES ('ID', 'SENDER', 'DISCUSSION', 'DATE', 'MESSAGE') VALUES (") +
-                    std::string("'") + std::to_string(id) + std::string("','") + std::to_string(sender) +
-                    std::string("','") + std::to_string(group) + std::string("',strftime('%s','now'),'") + messageData + std::string("');");
+    sqlRequest =    std::string("INSERT INTO MESSAGES ('SENDER', 'DISCUSSION', 'SENDDATE', 'MESSAGE') VALUES (") +
+                    std::string("'") + std::to_string(sender) + std::string("','") + std::to_string(group) +
+                    std::string("',strftime('%s','now'),'") + messageData + std::string("');");
 
     if (_database->exec(sqlRequest, addCallback, 0, errorMessage.c_str())) {
         //error message
@@ -89,6 +91,7 @@ int /*DatabaseMessageHandling::*/selectAllCallback(void *notUsed, int argc, char
     }
 
     //Send data
+    std::cout <<data <<std::endl;
 
     return 0;
 }
@@ -98,7 +101,7 @@ void DatabaseMessageHandling::getAllMessage(const int &group)
     std::string sqlRequest;
     std::string errorMessage = "ouais";
 
-    sqlRequest = std::string("SELECT * FROM MESSAGES WHERE GROUP = ") + std::to_string(group) + std::string(";");
+    sqlRequest = std::string("SELECT * FROM MESSAGES WHERE DISCUSSION = ") + std::to_string(group) + std::string(";");
 
     if (_database->exec(sqlRequest, selectAllCallback, 0, errorMessage.c_str())) {
         //error message
@@ -114,9 +117,8 @@ int /*DatabaseMessageHandling::*/selectRangeCallback(void *notUsed, int argc, ch
         data += azColName[i] + std::string(" ") + argv[i] + std::string("\n");
     }
 
-    std::cout <<data <<std::endl;
-
     //Send data
+    std::cout <<data <<std::endl;
 
     return 0;
 }

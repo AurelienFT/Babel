@@ -26,8 +26,12 @@ target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets 
 set(
     SERVER_SOURCES_FILES
     "Server/Sources/Main.cpp"
-    "Server/Sources/DatabaseMessageHandling.cpp"
+    "Server/Sources/Database/DatabaseMessageHandling.cpp"
     "Server/Sources/User.cpp"
+    "Server/Sources/Database/DatabaseDiscussionHandling.cpp"
+    "Server/Sources/Database/DatabaseUserHandling.cpp"
+    "Server/Sources/Database/DatabaseUserDiscussionHandling.cpp"
+    "Server/Sources/Database/DatabaseUserFriendHandling.cpp"
 )
 
 add_executable(
@@ -35,20 +39,5 @@ add_executable(
     ${SERVER_SOURCES_FILES}
 )
 
-add_executable(
-    audio_test
-    "Client/Sources/AudioTest.cpp"
-)
-
-target_include_directories(audio_test PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
-target_link_libraries(audio_test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
-
-add_executable(
-    audio_test2
-    "Client/Sources/AudioTest.cpp"
-)
-
-target_include_directories(audio_test2 PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
-target_link_libraries(audio_test2 pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
-target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources")
+target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
