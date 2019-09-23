@@ -26,6 +26,11 @@ class Db {
                     //error
                     exit(84);
                 }
+
+                if (sqlite3_exec(_database, "PRAGMA foreign_keys = ON;", NULL, NULL, 0)) {
+                    std::cout << "DB Error: " << sqlite3_errmsg(_database) << std::endl;
+                    exit(0);
+                }
         };
 
 		~Db()
@@ -35,7 +40,6 @@ class Db {
 
         int exec(const std::string &sqlRequest, sqlite3_callback callback, void *data, const char *errorMessage)
         {
-            //std::cout << sqlRequest <<std::endl;
             if (sqlite3_exec(_database, sqlRequest.c_str(), callback, data, const_cast<char **>(&errorMessage)))
             {
                 std::cout << "DB Error: " << sqlite3_errmsg(_database) << std::endl;

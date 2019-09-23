@@ -2,28 +2,27 @@
 ** EPITECH PROJECT, 2019
 ** cpp_babel_2019
 ** File description:
-** DatabaseMessageHandling
+** DatabaseDiscussionHandling
 */
 
-#ifndef DATABASEMESSAGEHANDLING_HPP_
-#define DATABASEMESSAGEHANDLING_HPP_
+#ifndef DATABASEDISCUSSIONHANDLING_HPP_
+#define DATABASEDISCUSSIONHANDLING_HPP_
 
 #include <memory>
 #include <string>
 
 #include "Db.hpp"
 
-class DatabaseMessageHandling {
+class DatabaseDiscussionHandling {
 	public:
-		DatabaseMessageHandling(std::shared_ptr<Db> database);
-		~DatabaseMessageHandling();
+		DatabaseDiscussionHandling(std::shared_ptr<Db> database);
+		~DatabaseDiscussionHandling();
 
-                void createDiscussion();
-                void addMessage(const int &id, const int &sender, const int &group, const std::string &messageData);
-                void deleteMessage(const int &messageId);
+                void createTable();
+                void addDiscussion(const std::string &discussionName);
+                void deleteDiscussion(const int &discussion);
 
-                void getAllMessage(const int &group);
-                void getRangeMessage(const int &group, const int &numberOfMessage);
+                void getDiscussionInfos(const int &discussion);
 
 	protected:
 	private:
@@ -37,4 +36,4 @@ class DatabaseMessageHandling {
                 std::shared_ptr<Db> _database;
 };
 
-#endif /* !DATABASEMESSAGEHANDLING_HPP_ */
+#endif /* !DATABASEDISCUSSIONHANDLING_HPP_ */
