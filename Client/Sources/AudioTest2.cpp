@@ -1,6 +1,4 @@
-
-/*
-  * $Id$  *  * This program uses the PortAudio Portable Audio Library.
+/*  * $Id$  *  * This program uses the PortAudio Portable Audio Library.
   * For more information see: http://www.portaudio.com
   * Copyright (c) 1999-2000 Ross Bencina and Phil Burk
   *

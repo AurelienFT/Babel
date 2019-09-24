@@ -27,6 +27,7 @@ set(
     SERVER_SOURCES_FILES
     "Server/Sources/Main.cpp"
     "Server/Sources/Database/DatabaseMessageHandling.cpp"
+    "Server/Sources/DatabaseMessageHandling.cpp"
     "Server/Sources/User.cpp"
     "Server/Sources/Database/DatabaseDiscussionHandling.cpp"
     "Server/Sources/Database/DatabaseUserHandling.cpp"
@@ -41,3 +42,29 @@ add_executable(
 
 target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
+
+add_executable(
+    audio_test
+    "Client/Sources/AudioTest.cpp"
+)
+
+target_include_directories(audio_test PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+target_link_libraries(audio_test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
+
+add_executable(
+    audio_test2
+    "Client/Sources/AudioTest2.cpp"
+)
+
+target_include_directories(audio_test2 PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+target_link_libraries(audio_test2 pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
+
+add_executable(
+    my_audiotest
+    "Client/Sources/Audio/Audio.cpp"
+    "Client/Sources/Audio/TestMain.cpp"
+)
+
+target_include_directories(my_audiotest PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+target_link_libraries(my_audiotest pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack)
+target_compile_options(my_audiotest PRIVATE "-g3")

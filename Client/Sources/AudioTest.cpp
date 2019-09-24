@@ -55,13 +55,7 @@
 #define PA_SAMPLE_TYPE paFloat32
 #define FRAMES_PER_BUFFER (64)
 
-    typedef float SAMPLE;
-static int soundCallback(const void *inputBuffer, void *outputBuffer,
-			unsigned long framesPerBuffer,
-			const PaStreamCallbackTimeInfo *timeInfo,
-			PaStreamCallbackFlags statusFlags,
-			void *userData);
-
+typedef float SAMPLE;
 
 static int gNumNoInputs = 0;
 /* This routine will be called by the PortAudio engine when audio is needed.
