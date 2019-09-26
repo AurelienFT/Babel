@@ -8,13 +8,17 @@
 #ifndef USER_HPP_
 #define USER_HPP_
 #include <vector>
-class User {
+#include "NetworkClient.hpp"
+class User : public Babel::Network::NetworkClient {
 	public:
-		User();
-		~User();
-		std::vector<User> getFriends();
+            User(int fd, struct sockaddr_in *sockaddrIn);
+            ~User();
+	    bool isLogged() const {return _logged;};
+            void onMessage(std::vector<uint8_t> &buff);
+	    std::vector<User> getFriends();
 	protected:
 	private:
+		bool _logged = false;
 		int _id;
 };
 
