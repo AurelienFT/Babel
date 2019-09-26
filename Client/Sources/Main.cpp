@@ -5,13 +5,9 @@
 ** Main
 */
 
-#include <QApplication>
-#include <QPushButton>
+#include <iostream>
 
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
-    QApplication app(argc, argv);
-    QPushButton bouton("Salut les Zéros, la forme ?");
-    bouton.show();
-    return app.exec();
+
 }

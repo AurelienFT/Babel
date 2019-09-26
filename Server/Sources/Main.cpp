@@ -5,6 +5,9 @@
 ** Main
 */
 
+#include "NetworkClient.hpp"
+#include "User.hpp"
+#include "MainServer.hpp"
 #include "DatabaseMessageHandling.hpp"
 #include "DatabaseDiscussionHandling.hpp"
 #include "DatabaseUserDiscussionHandling.hpp"
@@ -13,6 +16,9 @@
 
 int main(int ac, char **av)
 {
+    Babel::Network::MainServer<User> mainServer(1337);
+
+    mainServer.run();
     std::shared_ptr<Db> testDb = std::make_shared<Db>();
     DatabaseUserHandling testUser(testDb);
 
