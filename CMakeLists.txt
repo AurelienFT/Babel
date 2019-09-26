@@ -9,6 +9,8 @@ find_package(Qt5DBus)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/Client/Sources/babelInterface)
+
 set(
     CLIENT_SOURCES_FILES
     "Client/Sources/Main.cpp"
