@@ -18,7 +18,7 @@ class DatabaseMessageHandling {
 		DatabaseMessageHandling(std::shared_ptr<Db> database);
 		~DatabaseMessageHandling();
 
-                void createDiscussion();
+                void createTable();
                 void addMessage(const int &sender, const int &group, const std::string &messageData);
                 void deleteMessage(const int &messageId);
 

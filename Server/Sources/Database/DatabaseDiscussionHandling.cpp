@@ -26,7 +26,7 @@ void DatabaseDiscussionHandling::createTable()
     std::string sqlRequest;
     std::string errorMessage = "ouais";
 
-    sqlRequest =    std::string("CREATE TABLE DISCUSSIONS (") +
+    sqlRequest =    std::string("CREATE TABLE IF NOT EXISTS DISCUSSIONS (") +
                     std::string("ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ") +
                     std::string("CREATIONDATE DATE NOT NULL, ") +
                     std::string("NAME TEXT NOT NULL);");

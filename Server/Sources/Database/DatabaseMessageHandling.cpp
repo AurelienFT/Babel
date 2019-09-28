@@ -22,12 +22,12 @@ int /*DatabaseMessageHandling::*/createCallback(void *notUsed, int argc, char **
     return 0;
 }
 
-void DatabaseMessageHandling::createDiscussion()
+void DatabaseMessageHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
 
-    sqlRequest =    std::string("CREATE TABLE MESSAGES (") +
+    sqlRequest =    std::string("CREATE TABLE IF NOT EXISTS MESSAGES (") +
                     std::string("ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, ") +
                     std::string("SENDER INTEGER NOT NULL, ") +
                     std::string("DISCUSSION INTEGER NOT NULL, ") +

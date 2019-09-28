@@ -8,7 +8,7 @@
 
 void Babel::Network::NetworkClient::onMessage(std::vector<uint8_t> &buff)
 {
-    printf("Message: %d {", _fd);
+    printf("Message: %d {", fd);
     for (auto i : buff) {
         printf("%x", i);
     }
@@ -16,13 +16,13 @@ void Babel::Network::NetworkClient::onMessage(std::vector<uint8_t> &buff)
 }
 
 Babel::Network::NetworkClient::NetworkClient(int fd, struct sockaddr_in *sockaddrIn) :
-    _fd(fd)
+    fd(fd)
 {
     memcpy(&sockaddrInClient, sockaddrIn, sizeof(struct sockaddr_in));
-    std::cout << "New network client, id: " << _fd << std::endl;
+    std::cout << "New network client, id: " << fd << std::endl;
 }
 
 Babel::Network::NetworkClient::~NetworkClient()
 {
-    std::cout << "Network client " << _fd  << "disconnected" << std::endl;
+    std::cout << "Network client " << fd  << "disconnected" << std::endl;
 }

@@ -23,26 +23,26 @@ int main(int ac, char **av)
     DatabaseUserHandling testUser(testDb);
 
     testUser.createTable();
-    testUser.addUser("Jean-Pierre");
+    //testUser.addUser("Jean-Pierre");
     testUser.getUserInfos(1);
     testUser.deleteUser(1);
-    testUser.addUser("Jean-Paul");
-    testUser.addUser("Un mec chelou");
+    //testUser.addUser("Jean-Paul");
+    //testUser.addUser("Un mec chelou");
     testUser.getUserInfos(2);
     testUser.getUserInfos(3);
 
     DatabaseDiscussionHandling testDiscussion(testDb);
     testDiscussion.createTable();
-    testDiscussion.addDiscussion("Jean-Paul et Jean-Pierre");
+    testDiscussion.createTable();
     testDiscussion.getDiscussionInfos(1);
     testDiscussion.deleteDiscussion(1);
-    testDiscussion.addDiscussion("Jean-Pierre et Jean-Paul");
-    testDiscussion.addDiscussion("Un mec chelou seul");
+    testDiscussion.createTable();
+    testDiscussion.createTable();
     testDiscussion.getDiscussionInfos(2);
     testDiscussion.getDiscussionInfos(3);
 
     DatabaseMessageHandling testMessage(testDb);
-    testMessage.createDiscussion();
+    testMessage.createTable();
     testMessage.addMessage(2, 2, "Tiens, Tiens, Tiens...");
     testMessage.getAllMessage(1);
     testMessage.deleteMessage(1);

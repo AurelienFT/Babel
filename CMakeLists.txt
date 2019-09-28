@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/Client/Sources/babelInterface)
+#add_subdirectory(${CMAKE_SOURCE_DIR}/Client/Sources/babelInterface)
 
 set(
         CLIENT_SOURCES_FILES
@@ -44,6 +44,7 @@ set(
         Client/Sources/babelInterface/loginform.h
         Client/Sources/babelInterface/loginregister.cpp
         Client/Sources/babelInterface/loginregister.h
+        Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
 )
 
@@ -53,17 +54,17 @@ add_executable(
 )
 
 target_compile_options(babel_client PRIVATE "-fPIC")
-target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/babelInterface)
+target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/babelInterface Client/Sources/Network Interface)
 target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
 
 set(
     SERVER_SOURCES_FILES
-    "Server/Sources/VoIpServer.cpp"
-    "Server/Sources/VoIpServer.hpp"
-    "Server/Sources/NetworkClient.cpp"
-    "Server/Sources/NetworkClient.hpp"
-    "Server/Sources/MainServer.cpp"
-    "Server/Sources/MainServer.hpp"
+    "Server/Sources/Network/VoIpServer.cpp"
+    "Server/Sources/Network/VoIpServer.hpp"
+    "Server/Sources/Network/NetworkClient.cpp"
+    "Server/Sources/Network/NetworkClient.hpp"
+    "Server/Sources/Network/MainServer.cpp"
+    "Server/Sources/Network/MainServer.hpp"
     "Server/Sources/Main.cpp"
     "Server/Sources/Database/DatabaseMessageHandling.cpp"
     "Server/Sources/Database/DatabaseMessageHandling.cpp"
@@ -72,6 +73,7 @@ set(
     "Server/Sources/Database/DatabaseUserHandling.cpp"
     "Server/Sources/Database/DatabaseUserDiscussionHandling.cpp"
     "Server/Sources/Database/DatabaseUserFriendHandling.cpp"
+    "Server/Sources/Controller.cpp"
 )
 
 add_executable(
@@ -79,7 +81,7 @@ add_executable(
     ${SERVER_SOURCES_FILES}
 )
 
-target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database")
+target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database" "Server/Sources/Network" "Interface")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
 
 add_executable(
