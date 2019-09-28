@@ -1,6 +1,8 @@
 #include "login.h"
 #include "QDebug"
 #include <iostream>
+#include "NetworkInterface.hpp"
+#include "NetworkClient.hpp"
 
 login::login()
 {
@@ -70,6 +72,11 @@ void login::setLoginLayout() // Change le contenu de la fenêtre de login en fon
 
 void login::goToLogin() // Fonction pour aller à la feneêtre de connection //
 {
+    std::string login = formRegister->getLogin().toStdString();
+    std::string password = formRegister->getPassword().toStdString();
+    NetworkClient::instance()->send_server(MessageType::REGISTER, login + "|" + password);
+    MessageType type = NetworkClient::instance()->receive_messageCode();
+    std::cout << "type: " << static_cast<int>(type) << std::endl;
     loginBar->setCurrentIndex(0);
     stack->setCurrentIndex(0);
 }

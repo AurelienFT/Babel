@@ -15,7 +15,7 @@ namespace Babel {
 
         class NetworkClient {
         public:
-            int _fd;
+            int fd;
             //Network
             struct sockaddr_in sockaddrInClient{};
             int sockaddrInClientLen = sizeof(sockaddrInClient);

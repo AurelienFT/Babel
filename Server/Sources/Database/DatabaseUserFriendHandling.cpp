@@ -26,7 +26,7 @@ void DatabaseUserFriendHandling::createTable()
     std::string sqlRequest;
     std::string errorMessage = "ouais";
 
-    sqlRequest =    std::string("CREATE TABLE USER_FRIENDSHIP (") +
+    sqlRequest =    std::string("CREATE TABLE IF NOT EXISTS USER_FRIENDSHIP (") +
                     std::string("ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ") +
                     std::string("FIRST INTEGER NOT NULL, ") +
                     std::string("SECOND INTEGER NOT NULL, ") +

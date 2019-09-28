@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "QDebug"
+#include "NetworkClient.hpp"
 #include <iostream>
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
@@ -24,8 +25,15 @@ MainWindow::~MainWindow() {}
 void MainWindow::slotDisplayFen()
 {
     fenIndex = 1;
-    std::cout << "test" << std::endl;
-    if ((fenIndex < 0) || (fenIndex > 1)) {return;}
-    stack->setCurrentIndex(fenIndex);
+    std::string username = loginPage->form->getLogin().toStdString();
+    std::string password = loginPage->form->getPassword().toStdString();
+    NetworkClient::instance()->send_server(MessageType::LOGIN, username + "|" + password);
+    MessageType returnType = NetworkClient::instance()->receive_messageCode();
+    if (returnType == MessageType::OK) {
+        if ((fenIndex < 0) || (fenIndex > 1)) {return;}
+        stack->setCurrentIndex(fenIndex);
+    } else {
+        std::cout << "error login" << std::endl;
+    }
 }
 

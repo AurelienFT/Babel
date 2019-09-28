@@ -5,9 +5,16 @@
 ** Main
 */
 
-#include <iostream>
+#include "mainwindow.h"
+#include "NetworkClient.hpp"
+#include <QApplication>
 
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
-
+    QApplication a(argc, argv);
+    NetworkClient::instance()->connection();
+    MainWindow w;
+    w.showMaximized();
+    w.show();
+    return a.exec();
 }

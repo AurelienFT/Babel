@@ -19,11 +19,11 @@ class DatabaseUserHandling {
 		~DatabaseUserHandling();
 
         void createTable();
-        void addUser(const std::string &userName);//TO ADD multiple infos on the user (to see with everyone)
+        void addUser(const std::string &userName, const std::string &password);
         void deleteUser(const int &user);
-
+	int userExists(const std::string &userName, const std::string &password);
         void getUserInfos(const int &user);
-
+	int getIDFromUsername(const std::string &username);
 	protected:
 	private:
 		/*int createCallback(void *notUsed, int argc, char **argv, char **azColName);

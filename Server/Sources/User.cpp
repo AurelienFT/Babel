@@ -16,20 +16,26 @@ std::vector<User> User::getFriends()
 
 void User::onMessage(std::vector<uint8_t> &buff)
 {
-    printf("Message: %d {", _fd);
+    printf("Message: %d {", fd);
     for (auto i : buff) {
         printf("%x", i);
     }
     printf("}\n");
 }
 
+void User::login(int id)
+{
+    _id = id;
+    _logged = true;
+}
+
 User::User(int fd, struct sockaddr_in *sockaddrIn)
 	: 	Babel::Network::NetworkClient(fd, sockaddrIn)
 {
-    std::cout << "New network client, id: " << _fd << std::endl;
+    std::cout << "New network client, id: " << fd << std::endl;
 }
 
 User::~User()
 {
-    std::cout << "Network client " << _fd  << "disconnected" << std::endl;
+    std::cout << "Network client " << fd  << "disconnected" << std::endl;
 }
