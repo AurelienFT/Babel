@@ -1,0 +1,19 @@
+build_and_test:
+  image: gcc
+  before_script:
+    - apt-get update
+    - apt install -y python-pip
+    - apt install -y qt5-default
+    - pip install conan
+    - mkdir -p $HOME/.local
+    - curl -s "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
+    - export PATH=$HOME/.local/bin:$PATH
+    - apt-get update
+  script:
+    - mkdir -p build
+    - cd build
+    - conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+    - conan remote add epitech "https://api.bintray.com/conan/epitech/public-conan"
+    - conan remote list
+    - CONAN_SYSREQUIRES_SUDO=0 conan install .. --build portaudio && cmake ..
+    - make -j$(nproc)
