@@ -1,4 +1,4 @@
-#include "friendlist.h"
+#include "friendlist.hpp"
 #include <iostream>
 #include <QSignalMapper>
 

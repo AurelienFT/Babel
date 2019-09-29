@@ -1,7 +1,7 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-#include "customwidget.h"
+#include "customwidget.hpp"
 #include "QPushButton"
 
 

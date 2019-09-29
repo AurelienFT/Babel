@@ -1,4 +1,4 @@
-#include "message.h"
+#include "message.hpp"
 
 message::message(QString sender, QString message, QPair<qint32, qint32> s_size, QPair<qint32, qint32> m_size) : m_sender(sender), m_message(message)
 {

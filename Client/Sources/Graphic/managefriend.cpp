@@ -1,4 +1,4 @@
-#include "managefriend.h"
+#include "managefriend.hpp"
 #include "iostream"
 
 ManageFriend::ManageFriend()

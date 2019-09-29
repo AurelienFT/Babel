@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QHBoxLayout>
-#include <customwidget.h>
+#include "customwidget.hpp"
 #include <QFormLayout>
 #include<QLineEdit>
 #include <QPushButton>

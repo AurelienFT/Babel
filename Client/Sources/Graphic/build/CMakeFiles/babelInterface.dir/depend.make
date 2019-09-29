@@ -12,7 +12,7 @@ CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: bab
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: babelInterface_autogen/mocs_compilation.cpp
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../home.h
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: ../login.h
@@ -156,7 +156,7 @@ CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: /us
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/babelInterface.dir/chat.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/chat.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/chat.cpp.o: ../chat.cpp
 CMakeFiles/babelInterface.dir/chat.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/chat.cpp.o: ../message.h
@@ -283,7 +283,7 @@ CMakeFiles/babelInterface.dir/chat.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/babelInterface.dir/contact.cpp.o: ../contact.cpp
 CMakeFiles/babelInterface.dir/contact.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/contact.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/contact.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/contact.cpp.o: /usr/include/qt5/QtCore/QObject
 CMakeFiles/babelInterface.dir/contact.cpp.o: /usr/include/qt5/QtCore/qalgorithms.h
 CMakeFiles/babelInterface.dir/contact.cpp.o: /usr/include/qt5/QtCore/qarraydata.h
@@ -390,7 +390,7 @@ CMakeFiles/babelInterface.dir/contact.cpp.o: /usr/include/qt5/QtWidgets/qwidget.
 CMakeFiles/babelInterface.dir/conversation.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/conversation.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/conversation.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/conversation.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/conversation.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/conversation.cpp.o: ../conversation.cpp
 CMakeFiles/babelInterface.dir/conversation.cpp.o: ../conversation.h
 CMakeFiles/babelInterface.dir/conversation.cpp.o: /usr/include/qt5/QtCore/QObject
@@ -518,7 +518,7 @@ CMakeFiles/babelInterface.dir/conversation.cpp.o: /usr/include/qt5/QtWidgets/qtw
 CMakeFiles/babelInterface.dir/conversation.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/babelInterface.dir/customwidget.cpp.o: ../customwidget.cpp
-CMakeFiles/babelInterface.dir/customwidget.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/customwidget.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/customwidget.cpp.o: /usr/include/qt5/QtCore/QDebug
 CMakeFiles/babelInterface.dir/customwidget.cpp.o: /usr/include/qt5/QtCore/QObject
 CMakeFiles/babelInterface.dir/customwidget.cpp.o: /usr/include/qt5/QtCore/qalgorithms.h
@@ -628,7 +628,7 @@ CMakeFiles/babelInterface.dir/customwidget.cpp.o: /usr/include/qt5/QtWidgets/qtw
 CMakeFiles/babelInterface.dir/customwidget.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/babelInterface.dir/friendlist.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/friendlist.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/friendlist.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/friendlist.cpp.o: ../friendlist.cpp
 CMakeFiles/babelInterface.dir/friendlist.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/friendlist.cpp.o: /usr/include/qt5/QtCore/QObject
@@ -749,7 +749,7 @@ CMakeFiles/babelInterface.dir/friendlist.cpp.o: /usr/include/qt5/QtWidgets/qwidg
 
 CMakeFiles/babelInterface.dir/home.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/home.cpp.o: ../conversation.h
-CMakeFiles/babelInterface.dir/home.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/home.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/home.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/home.cpp.o: ../contact.h
 CMakeFiles/babelInterface.dir/home.cpp.o: ../home.cpp
@@ -880,7 +880,7 @@ CMakeFiles/babelInterface.dir/home.cpp.o: /usr/include/qt5/QtWidgets/qtwidgets-c
 CMakeFiles/babelInterface.dir/home.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/babelInterface.dir/home.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/babelInterface.dir/login.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/login.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/login.cpp.o: ../login.cpp
 CMakeFiles/babelInterface.dir/login.cpp.o: ../login.h
 CMakeFiles/babelInterface.dir/login.cpp.o: ../loginform.h
@@ -1012,7 +1012,7 @@ CMakeFiles/babelInterface.dir/login.cpp.o: /usr/include/qt5/QtWidgets/qtwidgets-
 CMakeFiles/babelInterface.dir/login.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/babelInterface.dir/login.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/babelInterface.dir/loginform.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/loginform.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/loginform.cpp.o: ../loginform.cpp
 CMakeFiles/babelInterface.dir/loginform.cpp.o: ../loginform.h
 CMakeFiles/babelInterface.dir/loginform.cpp.o: /usr/include/qt5/QtCore/QObject
@@ -1137,7 +1137,7 @@ CMakeFiles/babelInterface.dir/loginform.cpp.o: /usr/include/qt5/QtWidgets/qtwidg
 CMakeFiles/babelInterface.dir/loginform.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/babelInterface.dir/loginform.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/babelInterface.dir/loginregister.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/loginregister.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/loginregister.cpp.o: ../loginform.h
 CMakeFiles/babelInterface.dir/loginregister.cpp.o: ../loginregister.cpp
 CMakeFiles/babelInterface.dir/loginregister.cpp.o: ../loginregister.h
@@ -1267,7 +1267,7 @@ CMakeFiles/babelInterface.dir/loginregister.cpp.o: /usr/include/qt5/QtWidgets/qw
 CMakeFiles/babelInterface.dir/main.cpp.o: ../conversation.h
 CMakeFiles/babelInterface.dir/main.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/main.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/main.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/main.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/main.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/main.cpp.o: ../home.h
 CMakeFiles/babelInterface.dir/main.cpp.o: ../login.h
@@ -1422,7 +1422,7 @@ CMakeFiles/babelInterface.dir/main.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../conversation.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../chat.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../contact.h
-CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../friendlist.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../home.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: ../login.h
@@ -1567,7 +1567,7 @@ CMakeFiles/babelInterface.dir/mainwindow.cpp.o: /usr/include/qt5/QtWidgets/qtwid
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/babelInterface.dir/mainwindow.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/babelInterface.dir/message.cpp.o: ../customwidget.h
+CMakeFiles/babelInterface.dir/message.cpp.o: ../customwidget.hpp
 CMakeFiles/babelInterface.dir/message.cpp.o: ../message.cpp
 CMakeFiles/babelInterface.dir/message.cpp.o: ../message.h
 CMakeFiles/babelInterface.dir/message.cpp.o: /usr/include/qt5/QtCore/QObject

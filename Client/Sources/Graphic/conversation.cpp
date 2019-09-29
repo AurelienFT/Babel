@@ -1,4 +1,4 @@
-#include "conversation.h"
+#include "conversation.hpp"
 #include <iostream>
 
 conversation::conversation()

@@ -1,4 +1,4 @@
-#include "contact.h"
+#include "contact.hpp"
 
 contact::contact(QString txt, int index, QWidget *parent)
     : QPushButton(parent)

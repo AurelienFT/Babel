@@ -1,5 +1,5 @@
-#include "chat.h"
-#include "message.h"
+#include "chat.hpp"
+#include "message.hpp"
 #include "iostream"
 #include <QDebug>
 

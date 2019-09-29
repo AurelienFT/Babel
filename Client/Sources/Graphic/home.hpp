@@ -4,11 +4,11 @@
 #include <QObject>
 #include <QWidget>
 #include <QVBoxLayout>
-#include <customwidget.h>
+#include "customwidget.hpp"
 #include <QTabBar>
-#include <conversation.h>
+#include "conversation.hpp"
 #include <QStackedWidget>
-#include <managefriend.h>
+#include "managefriend.hpp"
 #include <iostream>
 
 

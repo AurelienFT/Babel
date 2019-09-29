@@ -3,12 +3,12 @@
 
 #include <QMainWindow>
 #include <QHBoxLayout>
-#include "customwidget.h"
-#include "friendlist.h"
-#include "chat.h"
+#include "customwidget.hpp"
+#include "friendlist.hpp"
+#include "chat.hpp"
 #include "QFormLayout"
-#include "home.h"
-#include "login.h"
+#include "home.hpp"
+#include "login.hpp"
 #include "QStackedWidget"
 
 class MainWindow : public QMainWindow

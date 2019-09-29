@@ -2,10 +2,10 @@
 #define LOGIN_H
 
 #include <QVBoxLayout>
-#include <customwidget.h>
+#include <customwidget.hpp>
 #include <QTabBar>
-#include "loginform.h"
-#include "loginregister.h"
+#include "loginform.hpp"
+#include "loginregister.hpp"
 #include "QStackedWidget"
 
 

@@ -5,7 +5,7 @@
 ** Main
 */
 
-#include "mainwindow.h"
+#include "mainwindow.hpp"
 #include "NetworkClient.hpp"
 #include <QApplication>
 
