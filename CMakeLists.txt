@@ -18,32 +18,33 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
-#add_subdirectory(${CMAKE_SOURCE_DIR}/Client/Sources/babelInterface)
+#add_subdirectory(${CMAKE_SOURCE_DIR}/Client/Sources/Graphic)
 
 set(
         CLIENT_SOURCES_FILES
-        Client/Sources/babelInterface/mainwindow.cpp
-        Client/Sources/babelInterface/mainwindow.h
-        Client/Sources/babelInterface/customwidget.cpp
-        Client/Sources/babelInterface/customwidget.h
-        Client/Sources/babelInterface/friendlist.cpp
-        Client/Sources/babelInterface/friendlist.h
-        Client/Sources/babelInterface/contact.cpp
-        Client/Sources/babelInterface/contact.h
-        Client/Sources/babelInterface/chat.cpp
-        Client/Sources/babelInterface/chat.h
-        Client/Sources/babelInterface/message.cpp
-        Client/Sources/babelInterface/message.h
-        Client/Sources/babelInterface/home.cpp
-        Client/Sources/babelInterface/home.h
-        Client/Sources/babelInterface/conversation.cpp
-        Client/Sources/babelInterface/conversation.h
-        Client/Sources/babelInterface/login.cpp
-        Client/Sources/babelInterface/login.h
-        Client/Sources/babelInterface/loginform.cpp
-        Client/Sources/babelInterface/loginform.h
-        Client/Sources/babelInterface/loginregister.cpp
-        Client/Sources/babelInterface/loginregister.h
+        Client/Sources/Graphic/mainwindow.cpp
+        Client/Sources/Graphic/mainwindow.h
+        Client/Sources/Graphic/customwidget.cpp
+        Client/Sources/Graphic/customwidget.h
+        Client/Sources/Graphic/friendlist.cpp
+        Client/Sources/Graphic/friendlist.h
+        Client/Sources/Graphic/contact.cpp
+        Client/Sources/Graphic/contact.h
+        Client/Sources/Graphic/chat.cpp
+        Client/Sources/Graphic/chat.h
+        Client/Sources/Graphic/message.cpp
+        Client/Sources/Graphic/message.h
+        Client/Sources/Graphic/home.cpp
+        Client/Sources/Graphic/home.h
+        Client/Sources/Graphic/conversation.cpp
+        Client/Sources/Graphic/conversation.h
+        Client/Sources/Graphic/login.cpp
+        Client/Sources/Graphic/login.h
+        Client/Sources/Graphic/loginform.cpp
+        Client/Sources/Graphic/loginform.h
+        Client/Sources/Graphic/loginregister.cpp
+        Client/Sources/Graphic/loginregister.h
+        Client/Sources/Graphic/managefriend.cpp
         Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
 )
@@ -54,7 +55,7 @@ add_executable(
 )
 
 target_compile_options(babel_client PRIVATE "-fPIC")
-target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/babelInterface Client/Sources/Network Interface)
+target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
 target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
 
 set(
