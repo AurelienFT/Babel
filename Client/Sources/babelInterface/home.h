@@ -7,6 +7,9 @@
 #include <customwidget.h>
 #include <QTabBar>
 #include <conversation.h>
+#include <QStackedWidget>
+#include <managefriend.h>
+#include <iostream>
 
 
 class home : public QWidget
@@ -20,12 +23,18 @@ public:
     void setHome();
     void setHomeBar();
 
+private slots:
+
+    void setHomeLayout();
+
 private :
 
     QVBoxLayout *homeLayout;
     customWidget *homeWidget;
     QTabBar *homeBar;
     conversation *conversationStatut;
+    ManageFriend * h_friendStatut = new ManageFriend();
+    QStackedWidget *h_stack = new QStackedWidget();
 
 };
 

@@ -15,14 +15,13 @@ public:
     void setColorWidget(QList<qint32> color);
     void setSizeWidget(QPair<qint32, qint32> size);
     void setPosWidget(QPair<qint32, qint32> pos);
+    void setClicked(bool click);
 
 protected:
 
     void paintEvent(QPaintEvent *event);
-
-signals:
-
-public slots:
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
 
 private:
 
@@ -30,6 +29,7 @@ private:
     QList<qint32> w_color;
     QPair<qint32, qint32> w_size;
     QPair<qint32, qint32> w_pos;
+    bool w_click = false;
 };
 
 #endif // CUSTOMWIDGET_H
