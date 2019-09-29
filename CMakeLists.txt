@@ -23,27 +23,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 set(
         CLIENT_SOURCES_FILES
         Client/Sources/Graphic/mainwindow.cpp
-        Client/Sources/Graphic/mainwindow.h
         Client/Sources/Graphic/customwidget.cpp
-        Client/Sources/Graphic/customwidget.h
         Client/Sources/Graphic/friendlist.cpp
-        Client/Sources/Graphic/friendlist.h
         Client/Sources/Graphic/contact.cpp
-        Client/Sources/Graphic/contact.h
         Client/Sources/Graphic/chat.cpp
-        Client/Sources/Graphic/chat.h
         Client/Sources/Graphic/message.cpp
-        Client/Sources/Graphic/message.h
         Client/Sources/Graphic/home.cpp
-        Client/Sources/Graphic/home.h
         Client/Sources/Graphic/conversation.cpp
-        Client/Sources/Graphic/conversation.h
         Client/Sources/Graphic/login.cpp
-        Client/Sources/Graphic/login.h
         Client/Sources/Graphic/loginform.cpp
-        Client/Sources/Graphic/loginform.h
         Client/Sources/Graphic/loginregister.cpp
-        Client/Sources/Graphic/loginregister.h
         Client/Sources/Graphic/managefriend.cpp
         Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
