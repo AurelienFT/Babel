@@ -8,6 +8,7 @@
 #include "customwidget.h"
 #include <QWidget>
 #include <QScrollArea>
+#include <QDialog>
 
 class friendList : public QWidget
 {
@@ -24,9 +25,12 @@ public:
     void setFriendListVLayout();
     void createFriend(QList<QString> contactList);
 
-public slots:
-
+private slots:
+    void buttonClicked(int index);
     void addContact();
+
+signals:
+    void changeFriend(int index);
 
 private:
 
@@ -37,6 +41,9 @@ private:
       QList<QString> f_listFriend = {"laura", "arnaud", "délice", "coucou", "kikou", "juju", "koko", "lulu","lili","paul"};
       QPushButton *f_add = new QPushButton("ADD FRIENDS");
       QWidget *f_listWidget = new QWidget;
+      qint32 f_currentFriend;
+      qint32 f_index;
+
 };
 
 #endif // FRIENDLIST_H

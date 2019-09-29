@@ -59,7 +59,7 @@ QPushButton &loginRegister::getRegisterButton()
 
 QString loginRegister::getPassword() const
 {
-    return (formLogin->text());
+    return (formPassword->text());
 }
 
 QString loginRegister::getLogin() const

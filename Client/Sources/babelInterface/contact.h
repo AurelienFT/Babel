@@ -2,20 +2,26 @@
 #define CONTACT_H
 
 #include "customwidget.h"
+#include "QPushButton"
 
-class contact
+
+class contact : public QPushButton
 {
+    Q_OBJECT
 
 public:
+    contact(QString txt,int digit, QWidget *parent);
 
-    contact(QString name, qint32 index);
-    customWidget *getContactWidget(void);
+signals:
+    void clicked(int digit);
+
+private slots:
+    void reemitClicked();
 
 private:
-
-    customWidget *c_widget;
-    QString c_name;
-    qint32 c_index;
+    int c_index;
+    QString c_txt;
 };
+
 
 #endif // CONTACT_H

@@ -26,8 +26,13 @@ void customWidget::paintEvent(QPaintEvent *event)
 
     (void)event;
 
-    w_painter.setPen(QColor(w_color[0], w_color[1], w_color[2], w_color[3]));
-    w_painter.setBrush(QColor(w_color[0], w_color[1], w_color[2], w_color[3]));
+    if (w_click == true) {
+        w_painter.setPen(QColor(242, 101, 34, 255));
+        w_painter.setBrush(QColor(242, 101, 34,255));
+    } else if (w_click == false){
+        w_painter.setPen(QColor(w_color[0], w_color[1], w_color[2], w_color[3]));
+        w_painter.setBrush(QColor(w_color[0], w_color[1], w_color[2], w_color[3]));
+    }
     w_painter.drawRect(w_pos.first, w_pos.second, w_size.first, w_size.second);
 
     if (w_txt != nullptr) {
@@ -35,4 +40,17 @@ void customWidget::paintEvent(QPaintEvent *event)
         w_painter.setFont(QFont("Arial", 12));
         w_painter.drawText(QRectF(0, 0, w_size.first, w_size.second), Qt::AlignCenter | Qt::AlignTop, w_txt);
     }
+}
+
+void customWidget::mousePressEvent(QMouseEvent *event)
+{
+
+//    w_click = true;
+//    repaint();
+}
+
+void customWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+//    w_click = false;
+//    repaint();
 }

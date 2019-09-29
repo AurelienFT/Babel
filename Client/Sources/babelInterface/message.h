@@ -9,7 +9,7 @@
 class message
 {
 public:
-    message(QString sender, QString message);
+    message(QString sender, QString message, QPair<qint32, qint32> s_size, QPair<qint32, qint32> m_size);
     customWidget *getWidgetSender();
     customWidget *getWidgetMessage();
 

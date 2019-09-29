@@ -59,7 +59,7 @@ QPushButton &loginForm::getValidateButton()
 
 QString loginForm::getPassword() const
 {
-    return (formLogin->text());
+    return (formPassword->text());
 }
 
 QString loginForm::getLogin() const

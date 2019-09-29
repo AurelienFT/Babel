@@ -40,6 +40,7 @@ private:
     QTabBar *loginBar;
     QHBoxLayout *formLayout = new QHBoxLayout();
     QStackedWidget *stack = new QStackedWidget();
+
 };
 
 #endif // LOGIN_H

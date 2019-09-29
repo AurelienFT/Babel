@@ -1,17 +1,16 @@
 #include "contact.h"
 
-contact::contact(QString name, qint32 index) : c_name(name), c_index(index)
+contact::contact(QString txt, int index, QWidget *parent)
+    : QPushButton(parent)
 {
-    QList<qint32> color = {47, 49, 54, 255};
-    QPair<qint32, qint32> size(280, 50);
-    QPair<qint32, qint32> pos(0, 1);
-
-    c_widget = new customWidget(color, size, pos, c_name, nullptr);
+    c_txt = txt;
+    c_index = index;
+    setText(txt);
+    connect(this, SIGNAL(clicked()), this, SLOT(reemitClicked()));
 }
 
-customWidget *contact::getContactWidget(void)
+void contact::reemitClicked()
 {
-    return (c_widget);
+    emit clicked(c_index);
 }
-
 
