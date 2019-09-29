@@ -1,0 +1,4 @@
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/CMakeFiles/rebuild_cache.dir
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/CMakeFiles/babelInterface.dir
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/CMakeFiles/edit_cache.dir
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/CMakeFiles/babelInterface_autogen.dir
