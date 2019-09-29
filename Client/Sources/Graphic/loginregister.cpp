@@ -1,4 +1,4 @@
-#include "loginregister.h"
+#include "loginregister.hpp"
 
 loginRegister::loginRegister()
 {

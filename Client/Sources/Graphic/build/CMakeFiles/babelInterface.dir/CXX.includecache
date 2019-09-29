@@ -22,7 +22,7 @@ chat.h
 friendlist.h
 -
 
-..//customwidget.h
+..//customwidget.hpp
 QObject
 -
 QWidget
@@ -37,26 +37,26 @@ QPushButton
 -
 contact.h
 ../contact.h
-customwidget.h
-../customwidget.h
+customwidget.hpp
+../customwidget.hpp
 QWidget
 -
 QScrollArea
 -
 
 ../contact.h
-customwidget.h
-../customwidget.h
+customwidget.hpp
+../customwidget.hpp
 
-../customwidget.h
+../customwidget.hpp
 QObject
 -
 QWidget
 -
 
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/babelInterface_autogen/EWIEGA46WW/moc_customwidget.cpp
-../../../customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+../../../customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
@@ -145,8 +145,8 @@ contact.h
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
 
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/conversation.cpp
 conversation.h
@@ -161,14 +161,14 @@ friendlist.h
 -
 
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.cpp
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QPainter
 -
 QDebug
 -
 
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QObject
 -
 QWidget
@@ -189,8 +189,8 @@ QPushButton
 -
 contact.h
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QWidget
 -
 QScrollArea
@@ -207,7 +207,7 @@ QWidget
 -
 QVBoxLayout
 -
-customwidget.h
+customwidget.hpp
 -
 QTabBar
 -
@@ -225,7 +225,7 @@ iostream
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.h
 QVBoxLayout
 -
-customwidget.h
+customwidget.hpp
 -
 QTabBar
 -
@@ -245,8 +245,8 @@ QVBoxLayout
 -
 QWidget
 -
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QFormLayout
 -
 QLineEdit
@@ -263,8 +263,8 @@ QVBoxLayout
 -
 QWidget
 -
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 QFormLayout
 -
 QLineEdit
@@ -297,8 +297,8 @@ QMainWindow
 -
 QHBoxLayout
 -
-customwidget.h
-/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+customwidget.hpp
+/home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
 friendlist.h
 /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.h
 chat.h
@@ -321,7 +321,7 @@ QString
 -
 QList
 -
-customwidget.h
+customwidget.hpp
 -
 
 /usr/include/qt5/QtCore/QDebug

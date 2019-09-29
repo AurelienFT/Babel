@@ -4,11 +4,11 @@
 
 #include <QVBoxLayout>
 #include <QWidget>
-#include "customwidget.h"
+#include "customwidget.hpp"
 #include <QFormLayout>
 #include <QLineEdit>
 #include "QPushButton"
-#include "loginform.h"
+#include "loginform.hpp"
 #include "QDebug"
 #include "QObject"
 

@@ -13,7 +13,7 @@ CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/build/babelInterface_autogen/mocs_compilation.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/chat.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/home.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.h
@@ -157,7 +157,7 @@ CMakeFiles/babelInterface.dir/babelInterface_autogen/mocs_compilation.cpp.o
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/chat.cpp.o
- ..//customwidget.h
+ ..//customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/chat.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/chat.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/message.h
@@ -284,7 +284,7 @@ CMakeFiles/babelInterface.dir/chat.cpp.o
 CMakeFiles/babelInterface.dir/contact.cpp.o
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /usr/include/qt5/QtCore/QObject
  /usr/include/qt5/QtCore/qalgorithms.h
  /usr/include/qt5/QtCore/qarraydata.h
@@ -391,7 +391,7 @@ CMakeFiles/babelInterface.dir/conversation.cpp.o
  ..//chat.h
  ..//friendlist.h
  ../contact.h
- ../customwidget.h
+ ../customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/conversation.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/conversation.h
  /usr/include/qt5/QtCore/QObject
@@ -519,7 +519,7 @@ CMakeFiles/babelInterface.dir/conversation.cpp.o
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/customwidget.cpp.o
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.cpp
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /usr/include/qt5/QtCore/QDebug
  /usr/include/qt5/QtCore/QObject
  /usr/include/qt5/QtCore/qalgorithms.h
@@ -629,7 +629,7 @@ CMakeFiles/babelInterface.dir/customwidget.cpp.o
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/friendlist.cpp.o
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.h
  /usr/include/qt5/QtCore/QObject
@@ -750,7 +750,7 @@ CMakeFiles/babelInterface.dir/friendlist.cpp.o
 CMakeFiles/babelInterface.dir/home.cpp.o
  ..//chat.h
  ..//conversation.h
- ..//customwidget.h
+ ..//customwidget.hpp
  ..//friendlist.h
  ../contact.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/home.cpp
@@ -881,7 +881,7 @@ CMakeFiles/babelInterface.dir/home.cpp.o
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/login.cpp.o
- ..//customwidget.h
+ ..//customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginform.h
@@ -1013,7 +1013,7 @@ CMakeFiles/babelInterface.dir/login.cpp.o
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/loginform.cpp.o
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginform.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginform.h
  /usr/include/qt5/QtCore/QObject
@@ -1138,7 +1138,7 @@ CMakeFiles/babelInterface.dir/loginform.cpp.o
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/loginregister.cpp.o
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginform.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginregister.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/loginregister.h
@@ -1268,7 +1268,7 @@ CMakeFiles/babelInterface.dir/main.cpp.o
  ..//conversation.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/chat.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/home.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.h
@@ -1423,7 +1423,7 @@ CMakeFiles/babelInterface.dir/mainwindow.cpp.o
  ..//conversation.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/chat.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/contact.h
- /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.h
+ /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/friendlist.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/home.h
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/login.h
@@ -1568,7 +1568,7 @@ CMakeFiles/babelInterface.dir/mainwindow.cpp.o
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
 CMakeFiles/babelInterface.dir/message.cpp.o
- ..//customwidget.h
+ ..//customwidget.hpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/message.cpp
  /home/afoucault/Tek3_Epitech/cpp_babel_2019/Client/Sources/babelInterface/message.h
  /usr/include/qt5/QtCore/QObject

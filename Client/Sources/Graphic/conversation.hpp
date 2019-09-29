@@ -2,9 +2,9 @@
 #define CONVERSATION_H
 
 #include <QHBoxLayout>
-#include <chat.h>
-#include <friendlist.h>
-#include <message.h>
+#include "chat.hpp"
+#include "friendlist.hpp"
+#include "message.hpp"
 
 class conversation : public QWidget
 {

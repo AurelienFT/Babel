@@ -1,4 +1,4 @@
-#include "customwidget.h"
+#include "customwidget.hpp"
 #include <QPainter>
 #include <QDebug>
 

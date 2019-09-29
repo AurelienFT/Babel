@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <QList>
-#include <customwidget.h>
+#include "customwidget.hpp"
 
 
 class message

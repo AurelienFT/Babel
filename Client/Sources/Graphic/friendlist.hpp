@@ -4,8 +4,8 @@
 #include <QObject>
 #include <QVBoxLayout>
 #include <QPushButton>
-#include "contact.h"
-#include "customwidget.h"
+#include "contact.hpp"
+#include "customwidget.hpp"
 #include <QWidget>
 #include <QScrollArea>
 #include <QDialog>

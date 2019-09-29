@@ -18,7 +18,7 @@ add_executable(babelInterface
   mainwindow.cpp
   mainwindow.h
   customwidget.cpp
-  customwidget.h
+  customwidget.hpp
   friendlist.cpp
   friendlist.h
   contact.cpp

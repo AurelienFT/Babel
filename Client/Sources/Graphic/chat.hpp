@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 #include <QTextEdit>
 #include <QPushButton>
-#include "message.h"
+#include "message.hpp"
 #include <QList>
 #include <QObject>
 
