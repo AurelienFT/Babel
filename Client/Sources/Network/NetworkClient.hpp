@@ -69,10 +69,12 @@ public:
   void connection();
   int send_server(MessageType messageType, std::string message);
   MessageType receive_messageCode();
+  std::string getReponse() const;
 private:
 
   static NetworkClient *mInstance;
   static std::mutex mInstanceMutex;
+  std::string _reponse;
   int _sockfd;
 }; 
 

@@ -23,7 +23,7 @@ class DatabaseUserHandling {
         void deleteUser(const int &user);
 	int userExists(const std::string &userName, const std::string &password);
         void getUserInfos(const int &user);
-	int getIDFromUsername(const std::string &username);
+	int userExists(const std::string &username);
 	protected:
 	private:
 		/*int createCallback(void *notUsed, int argc, char **argv, char **azColName);

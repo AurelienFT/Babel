@@ -7,6 +7,7 @@
 
 #include "NetworkClient.hpp"
 #include <cstring>
+#include <iostream>
 
 void NetworkClient::connection()
 {
@@ -40,9 +41,21 @@ void NetworkClient::connection()
 
 MessageType NetworkClient::receive_messageCode()
 {
+	char buffread[22000] = {0};
 	char messageType = 0;
-	recv(_sockfd, &messageType, 1, 0);
-	return static_cast<MessageType>(messageType);
+	recv(_sockfd, &buffread, sizeof(buffread), 0);
+	int size = *(int *)(buffread + 1);
+	std::cout << "size in network: " << size << std::endl;
+	char tmp[size + 1] = {0};
+	memcpy(tmp, buffread + 5, size);
+	_reponse = std::string(tmp);
+	std::cout << "reponse in network: " << _reponse << std::endl;
+	return static_cast<MessageType>(buffread[0]);
+}
+
+std::string NetworkClient::getReponse() const
+{
+	return (_reponse);
 }
 
 

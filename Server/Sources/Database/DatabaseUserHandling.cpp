@@ -109,7 +109,7 @@ int DatabaseUserHandling::userExists(const std::string &username, const std::str
     return (id);
 }
 
-int DatabaseUserHandling::getIDFromUsername(const std::string &username)
+int DatabaseUserHandling::userExists(const std::string &username)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -120,7 +120,7 @@ int DatabaseUserHandling::getIDFromUsername(const std::string &username)
         //error message
         exit(0);
     }
-    return (id);   
+    return (id);
 }
 
 void DatabaseUserHandling::getUserInfos(const int &user)

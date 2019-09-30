@@ -122,7 +122,15 @@ private:
             return 0;
         printf("fd: %d | type: %d | recv %d: \n", client->fd, buffread[0], r);
         MessageType codeType = controller.manageReponse(client, static_cast<MessageType>(buffread[0]), buffread + 1);
-        send(client->fd, reinterpret_cast<char *>(&codeType), 1, 0);
+        std::string reponse = controller.getReponse();
+        std::cout << "reponse in server = " << reponse << std::endl;
+        char *data = static_cast<char *>(malloc(sizeof(char) + sizeof(int) + reponse.length()));
+    	data[0] = static_cast<char>(codeType);
+	    int length = reponse.length();
+	    int *tmp = (int *)&data[1]; //theo.zapata@epitech.eu tricks
+	    (*tmp) = length;
+    	memcpy(data + 5, reponse.c_str(), reponse.length());
+        send(client->fd, data, sizeof(char) + sizeof(int) + reponse.length(), 0);
         return (1);
     }
 };

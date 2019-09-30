@@ -1,5 +1,7 @@
 #include "managefriend.hpp"
 #include "iostream"
+#include "NetworkInterface.hpp"
+#include "NetworkClient.hpp"
 
 ManageFriend::ManageFriend()
 {
@@ -67,8 +69,14 @@ QWidget *ManageFriend::getFormWidget() const
 
 void ManageFriend::addFriend()
 {
-    std::cout << "add" << std::endl;
-    formLogin->text();
+    std::string friendName = formLogin->displayText().toStdString();
+    NetworkClient::instance()->send_server(MessageType::ADD_FRIEND, friendName);
+    MessageType returnType = NetworkClient::instance()->receive_messageCode();
+    if (returnType == MessageType::OK) {
+        std::cout << "friend request sent" << std::endl;
+    } else {
+        std::cout << "error user not exist" << std::endl;
+    }
 }
 
 void ManageFriend::removeFriend()
