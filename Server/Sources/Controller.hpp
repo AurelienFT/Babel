@@ -31,6 +31,8 @@ class Controller {
 			_dbMessageHandling.createTable();
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->registerUser(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->loginUser(client, size, data); });
+			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->createFriendRequest(client, size, data); });
+			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->updateData(client, size, data); });
 		};
 		MessageType manageReponse(std::shared_ptr<T> client, MessageType messageType, char *payload) {
 			int size = *(int *)payload;
@@ -41,6 +43,9 @@ class Controller {
 		~Controller() {
 
 		};
+		std::string getReponse() const {
+			return (_reponse);
+		}
 	protected:
 	private:
 	  	MessageType registerUser(std::shared_ptr<T> client, size_t size, const char *data) {
@@ -65,12 +70,28 @@ class Controller {
 			client->login(id);
 			return MessageType::OK;
 		};
+		MessageType createFriendRequest(std::shared_ptr<T> client, size_t size, const char *data) {
+			char tmp[size + 1] = {0};
+			memcpy(tmp, data, size);
+			std::string friendName(tmp);
+			int id = client->getID();
+			int idTwo = _dbUserHandling.userExists(friendName);
+			if (idTwo == -1)
+				return MessageType::ERROR_ADD_FRIEND;
+			_dbUserFriendHandling.addFriendShip(id, idTwo, false);
+			return MessageType::OK;
+		};
+		MessageType updateData(std::shared_ptr<T> client, size_t size, const char *data) {
+			_reponse = std::string("testounet");
+			return MessageType::OK;
+		};
 		std::shared_ptr<Db> _db = std::shared_ptr<Db>(new Db());
 		DatabaseDiscussionHandling _dbDiscussionHandling;
 		DatabaseMessageHandling _dbMessageHandling;
 		DatabaseUserFriendHandling _dbUserFriendHandling;
 		DatabaseUserHandling _dbUserHandling;
 		std::vector<std::function<MessageType (std::shared_ptr<T>, size_t, const char *)>> controllerFunctions;
+		std::string _reponse;
 };
 
 #endif /* !CONTROLLER_HPP_ */

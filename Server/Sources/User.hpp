@@ -17,6 +17,7 @@ class User : public Babel::Network::NetworkClient {
             void onMessage(std::vector<uint8_t> &buff);
 	    void login(int id);
 	    std::vector<User> getFriends();
+	    int getID() const;
 	protected:
 	private:
 		bool _logged = false;

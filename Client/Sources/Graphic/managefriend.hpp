@@ -18,8 +18,6 @@ public:
     ManageFriend();
     QHBoxLayout *getFriendLayout() const;
     QWidget *getFormWidget() const;
-    QString getPassword() const;
-    QString getLogin() const;
     void setFormWidget();
     void setFormCLayout();
     void setFormVLayout();
