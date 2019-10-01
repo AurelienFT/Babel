@@ -6,24 +6,31 @@
 #include "friendlist.hpp"
 #include "message.hpp"
 
-class conversation : public QWidget
-{
-    Q_OBJECT
+namespace Babel {
 
-public:
+    namespace Graphic {
 
-    conversation();
-    QHBoxLayout *getConversationLayout() const;
-    void setConversation();
+        class conversation : public QWidget
+        {
+            Q_OBJECT
 
-private slots:
-  void getMessage(int index);
+            public:
 
-private:
+                conversation();
+                QHBoxLayout *getConversationLayout() const;
+                void setConversation();
 
-    QHBoxLayout *conversationLayout;
-    chat *conversationChat;
-    friendList *conversationFriend;
-};
+            private slots:
+
+                void getMessage(int index);
+
+            private:
+
+                QHBoxLayout *conversationLayout;
+                chat *conversationChat;
+                friendList *conversationFriend;
+        };
+    }
+}
 
 #endif // CONVERSATION_H

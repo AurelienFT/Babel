@@ -3,12 +3,12 @@
 #include "iostream"
 #include <QDebug>
 
-chat::chat()
+Babel::Graphic::chat::chat()
 {
     setChatWidget();
 }
 
-void chat::setChatWidget()
+void Babel::Graphic::chat::setChatWidget()
 {
     c_chatEntry->setMaximumSize(1620, 100);
     c_chatScroll->setMaximumSize(1620, 1000);
@@ -27,7 +27,7 @@ void chat::setChatWidget()
 
 }
 
-void chat::setChatHLayout()
+void Babel::Graphic::chat::setChatHLayout()
 {
     c_chatEntry->setAlignment(Qt::AlignLeft);
     c_chatHLayout->addWidget(c_chatEntry);
@@ -44,26 +44,26 @@ void chat::setChatHLayout()
 
 }
 
-void chat::setChatVLayout()
+void Babel::Graphic::chat::setChatVLayout()
 {
     setListMessage();
     c_chatVLayout->addLayout(c_chatList);
 }
 
-void chat::setChatScroll()
+void Babel::Graphic::chat::setChatScroll()
 {
     c_chatScroll->setWidget(c_chatWidget);
     c_chatScroll->setWidgetResizable(true);
 }
 
-void chat::setListMessage()
+void Babel::Graphic::chat::setListMessage()
 {
     c_chatList->setAlignment(Qt::AlignTop);
     clearLayout(c_chatList);
     addMessage();
 }
 
-void chat::clearLayout(QLayout *layout)
+void Babel::Graphic::chat::clearLayout(QLayout *layout)
 {
     QLayoutItem *item;
 
@@ -81,7 +81,7 @@ void chat::clearLayout(QLayout *layout)
     }
 }
 
-void chat::addMessage()
+void Babel::Graphic::chat::addMessage()
 {
     for (int i = 0; i < c_listMessage.size(); i++) {
        message m = c_listMessage[i];
@@ -96,7 +96,7 @@ void chat::addMessage()
     }
 }
 
-void chat::sendMessage()
+void Babel::Graphic::chat::sendMessage()
 {
     QPair<qint32, qint32> s_size(100, 80);
     QPair<qint32, qint32> m_size(1400, 80);
@@ -117,13 +117,13 @@ void chat::sendMessage()
 }
 
 
-void chat::setMessage(QList<message> listMessage)
+void Babel::Graphic::chat::setMessage(QList<message> listMessage)
 {
     c_listMessage = listMessage;
     setListMessage();
 
 }
-void chat::sendResponse()
+void Babel::Graphic::chat::sendResponse()
 {
     QPair<qint32, qint32> s_size(100, 80);
     QPair<qint32, qint32> m_size(1400, 80);
@@ -140,7 +140,7 @@ void chat::sendResponse()
     c_chatList->addLayout(barMessage);
 }
 
-void chat::changeStateCall()
+void Babel::Graphic::chat::changeStateCall()
 {
     if (c_stateCall == 0) {
         c_chatCall->setStyleSheet("background-color: #e3191e;color: white;font-weight: bold");
@@ -153,7 +153,7 @@ void chat::changeStateCall()
     }
 }
 
-QVBoxLayout *chat::getChatLayout()
+QVBoxLayout *Babel::Graphic::chat::getChatLayout()
 {
     return (c_chatCLayout);
 }

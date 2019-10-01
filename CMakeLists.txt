@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.11)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
-find_package(Qt5Core) 
+find_package(Qt5Core)
 find_package(Qt5Widgets)
 find_package(Qt5DBus)
 
@@ -30,6 +30,7 @@ set(
         Client/Sources/Graphic/message.cpp
         Client/Sources/Graphic/home.cpp
         Client/Sources/Graphic/conversation.cpp
+	    Client/Sources/Graphic/friendrequest.cpp
         Client/Sources/Graphic/login.cpp
         Client/Sources/Graphic/loginform.cpp
         Client/Sources/Graphic/loginregister.cpp
@@ -42,8 +43,8 @@ add_executable(
         babel_client
         ${CLIENT_SOURCES_FILES}
 )
-
-target_compile_options(babel_client PRIVATE "-fPIC")
+message(Qt5::Core)
+target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
 target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
 target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
 

@@ -5,19 +5,24 @@
 #include <QList>
 #include "customwidget.hpp"
 
+namespace Babel {
 
-class message
-{
-public:
-    message(QString sender, QString message, QPair<qint32, qint32> s_size, QPair<qint32, qint32> m_size);
-    customWidget *getWidgetSender();
-    customWidget *getWidgetMessage();
+    namespace Graphic {
 
-private:
-    QString m_sender;
-    QString m_message;
-    customWidget *m_widget_message;
-    customWidget *m_widget_sender;
-};
+        class message {
+
+            public:
+                message(QString sender, QString message, QPair<qint32, qint32> s_size, QPair<qint32, qint32> m_size);
+                customWidget *getWidgetSender();
+                customWidget *getWidgetMessage();
+
+            private:
+                QString _messageSender;
+                QString _messageTxt;
+                customWidget *_widgetMessage;
+                customWidget *_widgetSender;
+        };
+    }
+}
 
 #endif // MESSAGE_H

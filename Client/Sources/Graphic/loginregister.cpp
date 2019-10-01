@@ -1,11 +1,11 @@
 #include "loginregister.hpp"
 
-loginRegister::loginRegister()
+Babel::Graphic::loginRegister::loginRegister()
 {
     setFormWidget();
 }
 
-void loginRegister::setFormWidget()
+void Babel::Graphic::loginRegister::setFormWidget()
 {
     QList<qint32> color = {47, 49, 54, 255};
     QPair<qint32, qint32> size(800, 500);
@@ -19,7 +19,7 @@ void loginRegister::setFormWidget()
     formWidget->setLayout(formLayout);
 }
 
-void loginRegister::setFormCLayout()
+void Babel::Graphic::loginRegister::setFormCLayout()
 {
     formLayout->addStretch();
     formLayout->addLayout(formForm);
@@ -27,7 +27,7 @@ void loginRegister::setFormCLayout()
     formLayout->addLayout(Horizontal);
 }
 
-void loginRegister::setFormVLayout()
+void Babel::Graphic::loginRegister::setFormVLayout()
 {
     formLogin->setMaximumSize(700, 50);
     formPassword->setMaximumSize(700, 50);
@@ -35,7 +35,7 @@ void loginRegister::setFormVLayout()
     formForm->addRow("Password :",formPassword);
 }
 
-void loginRegister::setFormHLayout()
+void Babel::Graphic::loginRegister::setFormHLayout()
 {
     validate->setMinimumSize(200,50);
     validate->setStyleSheet("background-color: #ffffff;");
@@ -47,22 +47,22 @@ void loginRegister::setFormHLayout()
 
 // Getter //
 
-QWidget *loginRegister::getFormWidget() const {
+QWidget *Babel::Graphic::loginRegister::getFormWidget() const {
 
     return (formWidget);
 }
 
-QPushButton &loginRegister::getRegisterButton()
+QPushButton &Babel::Graphic::loginRegister::getRegisterButton()
 {
     return (*validate);
 }
 
-QString loginRegister::getPassword() const
+QString Babel::Graphic::loginRegister::getPassword() const
 {
     return (formPassword->text());
 }
 
-QString loginRegister::getLogin() const
+QString Babel::Graphic::loginRegister::getLogin() const
 {
     return (formLogin->text());
 }

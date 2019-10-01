@@ -11,31 +11,35 @@
 #include "managefriend.hpp"
 #include <iostream>
 
+namespace Babel {
 
-class home : public QWidget
-{
-    Q_OBJECT
+    namespace Graphic {
 
-public:
+        class home : public QWidget
+        {
+            Q_OBJECT
 
-    home();
-    customWidget *getHomeWidget() const;
-    void setHome();
-    void setHomeBar();
+            public:
 
-private slots:
+                home();
+                customWidget *getHomeWidget() const;
+                void setHome();
+                void setHomeBar();
 
-    void setHomeLayout();
+            private slots:
 
-private :
+                void setHomeLayout();
 
-    QVBoxLayout *homeLayout;
-    customWidget *homeWidget;
-    QTabBar *homeBar;
-    conversation *conversationStatut;
-    ManageFriend * h_friendStatut = new ManageFriend();
-    QStackedWidget *h_stack = new QStackedWidget();
+            private :
 
-};
+                QVBoxLayout *homeLayout;
+                customWidget *homeWidget;
+                QTabBar *homeBar;
+                conversation *conversationStatut;
+                ManageFriend * h_friendStatut = new ManageFriend();
+                QStackedWidget *h_stack = new QStackedWidget();
+        };
+    }
+}
 
 #endif // HOME_H

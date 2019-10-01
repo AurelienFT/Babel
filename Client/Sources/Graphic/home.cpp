@@ -1,6 +1,6 @@
 #include "home.hpp"
 
-home::home()
+Babel::Graphic::home::home()
 {
     QList<qint32> color = {32, 34, 37, 255};
     QPair<qint32, qint32> size(1920, 1080);
@@ -11,16 +11,13 @@ home::home()
     homeBar = new QTabBar(nullptr);
     conversationStatut = new conversation();
     setHome();
-
 }
 
-void home::setHome()
+void Babel::Graphic::home::setHome()
 {
     QWidget *conversation = new QWidget();
-//    QWidget *manageFriend = new QWidget();
 
     conversation->setLayout(conversationStatut->getConversationLayout());
-//    manageFriend->setLayout(h_friendStatut->getFriendLayout());
     h_stack->addWidget(conversation);
     h_stack->addWidget(h_friendStatut->getFormWidget());
     setHomeBar();
@@ -29,7 +26,7 @@ void home::setHome()
     homeWidget->setLayout(homeLayout);
 }
 
-void home::setHomeBar()
+void Babel::Graphic::home::setHomeBar()
 {
 
     homeBar->addTab("Conversations");
@@ -41,12 +38,12 @@ void home::setHomeBar()
     connect(homeBar, SIGNAL(currentChanged(int)), this, SLOT(setHomeLayout()));
 }
 
-customWidget *home::getHomeWidget() const
+Babel::Graphic::customWidget *Babel::Graphic::home::getHomeWidget() const
 {
     return (homeWidget);
 }
 
-void home::setHomeLayout() // Change le contenu de la fenêtre de login en fonction de la TabBar//
+void Babel::Graphic::home::setHomeLayout() // Change le contenu de la fenêtre de login en fonction de la TabBar//
 {
     std::cout << "coucou34" << std::endl;
     if (homeBar->currentIndex() == 0)

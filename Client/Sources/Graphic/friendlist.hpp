@@ -9,41 +9,57 @@
 #include <QWidget>
 #include <QScrollArea>
 #include <QDialog>
+#include "friendrequest.hpp"
 
-class friendList : public QWidget
-{
 
-    Q_OBJECT
+namespace Babel {
 
-public:
+    namespace Graphic {
 
-    friendList();
-    QVBoxLayout *getIndividualLayout();
-    void setFriendListWidget();
-    void setFriendListScroll();
-    void setFriendListCLayout();
-    void setFriendListVLayout();
-    void createFriend(QList<QString> contactList);
+        class friendList : public QWidget {
 
-private slots:
-    void buttonClicked(int index);
-    void addContact();
+            Q_OBJECT
 
-signals:
-    void changeFriend(int index);
+            public:
 
-private:
+                friendList();
+                QVBoxLayout *getIndividualLayout();
+                void setFriendListWidget();
+                void setFriendListScroll();
+                void setFriendListCLayout();
+                void setFriendListVLayout();
+                void createFriend(QList<QString> contactList);
+                void setFriendRequest();
+                void clearLayout(QLayout *layout);
+                void updateFriend();
 
-      QScrollArea *f_scrollArea = new QScrollArea;
-      QVBoxLayout *f_listVLayout = new QVBoxLayout();
-      QVBoxLayout *f_container = new QVBoxLayout();
-      customWidget *f_listTitle;
-      QList<QString> f_listFriend = {"laura", "arnaud", "délice", "coucou", "kikou", "juju", "koko", "lulu","lili","paul"};
-      QPushButton *f_add = new QPushButton("ADD FRIENDS");
-      QWidget *f_listWidget = new QWidget;
-      qint32 f_currentFriend;
-      qint32 f_index;
+            private slots:
 
-};
+                void addFriend(int index);
+                void buttonClicked(int index);
+                void signOut();
+                void rejectFriend(int index);
+
+
+            signals:
+
+                void changeFriend(int index);
+
+            private:
+
+                QScrollArea *_scrollArea = new QScrollArea;
+                QVBoxLayout *_listVLayout = new QVBoxLayout();
+                QVBoxLayout *_container = new QVBoxLayout();
+                customWidget *_listTitle;
+                QVBoxLayout *_friendRequest = new QVBoxLayout();
+                QPushButton *_signOut = new QPushButton("SIGN OUT");
+                QWidget *_listWidget = new QWidget;
+                QList<QString> _listFriend = {"laura", "arnaud", "délice", "coucou", "kikou", "juju", "koko", "lulu","lili","paul", "baba", "didi","didi","didi","didi","didi","didi","didi","didi","didi","didi"};
+                QList<QString> _listRequest;
+                qint32 _currentFriend;
+                qint32 _index;
+        };
+    }
+}
 
 #endif // FRIENDLIST_H

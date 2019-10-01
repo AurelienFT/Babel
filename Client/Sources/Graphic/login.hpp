@@ -8,39 +8,43 @@
 #include "loginregister.hpp"
 #include "QStackedWidget"
 
+namespace Babel {
 
-class login : public QWidget
-{
+    namespace Graphic {
 
-       Q_OBJECT
+        class login : public QWidget
+        {
 
-public:
+            Q_OBJECT
 
-    login();
-    customWidget *getLoginWidget() const;
-    void setLoginBar();
-    void setLoginWidget();
-    void setLoginVLayout();
-     void setLoginHLayout();
-    loginForm *form = new loginForm();
-    loginRegister *formRegister = new loginRegister();
+            public:
+
+                login();
+                customWidget *getLoginWidget() const;
+                void setLoginBar();
+                void setLoginWidget();
+                void setLoginVLayout();
+                void setLoginHLayout();
+                loginForm *form = new loginForm();
+                loginRegister *formRegister = new loginRegister();
 
 
-private slots:
+            private slots:
 
-    void setLoginLayout();
-    void goToLogin();
+                void setLoginLayout();
+                void goToLogin();
 
-private:
+            private:
 
-    QVBoxLayout *loginLayout;
-    QVBoxLayout *vLayout = new QVBoxLayout();
-    customWidget *loginWidget;
-    customWidget *registerWidget;
-    QTabBar *loginBar;
-    QHBoxLayout *formLayout = new QHBoxLayout();
-    QStackedWidget *stack = new QStackedWidget();
-
-};
+                QVBoxLayout *_loginLayout;
+                QVBoxLayout *_vLayout = new QVBoxLayout();
+                customWidget *_loginWidget;
+                customWidget *_registerWidget;
+                QTabBar *_loginBar;
+                QHBoxLayout *_formLayout = new QHBoxLayout();
+                QStackedWidget *_stack = new QStackedWidget();
+        };
+    }
+}
 
 #endif // LOGIN_H

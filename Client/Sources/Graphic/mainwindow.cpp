@@ -3,35 +3,29 @@
 #include "NetworkClient.hpp"
 #include <iostream>
 
-MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
+Babel::Graphic::MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), _homePage(), _loginPage()
 {
-    homePage = new home();
-    loginPage = new login();
     setWindowTitle("Babel");
-    stack = new QStackedWidget(this);
-
-    stack->addWidget(loginPage->getLoginWidget());
-    stack->addWidget(homePage->getHomeWidget());
-
-    this->setCentralWidget(stack);
-    stack->setCurrentIndex(fenIndex); // on affiche la première fenêtre à l'ouverture du programme
-    std::cout <<"test1" << std::endl;
-
-
-    QWidget::connect(&loginPage->form->getValidateButton(), SIGNAL(clicked()), this, SLOT(slotDisplayFen()));
+    _windowStack = new QStackedWidget(this);
+    _windowStack->addWidget(_loginPage.getLoginWidget());
+    _windowStack->addWidget(_homePage.getHomeWidget());
+    this->setCentralWidget(_windowStack);
+    _windowStack->setCurrentIndex(_windowIndex); // on affiche la première fenêtre à l'ouverture du programme
+    connect(&_loginPage.form->getValidateButton(), SIGNAL(clicked()), this, SLOT(slotDisplayFen()));
 }
-MainWindow::~MainWindow() {}
 
-void MainWindow::slotDisplayFen()
+Babel::Graphic::MainWindow::~MainWindow() {}
+
+void Babel::Graphic::MainWindow::slotDisplayFen()
 {
-    fenIndex = 1;
-    std::string username = loginPage->form->getLogin().toStdString();
-    std::string password = loginPage->form->getPassword().toStdString();
+    _windowIndex = 1;
+    std::string username = _loginPage.form->getLogin().toStdString();
+    std::string password = _loginPage.form->getPassword().toStdString();
     NetworkClient::instance()->send_server(MessageType::LOGIN, username + "|" + password);
     MessageType returnType = NetworkClient::instance()->receive_messageCode();
     if (returnType == MessageType::OK) {
-        if ((fenIndex < 0) || (fenIndex > 1)) {return;}
-        stack->setCurrentIndex(fenIndex);
+        if ((_windowIndex < 0) || (_windowIndex > 1)) {return;}
+        _windowStack->setCurrentIndex(_windowIndex);
     } else {
         std::cout << "error login" << std::endl;
     }

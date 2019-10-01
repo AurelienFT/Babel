@@ -16,27 +16,31 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 add_executable(babelInterface
   main.cpp
   mainwindow.cpp
-  mainwindow.h
+  mainwindow.hpp
   customwidget.cpp
   customwidget.hpp
   friendlist.cpp
-  friendlist.h
+  friendlist.hpp
   contact.cpp
-  contact.h
+  contact.hpp
   chat.cpp
-  chat.h
+  chat.hpp
   message.cpp
-  message.h
+  message.hpp
   home.cpp
-  home.h
+  home.hpp
   conversation.cpp
-  conversation.h
+  conversation.hpp
   login.cpp
-  login.h
+  login.hpp
   loginform.cpp
-  loginform.h
+  loginform.hpp
   loginregister.cpp
-  loginregister.h
+  loginregister.hpp
+  friendrequest.cpp
+  friendrequest.hpp
+  managefriend.cpp
+  managefriend.hpp
   )
 
 target_link_libraries(babelInterface PRIVATE Qt5::Widgets)
