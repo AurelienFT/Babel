@@ -2,25 +2,25 @@
 #include <QPainter>
 #include <QDebug>
 
-customWidget::customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32> pos, QString txt, QWidget *parent)
+Babel::Graphic::customWidget::customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32> pos, QString txt, QWidget *parent)
     :  QWidget(parent), w_txt(txt), w_color(color), w_size(size), w_pos(pos) {}
 
-void customWidget::setColorWidget(QList<qint32> color)
+void Babel::Graphic::customWidget::setColorWidget(QList<qint32> color)
 {
     w_color = color;
 }
 
-void customWidget::setSizeWidget(QPair<qint32, qint32> size)
+void Babel::Graphic::customWidget::setSizeWidget(QPair<qint32, qint32> size)
 {
     w_size = size;
 }
 
-void customWidget::setPosWidget(QPair<qint32, qint32> pos)
+void Babel::Graphic::customWidget::setPosWidget(QPair<qint32, qint32> pos)
 {
     w_pos = pos;
 }
 
-void customWidget::paintEvent(QPaintEvent *event)
+void Babel::Graphic::customWidget::paintEvent(QPaintEvent *event)
 {
     QPainter w_painter(this);
 
@@ -42,14 +42,14 @@ void customWidget::paintEvent(QPaintEvent *event)
     }
 }
 
-void customWidget::mousePressEvent(QMouseEvent *event)
+void  Babel::Graphic::customWidget::mousePressEvent(QMouseEvent *event)
 {
 
 //    w_click = true;
 //    repaint();
 }
 
-void customWidget::mouseReleaseEvent(QMouseEvent *event)
+void Babel::Graphic::customWidget::mouseReleaseEvent(QMouseEvent *event)
 {
 //    w_click = false;
 //    repaint();

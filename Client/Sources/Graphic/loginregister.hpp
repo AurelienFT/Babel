@@ -12,34 +12,40 @@
 #include "QDebug"
 #include "QObject"
 
+namespace Babel {
 
-class loginRegister :  public QWidget
-{
+    namespace Graphic {
 
-    Q_OBJECT
 
-public:
+        class loginRegister :  public QWidget
+        {
 
-    loginRegister();
-    QWidget *getFormWidget() const;
-    QPushButton &getRegisterButton();
-    QString getPassword() const;
-    QString getLogin() const;
-    void setFormWidget();
-    void setFormCLayout();
-    void setFormVLayout();
-    void setFormHLayout();
+            Q_OBJECT
 
-private:
+        public:
 
-    QVBoxLayout *formLayout = new QVBoxLayout;
-    QHBoxLayout *Horizontal = new QHBoxLayout;
-    customWidget *formWidget;
-    QFormLayout *formForm = new QFormLayout;
-    QLineEdit *formLogin= new QLineEdit;
-    QLineEdit *formPassword= new QLineEdit;
-    QPushButton *validate = new QPushButton("Register");
+            loginRegister();
+            QWidget *getFormWidget() const;
+            QPushButton &getRegisterButton();
+            QString getPassword() const;
+            QString getLogin() const;
+            void setFormWidget();
+            void setFormCLayout();
+            void setFormVLayout();
+            void setFormHLayout();
 
-};
+        private:
+
+            QVBoxLayout *formLayout = new QVBoxLayout;
+            QHBoxLayout *Horizontal = new QHBoxLayout;
+            customWidget *formWidget;
+            QFormLayout *formForm = new QFormLayout;
+            QLineEdit *formLogin= new QLineEdit;
+            QLineEdit *formPassword= new QLineEdit;
+            QPushButton *validate = new QPushButton("Register");
+
+        };
+    }
+}
 
 #endif // LOGINREGISTER_H

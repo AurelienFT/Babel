@@ -1,11 +1,11 @@
 #include "loginform.hpp"
 
-loginForm::loginForm()
+Babel::Graphic::loginForm::loginForm()
 {
     setFormWidget();
 }
 
-void loginForm::setFormWidget() // Set the form widget
+void Babel::Graphic::loginForm::setFormWidget() // Set the form widget
 {
     QList<qint32> color = {47, 49, 54, 255};
     QPair<qint32, qint32> size(800, 500);
@@ -19,7 +19,7 @@ void loginForm::setFormWidget() // Set the form widget
     formWidget->setLayout(formLayout);
 }
 
-void loginForm::setFormCLayout() // Set the container Layout
+void Babel::Graphic::loginForm::setFormCLayout() // Set the container Layout
 {
     formLayout->addStretch();
     formLayout->addLayout(formForm);
@@ -27,7 +27,7 @@ void loginForm::setFormCLayout() // Set the container Layout
     formLayout->addLayout(Horizontal);
 }
 
-void loginForm::setFormVLayout() // Set the vertical layout
+void Babel::Graphic::loginForm::setFormVLayout() // Set the vertical layout
 {
     formLogin->setMaximumSize(700, 50);
     formPassword->setMaximumSize(700, 50);
@@ -35,34 +35,33 @@ void loginForm::setFormVLayout() // Set the vertical layout
     formForm->addRow("Password :",formPassword);
 }
 
-void loginForm::setFormHLayout() // Set the horizontal Layout
+void Babel::Graphic::loginForm::setFormHLayout() // Set the horizontal Layout
 {
     validate->setMinimumSize(200,50);
     validate->setStyleSheet("background-color: #ffffff;");
-
     Horizontal->addStretch();
     Horizontal->addWidget(validate);
     Horizontal->addStretch();
 }
 
-// Getter //
+// Getter /
 
-QWidget *loginForm::getFormWidget() const {
+QWidget *Babel::Graphic::loginForm::getFormWidget() const {
 
     return (formWidget);
 }
 
-QPushButton &loginForm::getValidateButton()
+QPushButton &Babel::Graphic::loginForm::getValidateButton()
 {
     return (*validate);
 }
 
-QString loginForm::getPassword() const
+QString Babel::Graphic::loginForm::getPassword() const
 {
     return (formPassword->text());
 }
 
-QString loginForm::getLogin() const
+QString Babel::Graphic::loginForm::getLogin() const
 {
     return (formLogin->text());
 }

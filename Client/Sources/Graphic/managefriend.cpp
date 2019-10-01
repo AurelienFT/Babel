@@ -3,12 +3,12 @@
 #include "NetworkInterface.hpp"
 #include "NetworkClient.hpp"
 
-ManageFriend::ManageFriend()
+Babel::Graphic::ManageFriend::ManageFriend()
 {
     setFormWidget();
 }
 
-void ManageFriend::setFormWidget()
+void Babel::Graphic::ManageFriend::setFormWidget()
 {
     QList<qint32> color = {47, 49, 54, 255};
     QPair<qint32, qint32> size(1920, 1080);
@@ -30,7 +30,7 @@ void ManageFriend::setFormWidget()
     formWidget->setLayout(v);
 }
 
-void ManageFriend::setFormCLayout()
+void Babel::Graphic::ManageFriend::setFormCLayout()
 {
     formLayout->addStretch();
     formLayout->addLayout(formForm);
@@ -38,7 +38,7 @@ void ManageFriend::setFormCLayout()
     formLayout->addLayout(Horizontal);
 }
 
-void ManageFriend::setFormVLayout()
+void Babel::Graphic::ManageFriend::setFormVLayout()
 {
     formLogin->setMaximumSize(700, 50);
     formPassword->setMaximumSize(700, 50);
@@ -46,7 +46,7 @@ void ManageFriend::setFormVLayout()
     formForm->addRow("",formLogin);
 }
 
-void ManageFriend::setFormHLayout()
+void Babel::Graphic::ManageFriend::setFormHLayout()
 {
     add->setMinimumSize(200,50);
     add->setStyleSheet("background-color: #ffffff;");
@@ -61,13 +61,13 @@ void ManageFriend::setFormHLayout()
     connect(remove, SIGNAL(clicked()), this, SLOT(removeFriend()));
 }
 
-QWidget *ManageFriend::getFormWidget() const
+QWidget *Babel::Graphic::ManageFriend::getFormWidget() const
 {
 
     return (formWidget);
 }
 
-void ManageFriend::addFriend()
+void Babel::Graphic::ManageFriend::addFriend()
 {
     std::string friendName = formLogin->displayText().toStdString();
     NetworkClient::instance()->send_server(MessageType::ADD_FRIEND, friendName);
@@ -79,7 +79,7 @@ void ManageFriend::addFriend()
     }
 }
 
-void ManageFriend::removeFriend()
+void Babel::Graphic::ManageFriend::removeFriend()
 {
     std::cout << "remove" << std::endl;
 }

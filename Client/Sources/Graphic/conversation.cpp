@@ -1,7 +1,7 @@
 #include "conversation.hpp"
 #include <iostream>
 
-conversation::conversation()
+Babel::Graphic::conversation::conversation()
 {
     conversationLayout = new QHBoxLayout();
     conversationFriend = new friendList();
@@ -9,7 +9,7 @@ conversation::conversation()
     setConversation();
 }
 
-void conversation::setConversation()
+void Babel::Graphic::conversation::setConversation()
 {
     conversationLayout->setAlignment(Qt::AlignTop);
     conversationLayout->addLayout(conversationFriend->getIndividualLayout());
@@ -32,17 +32,16 @@ void conversation::setConversation()
         lm.push_front(m);
     }
     conversationChat->setMessage(lm);
-
     connect(conversationFriend, SIGNAL(changeFriend(int)), this, SLOT(getMessage(int)));
     conversationLayout->addLayout(conversationChat->getChatLayout());
 }
 
-QHBoxLayout *conversation::getConversationLayout() const
+QHBoxLayout *Babel::Graphic::conversation::getConversationLayout() const
 {
     return (conversationLayout);
 }
 
-void conversation::getMessage(int index) //fonction pour recevoir la liste de message //
+void Babel::Graphic::conversation::getMessage(int index) //fonction pour recevoir la liste de message //
  {
     QPair<QString, QString> a("Laura", "Coucou ca va ?");
     QPair<QString, QString> b("Jean", "Coucou oui et toi ?");
@@ -63,7 +62,6 @@ void conversation::getMessage(int index) //fonction pour recevoir la liste de me
         message m(mList[i].first, mList[i].second, s_size, m_size);
         ml.push_front(m);
     }
-
 
     for (int i = 0; i < mList2.size(); i++) {
         message m(mList[i].first, mList[i].second, s_size, m_size);

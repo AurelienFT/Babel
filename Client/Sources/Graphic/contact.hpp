@@ -4,24 +4,32 @@
 #include "customwidget.hpp"
 #include "QPushButton"
 
+namespace Babel {
 
-class contact : public QPushButton
-{
-    Q_OBJECT
+    namespace Graphic {
 
-public:
-    contact(QString txt,int digit, QWidget *parent);
+        class contact : public QPushButton
+        {
+            Q_OBJECT
 
-signals:
-    void clicked(int digit);
+            public:
 
-private slots:
-    void reemitClicked();
+                contact(QString txt,int digit, QWidget *parent);
 
-private:
-    int c_index;
-    QString c_txt;
-};
+            signals:
 
+                void clicked(int digit);
+
+            private slots:
+
+                void reemitClicked();
+
+            private:
+                int c_index;
+                QString c_txt;
+        };
+
+    }
+}
 
 #endif // CONTACT_H

@@ -11,29 +11,32 @@
 #include "login.hpp"
 #include "QStackedWidget"
 
-class MainWindow : public QMainWindow
-{
 
-    Q_OBJECT
+namespace Babel {
 
+    namespace Graphic {
 
-public:
+        class MainWindow : public QMainWindow {
 
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+            Q_OBJECT
 
-public slots:
+            public:
 
-    void slotDisplayFen();
+                MainWindow(QWidget *parent = nullptr);
+                ~MainWindow();
 
-private:
+            public slots:
 
-    QStackedWidget *stack;
-    customWidget *homeWidget;
-    home *homePage;
-    login *loginPage;
-    int fenIndex = 0;
+                void slotDisplayFen();
 
-};
+            private:
+
+                QStackedWidget *_windowStack;
+                home _homePage;
+                login _loginPage;
+                int _windowIndex = 0;
+        };
+    }
+}
 
 #endif // MAINWINDOW_H

@@ -8,37 +8,38 @@
 #include <QLineEdit>
 #include "QPushButton"
 
-class loginForm :  public QWidget
-{
+namespace Babel {
 
-    Q_OBJECT
+    namespace Graphic {
 
-public:
+        class loginForm :  public QWidget
+        {
 
-    loginForm();
+            Q_OBJECT
 
-    QWidget *getFormWidget() const;
-    QPushButton &getValidateButton();
-    QString getPassword() const;
-    QString getLogin() const;
+        public:
 
+            loginForm();
+            QWidget *getFormWidget() const;
+            QPushButton &getValidateButton();
+            QString getPassword() const;
+            QString getLogin() const;
+            void setFormWidget();
+            void setFormCLayout();
+            void setFormVLayout();
+            void setFormHLayout();
 
-    void setFormWidget();
-    void setFormCLayout();
-    void setFormVLayout();
-    void setFormHLayout();
+        private:
 
-
-private:
-
-    QVBoxLayout *formLayout = new QVBoxLayout;
-    QHBoxLayout *Horizontal = new QHBoxLayout;
-    customWidget *formWidget;
-    QFormLayout *formForm = new QFormLayout;
-    QLineEdit *formLogin= new QLineEdit;
-    QLineEdit *formPassword= new QLineEdit;
-    QPushButton *validate = new QPushButton("Validate");
-
-};
+            QVBoxLayout *formLayout = new QVBoxLayout;
+            QHBoxLayout *Horizontal = new QHBoxLayout;
+            customWidget *formWidget;
+            QFormLayout *formForm = new QFormLayout;
+            QLineEdit *formLogin= new QLineEdit;
+            QLineEdit *formPassword= new QLineEdit;
+            QPushButton *validate = new QPushButton("Validate");
+        };
+    }
+}
 
 #endif // LOGINFORM_H

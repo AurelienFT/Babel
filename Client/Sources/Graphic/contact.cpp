@@ -1,6 +1,6 @@
 #include "contact.hpp"
 
-contact::contact(QString txt, int index, QWidget *parent)
+Babel::Graphic::contact::contact(QString txt, int index, QWidget *parent)
     : QPushButton(parent)
 {
     c_txt = txt;
@@ -9,7 +9,7 @@ contact::contact(QString txt, int index, QWidget *parent)
     connect(this, SIGNAL(clicked()), this, SLOT(reemitClicked()));
 }
 
-void contact::reemitClicked()
+void Babel::Graphic::contact::reemitClicked()
 {
     emit clicked(c_index);
 }

@@ -4,32 +4,38 @@
 #include <QObject>
 #include <QWidget>
 
-class customWidget : public QWidget
-{
+namespace Babel {
 
-    Q_OBJECT
+    namespace Graphic {
 
-public:
+        class customWidget : public QWidget
+        {
 
-    explicit customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32>, QString txt, QWidget *parent = nullptr);
-    void setColorWidget(QList<qint32> color);
-    void setSizeWidget(QPair<qint32, qint32> size);
-    void setPosWidget(QPair<qint32, qint32> pos);
-    void setClicked(bool click);
+            Q_OBJECT
 
-protected:
+            public:
 
-    void paintEvent(QPaintEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
+                explicit customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32>, QString txt, QWidget *parent = nullptr);
+                void setColorWidget(QList<qint32> color);
+                void setSizeWidget(QPair<qint32, qint32> size);
+                void setPosWidget(QPair<qint32, qint32> pos);
+                void setClicked(bool click);
 
-private:
+            protected:
 
-    QString w_txt;
-    QList<qint32> w_color;
-    QPair<qint32, qint32> w_size;
-    QPair<qint32, qint32> w_pos;
-    bool w_click = false;
-};
+                void paintEvent(QPaintEvent *event);
+                void mousePressEvent(QMouseEvent *event);
+                void mouseReleaseEvent(QMouseEvent *event);
+
+            private:
+
+                QString w_txt;
+                QList<qint32> w_color;
+                QPair<qint32, qint32> w_size;
+                QPair<qint32, qint32> w_pos;
+                bool w_click = false;
+        };
+    }
+}
 
 #endif // CUSTOMWIDGET_H
