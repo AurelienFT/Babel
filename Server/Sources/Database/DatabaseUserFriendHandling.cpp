@@ -7,21 +7,21 @@
 
 #include "DatabaseUserFriendHandling.hpp"
 
-DatabaseUserFriendHandling::DatabaseUserFriendHandling(std::shared_ptr<Db> database)
+Babel::Database::DatabaseUserFriendHandling::DatabaseUserFriendHandling(std::shared_ptr<Db> database)
     : _database(database)
 {
 }
 
-DatabaseUserFriendHandling::~DatabaseUserFriendHandling()
+Babel::Database::DatabaseUserFriendHandling::~DatabaseUserFriendHandling()
 {
 }
 
-int /*DatabaseUserFriendHandling::*/createCallback4(void *notUsed, int argc, char **argv, char **azColName)
+int createCallback4(void *notUsed, int argc, char **argv, char **azColName)
 {
     return 0;
 }
 
-void DatabaseUserFriendHandling::createTable()
+void Babel::Database::DatabaseUserFriendHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -41,13 +41,13 @@ void DatabaseUserFriendHandling::createTable()
     }
 }
 
-int /*DatabaseUserFriendHandling::*/addCallback4(void *notUsed, int argc, char **argv, char **azColName)
+int addCallback4(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserFriendHandling::addFriendShip(const int &first, const int &second, const bool &isAccepted)
+void Babel::Database::DatabaseUserFriendHandling::addFriendShip(const int &first, const int &second, const bool &isAccepted)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -71,13 +71,13 @@ void DatabaseUserFriendHandling::addFriendShip(const int &first, const int &seco
         }
 }
 
-int /*DatabaseUserFriendHandling::*/deleteCallback4(void *notUsed, int argc, char **argv, char **azColName)
+int deleteCallback4(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserFriendHandling::deleteFirendShip(const int &id)
+void Babel::Database::DatabaseUserFriendHandling::deleteFriendShip(const int &id)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -90,7 +90,7 @@ void DatabaseUserFriendHandling::deleteFirendShip(const int &id)
     }
 }
 
-int /*DatabaseUserFriendHandling::*/selectAllCallback4(void *notUsed, int argc, char **argv, char **azColName)
+int selectAllCallback4(void *notUsed, int argc, char **argv, char **azColName)
 {
     std::string data;
 
@@ -104,7 +104,7 @@ int /*DatabaseUserFriendHandling::*/selectAllCallback4(void *notUsed, int argc, 
     return 0;
 }
 
-void DatabaseUserFriendHandling::getFriendShipInfos(const int &id)
+void Babel::Database::DatabaseUserFriendHandling::getFriendShipInfos(const int &id)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -117,7 +117,7 @@ void DatabaseUserFriendHandling::getFriendShipInfos(const int &id)
     }
 }
 
-void DatabaseUserFriendHandling::getAllFriendsOf(const int &user)
+void Babel::Database::DatabaseUserFriendHandling::getAllFriendsOf(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";

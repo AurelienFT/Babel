@@ -18,15 +18,6 @@ int User::getID() const {
     return _id;
 }
 
-void User::onMessage(std::vector<uint8_t> &buff)
-{
-    printf("Message: %d {", fd);
-    for (auto i : buff) {
-        printf("%x", i);
-    }
-    printf("}\n");
-}
-
 void User::login(int id)
 {
     _id = id;

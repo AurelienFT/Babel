@@ -24,6 +24,10 @@
 template <typename T>
 class Controller {
 	public:
+		/**
+		 * Constructor : Initialize all classes to interact with database
+		 * and create all functions which handle requests though the socket
+		 */
 		Controller() : _dbDiscussionHandling(_db), _dbMessageHandling(_db), _dbUserFriendHandling(_db), _dbUserHandling(_db) {
 			_dbDiscussionHandling.createTable();
 			_dbUserHandling.createTable();
@@ -34,6 +38,13 @@ class Controller {
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->createFriendRequest(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->updateData(client, size, data); });
 		};
+		/**
+   		* Function to handle all messages and call the appropriate function
+		* @param client The client object with all informations needed
+		* @param messageType Type of message sended by client
+		* @param payload Rest of the data of the packet with contains the buffer and his size
+   		* @return MessageType
+   		*/
 		MessageType manageReponse(std::shared_ptr<T> client, MessageType messageType, char *payload) {
 			int size = *(int *)payload;
 			std::cout << "int = " << size << std::endl;
@@ -85,11 +96,11 @@ class Controller {
 			_reponse = std::string("testounet");
 			return MessageType::OK;
 		};
-		std::shared_ptr<Db> _db = std::shared_ptr<Db>(new Db());
-		DatabaseDiscussionHandling _dbDiscussionHandling;
-		DatabaseMessageHandling _dbMessageHandling;
-		DatabaseUserFriendHandling _dbUserFriendHandling;
-		DatabaseUserHandling _dbUserHandling;
+		std::shared_ptr<Babel::Database::Db> _db = std::shared_ptr<Babel::Database::Db>(new Babel::Database::Db());
+		Babel::Database::DatabaseDiscussionHandling _dbDiscussionHandling;
+		Babel::Database::DatabaseMessageHandling _dbMessageHandling;
+		Babel::Database::DatabaseUserFriendHandling _dbUserFriendHandling;
+		Babel::Database::DatabaseUserHandling _dbUserHandling;
 		std::vector<std::function<MessageType (std::shared_ptr<T>, size_t, const char *)>> controllerFunctions;
 		std::string _reponse;
 };

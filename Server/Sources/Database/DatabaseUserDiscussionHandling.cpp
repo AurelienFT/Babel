@@ -7,22 +7,22 @@
 
 #include "DatabaseUserDiscussionHandling.hpp"
 
-DatabaseUserDiscussionHandling::DatabaseUserDiscussionHandling(std::shared_ptr<Db> database)
+Babel::Database::DatabaseUserDiscussionHandling::DatabaseUserDiscussionHandling(std::shared_ptr<Db> database)
     : _database(database)
 {
     //createDiscussion();
 }
 
-DatabaseUserDiscussionHandling::~DatabaseUserDiscussionHandling()
+Babel::Database::DatabaseUserDiscussionHandling::~DatabaseUserDiscussionHandling()
 {
 }
 
-int /*DatabaseUserDiscussionHandling::*/createCallback2(void *notUsed, int argc, char **argv, char **azColName)
+int createCallback2(void *notUsed, int argc, char **argv, char **azColName)
 {
     return 0;
 }
 
-void DatabaseUserDiscussionHandling::createTable()
+void Babel::Database::DatabaseUserDiscussionHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -41,13 +41,13 @@ void DatabaseUserDiscussionHandling::createTable()
     }
 }
 
-int /*DatabaseUserDiscussionHandling::*/addCallback2(void *notUsed, int argc, char **argv, char **azColName)
+int addCallback2(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserDiscussionHandling::addUserDiscussion(const int &user, const int discussion)
+void Babel::Database::DatabaseUserDiscussionHandling::addUserDiscussion(const int &user, const int discussion)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -61,13 +61,13 @@ void DatabaseUserDiscussionHandling::addUserDiscussion(const int &user, const in
     }
 }
 
-int /*DatabaseUserDiscussionHandling::*/deleteCallback2(void *notUsed, int argc, char **argv, char **azColName)
+int deleteCallback2(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserDiscussionHandling::deleteUserDiscussion(const int &user)
+void Babel::Database::DatabaseUserDiscussionHandling::deleteUserDiscussion(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -80,7 +80,7 @@ void DatabaseUserDiscussionHandling::deleteUserDiscussion(const int &user)
     }
 }
 
-int /*DatabaseUserDiscussionHandling::*/selectAllCallback2(void *notUsed, int argc, char **argv, char **azColName)
+int selectAllCallback2(void *notUsed, int argc, char **argv, char **azColName)
 {
     std::string data;
 
@@ -94,7 +94,7 @@ int /*DatabaseUserDiscussionHandling::*/selectAllCallback2(void *notUsed, int ar
     return 0;
 }
 
-void DatabaseUserDiscussionHandling::getDiscussionList(const int &user)
+void Babel::Database::DatabaseUserDiscussionHandling::getDiscussionList(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -107,7 +107,7 @@ void DatabaseUserDiscussionHandling::getDiscussionList(const int &user)
     }
 }
 
-void DatabaseUserDiscussionHandling::getUserList(const int &discussion)
+void Babel::Database::DatabaseUserDiscussionHandling::getUserList(const int &discussion)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";

@@ -28,6 +28,9 @@ private:
     std::vector<std::shared_ptr<T>> clientList;
 
 public:
+    /**
+    * Constructor: Initialize the socket of the server
+    */
     explicit MainServer(int port)
     {
         _port = port;
@@ -46,7 +49,9 @@ public:
         if (listen(_sd, 10) == -1)
             throw std::runtime_error("Listen error");
     }
-
+    /**
+     * Handle the main loop of the server.
+     */
     void run()
     {
         struct pollfd *pollfd = buildpollfdset();

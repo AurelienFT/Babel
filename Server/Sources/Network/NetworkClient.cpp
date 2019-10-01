@@ -6,15 +6,6 @@
 #include <cstring>
 #include "NetworkClient.hpp"
 
-void Babel::Network::NetworkClient::onMessage(std::vector<uint8_t> &buff)
-{
-    printf("Message: %d {", fd);
-    for (auto i : buff) {
-        printf("%x", i);
-    }
-    printf("}\n");
-}
-
 Babel::Network::NetworkClient::NetworkClient(int fd, struct sockaddr_in *sockaddrIn) :
     fd(fd)
 {
