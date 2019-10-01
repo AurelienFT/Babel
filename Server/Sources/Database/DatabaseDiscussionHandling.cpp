@@ -7,21 +7,21 @@
 
 #include "DatabaseDiscussionHandling.hpp"
 
-DatabaseDiscussionHandling::DatabaseDiscussionHandling(std::shared_ptr<Db> database)
+Babel::Database::DatabaseDiscussionHandling::DatabaseDiscussionHandling(std::shared_ptr<Db> database)
     : _database(database)
 {
 }
 
-DatabaseDiscussionHandling::~DatabaseDiscussionHandling()
+Babel::Database::DatabaseDiscussionHandling::~DatabaseDiscussionHandling()
 {
 }
 
-int /*DatabaseDiscussionHandling::*/createCallback1(void *notUsed, int argc, char **argv, char **azColName)
+int createCallback1(void *notUsed, int argc, char **argv, char **azColName)
 {
     return 0;
 }
 
-void DatabaseDiscussionHandling::createTable()
+void Babel::Database::DatabaseDiscussionHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -37,13 +37,13 @@ void DatabaseDiscussionHandling::createTable()
     }
 }
 
-int /*DatabaseDiscussionHandling::*/addCallback1(void *notUsed, int argc, char **argv, char **azColName)
+int addCallback1(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseDiscussionHandling::addDiscussion(const std::string &discussionName)
+void Babel::Database::DatabaseDiscussionHandling::addDiscussion(const std::string &discussionName)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -57,13 +57,13 @@ void DatabaseDiscussionHandling::addDiscussion(const std::string &discussionName
     }
 }
 
-int /*DatabaseDiscussionHandling::*/deleteCallback1(void *notUsed, int argc, char **argv, char **azColName)
+int deleteCallback1(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseDiscussionHandling::deleteDiscussion(const int &discussion)
+void Babel::Database::DatabaseDiscussionHandling::deleteDiscussion(const int &discussion)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -76,7 +76,7 @@ void DatabaseDiscussionHandling::deleteDiscussion(const int &discussion)
     }
 }
 
-int /*DatabaseDiscussionHandling::*/selectDiscussionCallback1(void *notUsed, int argc, char **argv, char **azColName)
+int selectDiscussionCallback1(void *notUsed, int argc, char **argv, char **azColName)
 {
     std::string data;
 
@@ -90,7 +90,7 @@ int /*DatabaseDiscussionHandling::*/selectDiscussionCallback1(void *notUsed, int
     return 0;
 }
 
-void DatabaseDiscussionHandling::getDiscussionInfos(const int &discussion)
+void Babel::Database::DatabaseDiscussionHandling::getDiscussionInfos(const int &discussion)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";

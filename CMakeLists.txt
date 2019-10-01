@@ -54,7 +54,6 @@ set(
     "Server/Sources/Network/VoIpServer.hpp"
     "Server/Sources/Network/NetworkClient.cpp"
     "Server/Sources/Network/NetworkClient.hpp"
-    "Server/Sources/Network/MainServer.cpp"
     "Server/Sources/Network/MainServer.hpp"
     "Server/Sources/Main.cpp"
     "Server/Sources/Database/DatabaseMessageHandling.cpp"

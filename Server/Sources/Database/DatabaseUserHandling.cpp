@@ -7,21 +7,21 @@
 
 #include "DatabaseUserHandling.hpp"
 
-DatabaseUserHandling::DatabaseUserHandling(std::shared_ptr<Db> database)
+Babel::Database::DatabaseUserHandling::DatabaseUserHandling(std::shared_ptr<Db> database)
     : _database(database)
 {
 }
 
-DatabaseUserHandling::~DatabaseUserHandling()
+Babel::Database::DatabaseUserHandling::~DatabaseUserHandling()
 {
 }
 
-int /*DatabaseUserHandling::*/createCallback3(void *notUsed, int argc, char **argv, char **azColName)
+int createCallback3(void *notUsed, int argc, char **argv, char **azColName)
 {
     return 0;
 }
 
-void DatabaseUserHandling::createTable()
+void Babel::Database::DatabaseUserHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "";
@@ -38,13 +38,13 @@ void DatabaseUserHandling::createTable()
     }
 }
 
-int /*DatabaseUserHandling::*/addCallback3(void *notUsed, int argc, char **argv, char **azColName)
+int addCallback3(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserHandling::addUser(const std::string &userName, const std::string &password)
+void Babel::Database::DatabaseUserHandling::addUser(const std::string &userName, const std::string &password)
 {
     std::string sqlRequest;
     std::string errorMessage = "";
@@ -58,13 +58,13 @@ void DatabaseUserHandling::addUser(const std::string &userName, const std::strin
     }
 }
 
-int /*DatabaseUserHandling::*/deleteCallback3(void *notUsed, int argc, char **argv, char **azColName)
+int deleteCallback3(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseUserHandling::deleteUser(const int &user)
+void Babel::Database::DatabaseUserHandling::deleteUser(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -78,7 +78,7 @@ void DatabaseUserHandling::deleteUser(const int &user)
 }
 
 
-int /*DatabaseUserHandling::*/selectUserCallback3(void *id_to_fill, int argc, char **argv, char **azColName)
+int selectUserCallback3(void *id_to_fill, int argc, char **argv, char **azColName)
 {
     int *id = (int *)id_to_fill;
 
@@ -95,7 +95,7 @@ int /*DatabaseUserHandling::*/selectUserCallback3(void *id_to_fill, int argc, ch
     return 0;
 }
 
-int DatabaseUserHandling::userExists(const std::string &username, const std::string &password)
+int Babel::Database::DatabaseUserHandling::userExists(const std::string &username, const std::string &password)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -109,7 +109,7 @@ int DatabaseUserHandling::userExists(const std::string &username, const std::str
     return (id);
 }
 
-int DatabaseUserHandling::userExists(const std::string &username)
+int Babel::Database::DatabaseUserHandling::userExists(const std::string &username)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -123,7 +123,7 @@ int DatabaseUserHandling::userExists(const std::string &username)
     return (id);
 }
 
-void DatabaseUserHandling::getUserInfos(const int &user)
+void Babel::Database::DatabaseUserHandling::getUserInfos(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";

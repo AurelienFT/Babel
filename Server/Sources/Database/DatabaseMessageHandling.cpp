@@ -7,22 +7,22 @@
 
 #include "DatabaseMessageHandling.hpp"
 
-DatabaseMessageHandling::DatabaseMessageHandling(std::shared_ptr<Db> database)
+Babel::Database::DatabaseMessageHandling::DatabaseMessageHandling(std::shared_ptr<Db> database)
     : _database(database)
 {
     //createDiscussion();
 }
 
-DatabaseMessageHandling::~DatabaseMessageHandling()
+Babel::Database::DatabaseMessageHandling::~DatabaseMessageHandling()
 {
 }
 
-int /*DatabaseMessageHandling::*/createCallback(void *notUsed, int argc, char **argv, char **azColName)
+int createCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
     return 0;
 }
 
-void DatabaseMessageHandling::createTable()
+void Babel::Database::DatabaseMessageHandling::createTable()
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -42,13 +42,13 @@ void DatabaseMessageHandling::createTable()
     }
 }
 
-int /*DatabaseMessageHandling::*/addCallback(void *notUsed, int argc, char **argv, char **azColName)
+int addCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseMessageHandling::addMessage(const int &sender, const int &group, const std::string &messageData)
+void Babel::Database::DatabaseMessageHandling::addMessage(const int &sender, const int &group, const std::string &messageData)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -63,13 +63,13 @@ void DatabaseMessageHandling::addMessage(const int &sender, const int &group, co
     }
 }
 
-int /*DatabaseMessageHandling::*/deleteCallback(void *notUsed, int argc, char **argv, char **azColName)
+int deleteCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
     //send that it's done
     return 0;
 }
 
-void DatabaseMessageHandling::deleteMessage(const int &messageId)
+void Babel::Database::DatabaseMessageHandling::deleteMessage(const int &messageId)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -82,7 +82,7 @@ void DatabaseMessageHandling::deleteMessage(const int &messageId)
     }
 }
 
-int /*DatabaseMessageHandling::*/selectAllCallback(void *notUsed, int argc, char **argv, char **azColName)
+int selectAllCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
     std::string data;
 
@@ -96,7 +96,7 @@ int /*DatabaseMessageHandling::*/selectAllCallback(void *notUsed, int argc, char
     return 0;
 }
 
-void DatabaseMessageHandling::getAllMessage(const int &group)
+void Babel::Database::DatabaseMessageHandling::getAllMessage(const int &group)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
@@ -109,7 +109,7 @@ void DatabaseMessageHandling::getAllMessage(const int &group)
     }
 }
 
-int /*DatabaseMessageHandling::*/selectRangeCallback(void *notUsed, int argc, char **argv, char **azColName)
+int selectRangeCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
     std::string data;
 
@@ -123,7 +123,7 @@ int /*DatabaseMessageHandling::*/selectRangeCallback(void *notUsed, int argc, ch
     return 0;
 }
 
-void DatabaseMessageHandling::getRangeMessage(const int &group, const int &numberOfMessage/*Peut-être date à la place*/)
+void Babel::Database::DatabaseMessageHandling::getRangeMessage(const int &group, const int &numberOfMessage/*Peut-être date à la place*/)
 {
     //LATER
     std::string sqlRequest;
