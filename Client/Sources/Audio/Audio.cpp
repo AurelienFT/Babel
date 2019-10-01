@@ -16,9 +16,10 @@ Audio::Audio()
 	_audioData.maxFrameIndex = NUM_SECONDS * SAMPLE_RATE;
 	_totalFrames = NUM_SECONDS * SAMPLE_RATE;
 	_audioData.frameIndex = 0;
+	_audioData.toSend = false;
+	_audioData.toSend = true;
 	_numSamples = _totalFrames * NUM_CHANNELS;
 	int numBytes = _numSamples * sizeof(float);
-	_audioData.recordedSamples = (float *)malloc(numBytes);
 	for (int i = 0; i < _numSamples; i++)
 		_audioData.recordedSamples[i] = 0;
 	err = Pa_Initialize();
@@ -26,8 +27,7 @@ Audio::Audio()
 		throw std::exception();
 
 	_inputParameters.device = Pa_GetDefaultInputDevice();
-	if (_inputParameters.device == paNoDevice)
-	{
+	if (_inputParameters.device == paNoDevice) {
 		throw std::exception();
 	}
 	_inputParameters.channelCount = 2;
@@ -36,8 +36,7 @@ Audio::Audio()
 	_inputParameters.hostApiSpecificStreamInfo = NULL;
 
 	_outputParameters.device = Pa_GetDefaultOutputDevice();
-	if (_outputParameters.device == paNoDevice)
-	{
+	if (_outputParameters.device == paNoDevice) {
 		throw std::exception();
 	}
 	_outputParameters.channelCount = 2;
@@ -64,7 +63,6 @@ static int recordCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 		framesToCalc = framesPerBuffer;
 		finished = paContinue;
 	}
-
 	if (inputBuffer == NULL) {
 		for (i = 0; i < framesToCalc; i++) {
 			*wptr++ = SAMPLE_SILENCE;
@@ -79,6 +77,11 @@ static int recordCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 		}
 	}
 	data->frameIndex += framesToCalc;
+	if (data->frameIndex == data->maxFrameIndex) {
+		data->frameIndex = 0;
+		data->toSend = true;
+		finished = paContinue;
+	}
 	return finished;
 };
 
@@ -102,8 +105,9 @@ static int listenCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 			if (NUM_CHANNELS == 2)
 				*wptr++ = 0;
 		}
-		data->frameIndex += framesLeft;
-		finished = paComplete;
+		data->frameIndex = 0;
+		data->toRecv = true;
+		finished = paContinue;;
 	} else {
 		for (i = 0; i < framesPerBuffer; i++) {
 			*wptr++ = *rptr++;
@@ -116,7 +120,63 @@ static int listenCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 	return finished;
 }
 
-audioData Audio::Record()
+bool Audio::isRecording()
+{
+	if (Pa_IsStreamActive(_streamInput) == 1)
+		return true;
+	return false;
+}
+
+bool Audio::isListening()
+{
+	if (Pa_IsStreamActive(_streamOutput) == 1)
+		return true;
+	return false;
+}
+
+bool Audio::getSendStatus()
+{
+	return _audioData.toSend;
+}
+
+bool Audio::getRecvStatus()
+{
+	return _audioData.toRecv;
+}
+
+void Audio::resetRecvStatus()
+{
+	_audioData.toRecv = false;
+}
+
+void Audio::resetSendStatus()
+{
+	_audioData.toSend = false;
+}
+
+audioData Audio::getAudioData()
+{
+	return _audioData;
+}
+
+void Audio::resetAudioData()
+{
+	_audioData.frameIndex = 0;
+}
+
+void Audio::setAudioData(audioData &data)
+{
+	_audioData = data;
+}
+
+void Audio::addAudioData(float *data, const int &index)
+{
+	for (auto i = 0; i < SIZE_FLOAT_ARRAY; i++) {
+		_audioData.recordedSamples[i + index] = data[i];
+	}
+}
+
+void Audio::Record()
 {
 	PaError err = paNoError;
 
@@ -126,13 +186,6 @@ audioData Audio::Record()
 	err = Pa_StartStream(_streamInput);
 	if (err != paNoError)
 		throw std::exception();
-
-	while ((err = Pa_IsStreamActive(_streamInput)) == 1)
-	{
-		Pa_Sleep(1000);
-		printf("index = %d\n", _audioData.frameIndex);
-		fflush(stdout);
-	}
 }
 
 audioData Audio::Listen()
@@ -146,11 +199,18 @@ audioData Audio::Listen()
 	err = Pa_StartStream(_streamOutput);
 	if (err != paNoError)
 		throw std::exception();
-	while ((err = Pa_IsStreamActive(_streamOutput)) == 1)
-	{
-		std::cout <<"test" << std::endl;
-		Pa_Sleep(100);
-	}
+}
+
+void Audio::Listen(audioData &data)
+{
+	data.frameIndex = 0;
+	PaError err = paNoError;
+	err = Pa_OpenStream(&_streamOutput, NULL, &_outputParameters, SAMPLE_RATE, FRAMES_PER_BUFFER, paClipOff, listenCallback, &data);
+	if (err != paNoError)
+		throw std::exception();
+	err = Pa_StartStream(_streamOutput);
+	if (err != paNoError)
+		throw std::exception();
 }
 
 Audio::~Audio()
