@@ -14,6 +14,8 @@ int main(int ac, char **av)
 	Audio audio;
 
 	audio.Record();
+	while (audio.isRecording());
 	audio.Listen();
-	std::cout << "Test2" << std::endl;
+	while (audio.isListening());
+	std::cout <<"end" <<std::endl;
 }
