@@ -4,3 +4,16 @@ cd build && conan install .. && cmake .. && make && cd ..
 FAIRE UN FICHIER DE CONF A LA RACINE "qt.conf" avec comme contenu :
 [Paths]
 Plugins=/path/to/home/.conan/data/Qt/5.11.2/bincrafters/stable/package/092e5212177a716c7f4082b9b05c5650f6e409d9/plugins
+
+UML:
+```
+for i in $(find -name "*.hpp")
+do echo -i $i
+done | xargs hpp2plantuml -o uml.plantuml
+```
+
+```
+plantuml uml.plantuml
+```
+
+open uml.png
