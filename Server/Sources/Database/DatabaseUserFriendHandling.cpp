@@ -90,18 +90,86 @@ void Babel::Database::DatabaseUserFriendHandling::deleteFriendShip(const int &id
     }
 }
 
-int selectAllCallback4(void *notUsed, int argc, char **argv, char **azColName)
+int unusedCallback(void *notUsed, int argc, char **argv, char **azColName)
 {
-    std::string data;
-
-    for (auto i = 0; i < argc; i++) {
-        data += azColName[i] + std::string(" ") + argv[i] + std::string("\n");
-    }
-
-    //Send data
-    std::cout <<data <<std::endl;
-
     return 0;
+}
+
+int selectAllIDFriendRequest(void *ids_to_fill, int argc, char **argv, char **azColName)
+{
+    std::vector<int> *ids = (std::vector<int> *) ids_to_fill;
+
+    if (std::atoi(argv[4]) == 0)
+        ids->push_back(std::atoi(argv[1]));
+    return 0;
+}
+
+int selectAllIDFriend(void *ids_to_fill, int argc, char **argv, char **azColName)
+{
+    std::vector<int> *ids = (std::vector<int> *) ids_to_fill;
+
+    if (std::atoi(argv[4]) == 1)
+        ids->push_back(std::atoi(argv[1]));
+    return 0;
+}
+
+
+std::vector<int> Babel::Database::DatabaseUserFriendHandling::getAllFriendsRequest(const int &id)
+{
+    std::string sqlRequest;
+    std::string errorMessage = "";
+    std::vector<int> ids;
+
+    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE SECOND = ") + std::to_string(id) + std::string(";");
+    if (_database->exec(sqlRequest, selectAllIDFriendRequest, &ids, errorMessage.c_str())) {
+        //error message
+        exit(0);
+    }
+    return ids;
+}
+
+int selectAFriendShip(void *id_to_fill, int argc, char **argv, char **azColName)
+{
+    int *id = (int *) id_to_fill;
+
+    *id = std::atoi(argv[0]);
+    return 0;
+}
+
+int Babel::Database::DatabaseUserFriendHandling::getFriendShipID(const int &id1, const int &id2)
+{
+    std::string sqlRequest;
+    std::string errorMessage = "";
+    int id = -1;
+
+    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE FIRST = " + std::to_string(id1) + " AND SECOND = " + std::to_string(id2) + ";");
+    if (_database->exec(sqlRequest, selectAFriendShip, &id, errorMessage.c_str())) {
+        //error message
+        exit(0);
+    }
+    return id;
+}
+
+void Babel::Database::DatabaseUserFriendHandling::acceptFriendRequest(const int &id1, const int &id2)
+{
+    std::string sqlRequest;
+    std::string errorMessage = "";
+
+    sqlRequest = std::string("UPDATE USER_FRIENDSHIP SET STATUS = 1 WHERE FIRST = " + std::to_string(id1) + " AND SECOND = " + std::to_string(id2) + ";");
+    if (_database->exec(sqlRequest, unusedCallback, 0, errorMessage.c_str())) {
+    }
+    return;
+}
+
+void Babel::Database::DatabaseUserFriendHandling::rejectFriendRequest(const int &id1, const int &id2)
+{
+    std::string sqlRequest;
+    std::string errorMessage = "";
+
+    sqlRequest = std::string("DELETE FROM USER_FRIENDSHIP WHERE FIRST = " + std::to_string(id1) + " AND SECOND = " + std::to_string(id2) + ";");
+    if (_database->exec(sqlRequest, unusedCallback, 0, errorMessage.c_str())) {
+    }
+    return;
 }
 
 void Babel::Database::DatabaseUserFriendHandling::getFriendShipInfos(const int &id)
@@ -111,22 +179,24 @@ void Babel::Database::DatabaseUserFriendHandling::getFriendShipInfos(const int &
 
     sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE ID = ") + std::to_string(id) + std::string(";");
 
-    if (_database->exec(sqlRequest, selectAllCallback4, 0, errorMessage.c_str())) {
+    if (_database->exec(sqlRequest, unusedCallback, 0, errorMessage.c_str())) {
         //error message
         exit(0);
     }
 }
 
-void Babel::Database::DatabaseUserFriendHandling::getAllFriendsOf(const int &user)
+std::vector<int> Babel::Database::DatabaseUserFriendHandling::getAllFriendsOf(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
+    std::vector<int> ids;
 
-    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE (FIRST = ") + std::to_string(user) +
-    std::string(" OR SECOND = ") + std::to_string(user) + std::string(");");
+    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE FIRST = ") + std::to_string(user) +
+    std::string(" OR SECOND = ") + std::to_string(user) + std::string(";");
 
-    if (_database->exec(sqlRequest, selectAllCallback4, 0, errorMessage.c_str())) {
+    if (_database->exec(sqlRequest, selectAllIDFriend, &ids, errorMessage.c_str())) {
         //error message
         exit(0);
     }
+    return ids;
 }

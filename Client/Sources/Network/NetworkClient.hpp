@@ -70,6 +70,7 @@ public:
   int send_server(MessageType messageType, std::string message);
   MessageType receive_messageCode();
   std::string getReponse() const;
+  void disconnect();
 private:
 
   static NetworkClient *mInstance;

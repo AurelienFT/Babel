@@ -10,7 +10,7 @@
 
 #include <memory>
 #include <string>
-
+#include <vector>
 #include "Db.hpp"
 
 namespace Babel
@@ -47,15 +47,40 @@ public:
 		 */
 	void deleteFriendShip(const int &id);
 	/**
+	 * Get all the friend request of a user
+	 * @param ID client to find all friend request of
+	 * @return all ID of user who sent a friend request to the user id in parameters
+	 */
+	std::vector<int> getAllFriendsRequest(const int &id);
+	/**
+	 * Change status of a frienship to accepted
+	 * @param id1 ID of the first friend
+	 * @param id2 ID of the second friend
+	 */
+	void acceptFriendRequest(const int &id1, const int &id2);
+	/**
+	 * Delete a friend request
+	 * @param id1 ID of the first friend
+	 * @param id2 ID of the second friend
+	 */
+	void rejectFriendRequest(const int &id1, const int &id2);
+
+	/**
+	 * Get ID of a friendship
+	 * @param id1 ID of the first friend
+	 * @param id2 ID of the second friend
+	 */
+	int getFriendShipID(const int &id1, const int &id2);
+	/**
 		 * Get infos about a friendship (WIP)
 		 * @param id ID of the frienship
 		 */
 	void getFriendShipInfos(const int &id);
 	/**
-		 * Get all friends of a user
+		 * Get all friends of a user (WIP)
 		 * @param user ID of the user
 		 */
-	void getAllFriendsOf(const int &user);
+	std::vector<int> getAllFriendsOf(const int &user);
 
 protected:
 private:

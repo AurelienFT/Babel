@@ -136,6 +136,7 @@ private:
 	    (*tmp) = length;
     	memcpy(data + 5, reponse.c_str(), reponse.length());
         send(client->fd, data, sizeof(char) + sizeof(int) + reponse.length(), 0);
+        controller.resetReponse();
         return (1);
     }
 };

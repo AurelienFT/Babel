@@ -1,8 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <sstream>
 #include <QMainWindow>
 #include <QHBoxLayout>
+#include <QTimer>
 #include "customwidget.hpp"
 #include "friendlist.hpp"
 #include "chat.hpp"
@@ -28,6 +30,8 @@ namespace Babel {
             public slots:
 
                 void slotDisplayFen();
+                void update();
+                void signOut();
 
             private:
 
@@ -35,6 +39,7 @@ namespace Babel {
                 home _homePage;
                 login _loginPage;
                 int _windowIndex = 0;
+                QTimer *_timer;
         };
     }
 }

@@ -16,13 +16,14 @@ namespace Babel {
 
             public:
                 friendRequest(qint32 index, QString name);
-                void clearLayout(QLayout *layout);
 
             signals:
                 void clicked(int digit);
+                void reject(int index);
 
             private slots:
                 void reemitClicked();
+                void rejectClicked();
 
             private :
                 int _index;

@@ -83,15 +83,6 @@ int selectUserCallback3(void *id_to_fill, int argc, char **argv, char **azColNam
     int *id = (int *)id_to_fill;
 
     *id = std::atoi(argv[0]);
-    // std::string data;
-
-    // for (auto i = 0; i < argc; i++) {
-    //     data += azColName[i] + std::string(" ") + argv[i] + std::string("\n");
-    // }
-
-    // //Send data
-    // std::cout <<data <<std::endl;
-
     return 0;
 }
 
@@ -123,15 +114,30 @@ int Babel::Database::DatabaseUserHandling::userExists(const std::string &usernam
     return (id);
 }
 
-void Babel::Database::DatabaseUserHandling::getUserInfos(const int &user)
+int selectUsernameCallback(void *username_to_fill, int argc, char **argv, char **azColName)
+{
+    std::string *username = (std::string *)username_to_fill;
+
+    *username = std::string(argv[2]);
+    return 0;
+}
+
+
+std::string Babel::Database::DatabaseUserHandling::getUsername(const int &user)
 {
     std::string sqlRequest;
     std::string errorMessage = "ouais";
+    std::string username = "";
+    sqlRequest = std::string("SELECT * FROM USERS WHERE ID = '") + std::to_string(user) + std::string("'");
 
-    sqlRequest = std::string("SELECT * FROM USERS WHERE ID = ") + std::to_string(user) + std::string(";");
-
-    if (_database->exec(sqlRequest, selectUserCallback3, 0, errorMessage.c_str())) {
+    if (_database->exec(sqlRequest, selectUsernameCallback, &username, errorMessage.c_str())) {
         //error message
         exit(0);
     }
+    return (username);
+}
+
+void Babel::Database::DatabaseUserHandling::getUserInfos(const int &user)
+{
+    //WIP
 }

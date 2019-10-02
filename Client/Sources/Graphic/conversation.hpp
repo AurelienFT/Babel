@@ -19,6 +19,9 @@ namespace Babel {
                 conversation();
                 QHBoxLayout *getConversationLayout() const;
                 void setConversation();
+                friendList *getFriendList() const {
+                    return (conversationFriend);
+                };
 
             private slots:
 

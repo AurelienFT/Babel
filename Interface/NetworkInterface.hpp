@@ -14,6 +14,8 @@ enum class MessageType : char
 	LOGIN = 1,
 	ADD_FRIEND = 2,
 	UPDATE_DATA = 3,
+	ACCEPT_FRIEND_REQUEST = 4,
+	REJECT_FRIEND_REQUEST = 5,
 	ERROR_LOGIN = -1,
 	ERROR_ADD_FRIEND = -2,
 	OK = 127,
