@@ -21,6 +21,8 @@
 #include <iostream>
 #include <cstring>
 #include <algorithm>
+#include <sstream> 
+#include <iterator>
 template <typename T>
 class Controller {
 	public:
@@ -37,6 +39,8 @@ class Controller {
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->loginUser(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->createFriendRequest(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->updateData(client, size, data); });
+			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->acceptFriendRequest(client, size, data); });
+			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->rejectFriendRequest(client, size, data); });
 		};
 		/**
    		* Function to handle all messages and call the appropriate function
@@ -56,6 +60,9 @@ class Controller {
 		};
 		std::string getReponse() const {
 			return (_reponse);
+		}
+		void resetReponse() {
+			_reponse = std::string("");
 		}
 	protected:
 	private:
@@ -89,13 +96,53 @@ class Controller {
 			int idTwo = _dbUserHandling.userExists(friendName);
 			if (idTwo == -1)
 				return MessageType::ERROR_ADD_FRIEND;
+			if (_dbUserFriendHandling.getFriendShipID(id, idTwo) != -1)
+				return MessageType::ERROR_ADD_FRIEND;
 			_dbUserFriendHandling.addFriendShip(id, idTwo, false);
 			return MessageType::OK;
 		};
 		MessageType updateData(std::shared_ptr<T> client, size_t size, const char *data) {
-			_reponse = std::string("testounet");
+			_reponse = std::string("");
+			std::ostringstream vts;
+			std::vector<std::string> friendsRequestUsers;
+			std::vector<int> idsFriendsRequestUsers = _dbUserFriendHandling.getAllFriendsRequest(client->getID());
+			for (auto idFriendsRequestUser : idsFriendsRequestUsers) {
+				friendsRequestUsers.push_back(_dbUserHandling.getUsername(idFriendsRequestUser));
+			}
+ 			if (!friendsRequestUsers.empty()) { 
+				std::copy(friendsRequestUsers.begin(), friendsRequestUsers.end()-1, 
+        			std::ostream_iterator<std::string>(vts, ",")); 
+				vts << friendsRequestUsers.back(); 
+	  			_reponse += vts.str();
+			}
+			_reponse += ";";
+			std::vector<int> friendsIDs = _dbUserFriendHandling.getAllFriendsOf(client->getID());
+			std::vector<std::string> friends;
+			for (auto friendID : friendsIDs) {
+				friends.push_back(_dbUserHandling.getUsername(friendID));
+			}
+			if (!friends.empty()) { 
+				std::copy(friends.begin(), friends.end()-1, 
+        			std::ostream_iterator<std::string>(vts, ",")); 
+				vts << friends.back(); 
+				_reponse += vts.str();
+			}
 			return MessageType::OK;
 		};
+		MessageType acceptFriendRequest(std::shared_ptr<T> client, size_t size, const char *data) {
+			char tmp[size + 1] = {0};
+			memcpy(tmp, data, size);
+			std::string friendName(tmp);
+			_dbUserFriendHandling.acceptFriendRequest(_dbUserHandling.userExists(friendName), client->getID());
+			return MessageType::OK;
+		};
+		MessageType rejectFriendRequest(std::shared_ptr<T> client, size_t size, const char *data) {
+			char tmp[size + 1] = {0};
+			memcpy(tmp, data, size);
+			std::string friendName(tmp);
+			_dbUserFriendHandling.rejectFriendRequest( _dbUserHandling.userExists(friendName), client->getID());
+			return MessageType::OK;
+		}
 		std::shared_ptr<Babel::Database::Db> _db = std::shared_ptr<Babel::Database::Db>(new Babel::Database::Db());
 		Babel::Database::DatabaseDiscussionHandling _dbDiscussionHandling;
 		Babel::Database::DatabaseMessageHandling _dbMessageHandling;

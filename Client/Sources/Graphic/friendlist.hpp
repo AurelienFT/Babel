@@ -29,15 +29,19 @@ namespace Babel {
                 void setFriendListCLayout();
                 void setFriendListVLayout();
                 void createFriend(QList<QString> contactList);
+                void update(std::vector<std::string> users);
                 void setFriendRequest();
+                void setListFriendRequest(std::vector<std::string> users);
                 void clearLayout(QLayout *layout);
                 void updateFriend();
+                QPushButton *getSignOut() {
+                    return (_signOut);
+                };
 
             private slots:
 
                 void addFriend(int index);
                 void buttonClicked(int index);
-                void signOut();
                 void rejectFriend(int index);
 
 
@@ -54,7 +58,7 @@ namespace Babel {
                 QVBoxLayout *_friendRequest = new QVBoxLayout();
                 QPushButton *_signOut = new QPushButton("SIGN OUT");
                 QWidget *_listWidget = new QWidget;
-                QList<QString> _listFriend = {"laura", "arnaud", "délice", "coucou", "kikou", "juju", "koko", "lulu","lili","paul", "baba", "didi","didi","didi","didi","didi","didi","didi","didi","didi","didi"};
+                QList<QString> _listFriend;
                 QList<QString> _listRequest;
                 qint32 _currentFriend;
                 qint32 _index;

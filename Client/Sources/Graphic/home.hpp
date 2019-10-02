@@ -25,6 +25,9 @@ namespace Babel {
                 customWidget *getHomeWidget() const;
                 void setHome();
                 void setHomeBar();
+                conversation *getConversation() const {
+                    return (conversationStatut);
+                };
 
             private slots:
 

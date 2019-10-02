@@ -12,9 +12,31 @@ Babel::Graphic::MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), _h
     this->setCentralWidget(_windowStack);
     _windowStack->setCurrentIndex(_windowIndex); // on affiche la première fenêtre à l'ouverture du programme
     connect(&_loginPage.form->getValidateButton(), SIGNAL(clicked()), this, SLOT(slotDisplayFen()));
+    QWidget::connect(_homePage.getConversation()->getFriendList()->getSignOut(), SIGNAL(clicked()), this, SLOT(signOut()));
 }
 
 Babel::Graphic::MainWindow::~MainWindow() {}
+
+void Babel::Graphic::MainWindow::update()
+{
+    NetworkClient::instance()->send_server(MessageType::UPDATE_DATA, "");
+    MessageType code = NetworkClient::instance()->receive_messageCode();
+    std::string reponse = NetworkClient::instance()->getReponse();
+    std::string tmp; 
+    std::string friendRequest = reponse.substr(0, reponse.find(";"));
+    std::string friends = reponse.substr(reponse.find(";") + 1, reponse.length());
+    std::stringstream ss1(friendRequest);
+    std::stringstream ss2(friends);
+    std::vector<std::string> usersFriendRequest;
+    std::vector<std::string> userFriends;
+
+    while(std::getline(ss1, tmp, ','))
+        usersFriendRequest.push_back(tmp);
+    while(std::getline(ss2, tmp, ','))
+        userFriends.push_back(tmp);
+    _homePage.getConversation()->getFriendList()->setListFriendRequest(usersFriendRequest);
+    _homePage.getConversation()->getFriendList()->update(userFriends);
+}
 
 void Babel::Graphic::MainWindow::slotDisplayFen()
 {
@@ -26,8 +48,18 @@ void Babel::Graphic::MainWindow::slotDisplayFen()
     if (returnType == MessageType::OK) {
         if ((_windowIndex < 0) || (_windowIndex > 1)) {return;}
         _windowStack->setCurrentIndex(_windowIndex);
+        QTimer *_timer = new QTimer(this);
+        connect(_timer, SIGNAL(timeout()), this, SLOT(update()));
+        _timer->start(1000);
     } else {
         std::cout << "error login" << std::endl;
     }
 }
 
+void Babel::Graphic::MainWindow::signOut()
+{
+    _windowIndex = 0;
+    NetworkClient::instance()->disconnect();
+    _windowStack->setCurrentIndex(_windowIndex);
+    NetworkClient::instance()->connection();
+}

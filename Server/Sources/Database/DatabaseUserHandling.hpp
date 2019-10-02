@@ -57,6 +57,12 @@ public:
 	 * @return client id
 	 */
 	int userExists(const std::string &username);
+
+	/**
+	 * Get username by ID user
+	 * @param user ID of the user
+	 */
+	std::string getUsername(const int &user);
 	/**
 	 * WIP
 	 */

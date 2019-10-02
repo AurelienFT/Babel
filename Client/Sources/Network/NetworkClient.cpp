@@ -8,6 +8,7 @@
 #include "NetworkClient.hpp"
 #include <cstring>
 #include <iostream>
+#include <unistd.h>
 
 void NetworkClient::connection()
 {
@@ -68,4 +69,9 @@ int NetworkClient::send_server(MessageType messageType, std::string message)
 	(*tmp) = length;
 	memcpy(data + 5, message.c_str(), message.length());
 	send(_sockfd, data, sizeof(char) + sizeof(int) + message.length(), 0);
+}
+
+void NetworkClient::disconnect()
+{
+	close(_sockfd);
 }

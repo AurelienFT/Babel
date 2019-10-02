@@ -43,7 +43,7 @@ add_executable(
         babel_client
         ${CLIENT_SOURCES_FILES}
 )
-message(Qt5::Core)
+
 target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
 target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
 target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
@@ -62,7 +62,6 @@ set(
     "Server/Sources/Database/DatabaseUserHandling.cpp"
     "Server/Sources/Database/DatabaseUserDiscussionHandling.cpp"
     "Server/Sources/Database/DatabaseUserFriendHandling.cpp"
-    "Server/Sources/Controller.cpp"
 )
 
 add_executable(
@@ -72,6 +71,7 @@ add_executable(
 
 target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database" "Server/Sources/Network" "Interface")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
+target_compile_options(babel_server PRIVATE "-g3")
 
 add_executable(
     my_audiotest

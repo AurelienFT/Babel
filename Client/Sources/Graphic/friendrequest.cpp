@@ -14,6 +14,7 @@ Babel::Graphic::friendRequest::friendRequest(qint32 index, QString name): _index
     username->setStyleSheet("border: none; background-color: #2f3136; color:white;font-weight: bold;");
     reject->setStyleSheet("border: none; background-color: #2f3136;color:white;font-weight: bold;");
     connect(accept, SIGNAL(clicked()), this, SLOT(reemitClicked()));
+    connect(reject, SIGNAL(clicked()), this, SLOT(rejectClicked()));
     button->addWidget(accept);
     button->addWidget(reject);
     v->addLayout(button);
@@ -26,3 +27,7 @@ void Babel::Graphic::friendRequest::reemitClicked()
     emit clicked(_index);
 }
 
+void Babel::Graphic::friendRequest::rejectClicked()
+{
+    emit reject(_index);
+}
