@@ -89,8 +89,8 @@ add_executable(
     "Client/Sources/Audio/TestMainClient.cpp"
 )
 
-target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
-target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
+target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 target_compile_options(audiotest_client PRIVATE "-g3")
 
 add_executable(
@@ -99,6 +99,6 @@ add_executable(
     "Client/Sources/Audio/TestMainServer.cpp"
 )
 
-target_include_directories(audiotest_server PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
-target_link_libraries(audiotest_server pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_include_directories(audiotest_server PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
+target_link_libraries(audiotest_server pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 target_compile_options(audiotest_server PRIVATE "-g3")

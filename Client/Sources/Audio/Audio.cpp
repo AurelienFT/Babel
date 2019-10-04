@@ -13,8 +13,8 @@ Audio::Audio()
 {
 	PaError err;
 
-	_audioData.maxFrameIndex = NUM_SECONDS * SAMPLE_RATE;
-	_totalFrames = NUM_SECONDS * SAMPLE_RATE;
+	_audioData.maxFrameIndex = SAMPLE_RATE * NUM_SECONDS;
+	_totalFrames = _audioData.maxFrameIndex;
 	_audioData.frameIndex = 0;
 	_audioData.toSend = false;
 	_audioData.toSend = true;

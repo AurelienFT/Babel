@@ -5,7 +5,6 @@
 ** TestMain
 */
 
-#include "Audio.hpp"
 #include <iostream>
 #include <unistd.h>
 #include <stdio.h>
@@ -13,6 +12,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <opus.h>
 #include "Audio.hpp"
 #define PORT 8080
 
@@ -43,14 +43,26 @@ int main(int ac, char **av)
 		perror("bind failed");
 		exit(EXIT_FAILURE);
 	}
-	float data[SIZE_FLOAT_ARRAY];
-	
+	float data[SIZE_FLOAT_ARRAY * sizeof(float)];
+	int err = 0;
+	OpusDecoder *rec = opus_decoder_create(SAMPLE_RATE, NUM_CHANNELS, &err);
+
 	audio.Listen();
 	while (audio.isListening())
 	{
 		if (audio.getRecvStatus()) {
+			sendData recved;
 			audio.resetAudioData();
-			recv(sockfd, &data, SIZE_FLOAT_ARRAY, MSG_WAITALL);
+			recv(sockfd, &recved, sizeof(recved), MSG_WAITALL);
+
+			float tmp[160];
+			for (auto i = 0; i < 100; i++) {
+				opus_decode_float(rec, recved.data + recved.cuts[i], recved.cuts[i + 1] - recved.cuts[i], tmp, 80, 0);
+				
+				for (auto j = 0; j < 160; j++) {
+					data[j + i * 80] = tmp[j];
+				}
+			}
 			audio.addAudioData(data, 0);
 			audio.resetRecvStatus();
 		}

@@ -13,12 +13,12 @@
 #include <exception>
 #include <vector>
 
-#define SAMPLE_RATE 		(4400)
+#define SAMPLE_RATE 		(8000)
 #define FRAMES_PER_BUFFER 	(512)
 #define NUM_SECONDS     	(1)
 #define NUM_CHANNELS    	(2)
 #define SAMPLE_SILENCE  	(0.0f)
-#define SIZE_FLOAT_ARRAY	(8800 * sizeof(float))
+#define SIZE_FLOAT_ARRAY	(16000)
 static int gNumNoInputs = 0;
 
 typedef struct {
@@ -26,8 +26,13 @@ typedef struct {
    int maxFrameIndex;
    bool toSend;
    bool toRecv;
-   float recordedSamples[NUM_SECONDS * SAMPLE_RATE * NUM_CHANNELS * sizeof(float)];
+   float recordedSamples[SIZE_FLOAT_ARRAY * sizeof(float)];
 } audioData;
+
+typedef struct {
+	unsigned char data[SIZE_FLOAT_ARRAY];
+	int32_t cuts[101];
+} sendData;
 
 class Audio
 {
