@@ -2,10 +2,23 @@ project(babel)
 cmake_minimum_required(VERSION 3.11)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+if (WIN32)
+	set (CMAKE_PREFIX_PATH "/Qt/5.13.1/msvc2017_64/lib/cmake/Qt5")
+endif()
 conan_basic_setup()
-find_package(Qt5Core)
-find_package(Qt5Widgets)
-find_package(Qt5DBus)
+if(UNIX)
+	find_package(Qt5Core)
+	find_package(Qt5Widgets)
+	find_package(Qt5DBus)
+endif()
+if (WIN32)
+	find_package(Qt5 COMPONENTS Core REQUIRED)
+	find_package(Qt5 COMPONENTS Widgets REQUIRED)
+	find_package(Qt5 COMPONENTS DBus REQUIRED)
+	find_package(Threads REQUIRED)
+endif()
+
+message(Qt5::Widgets)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -43,10 +56,29 @@ add_executable(
         babel_client
         ${CLIENT_SOURCES_FILES}
 )
+if(UNIX)
+	target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
+endif()
 
-target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
 target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
-target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
+
+if (WIN32)
+
+	file(
+		GLOB_RECURSE
+		DLLS
+		"/Qt/5.13.1/msvc2017_64/bin/*.dll"
+	)
+
+	foreach(DLL ${DLLS})
+	file (COPY ${DLL} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+	endforeach()
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus wsock32 ws2_32)
+endif()
+
+if (UNIX)
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
+endif()
 
 set(
     SERVER_SOURCES_FILES
@@ -71,8 +103,9 @@ add_executable(
 
 target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database" "Server/Sources/Network" "Interface")
 target_link_libraries(babel_server ${CONAN_LIB_DIRS_SQLITE3}/libsqlite3.a pthread dl)
-target_compile_options(babel_server PRIVATE "-g3")
-
+if (UNIX)
+	target_compile_options(babel_server PRIVATE "-g3")
+endif()
 add_executable(
     my_audiotest
     "Client/Sources/Audio/Audio.cpp"
@@ -100,5 +133,11 @@ add_executable(
 )
 
 target_include_directories(audiotest_server PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
-target_link_libraries(audiotest_server pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
+if (UNIX)
+	target_link_libraries(audiotest_server pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
+endif()
+if (WIN32)
+	target_include_directories(audiotest_server PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
+	target_link_libraries(audiotest_server ${CONAN_LIB_DIRS_PORTAUDIO}/portaudio_x64.lib ${CONAN_LIB_DIRS_OPUS}/opus.lib Threads::Threads)
+endif()
 target_compile_options(audiotest_server PRIVATE "-g3")

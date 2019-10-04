@@ -8,46 +8,44 @@
 #include "NetworkClient.hpp"
 #include <cstring>
 #include <iostream>
-#include <unistd.h>
+#include <exception>
 
 void NetworkClient::connection()
 {
-	int connfd;
-	struct sockaddr_in servaddr, cli;
-
-	// socket create and varification
+	SOCKADDR_IN servAddress;
+#ifdef linux
 	_sockfd = socket(AF_INET, SOCK_STREAM, 0);
-	if (_sockfd == -1) {
-		printf("socket creation failed...\n");
-		exit(0);
-	}
-	else
-		printf("Socket successfully created..\n");
-	bzero(&servaddr, sizeof(servaddr));
+	servAddress.sin_family = AF_INET;
+	servAddress.sin_port = htons(PORT);
 
-	// assign IP, PORT
-	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = inet_addr(SERVER_ADDRESS);
-	servaddr.sin_port = htons(PORT);
-
-	// connect the client socket to server socket
-	if (connect(_sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) != 0)
-	{
-		printf("connection with the server failed...\n");
-		exit(0);
-	}
-	else
-		printf("connected to the server..\n");
+	if (inet_pton(AF_INET, SERVER_ADDRESS, &servAddress.sin_addr) <= 0)
+		throw std::exception();
+#endif
+#ifdef _WIN64
+	WSADATA WSAData;
+	WSAStartup(MAKEWORD(2, 0), &WSAData);
+	_sockfd = socket(AF_INET, SOCK_STREAM, 0);
+	servAddress.sin_addr.s_addr = inet_addr(SERVER_ADDRESS);
+	servAddress.sin_family = AF_INET;
+	servAddress.sin_port = htons(PORT);
+#endif
+	if (connect(_sockfd, (struct sockaddr *)&servAddress, sizeof(servAddress)) < 0)
+		throw std::exception();
+#ifdef _WIN64
+	unsigned long l = 1;
+	ioctlsocket(_sockfd, FIONBIO, &l);
+#endif
 }
 
 MessageType NetworkClient::receive_messageCode()
 {
 	char buffread[22000] = {0};
 	char messageType = 0;
-	recv(_sockfd, &buffread, sizeof(buffread), 0);
+	recv(_sockfd, (char*)&buffread, sizeof(buffread), 0);
 	int size = *(int *)(buffread + 1);
 	std::cout << "size in network: " << size << std::endl;
-	char tmp[size + 1] = {0};
+	static const int array_size = size + 1;
+	char tmp[10000] = {0};// TO CHANGE for windows test
 	memcpy(tmp, buffread + 5, size);
 	_reponse = std::string(tmp);
 	std::cout << "reponse in network: " << _reponse << std::endl;
@@ -69,9 +67,10 @@ int NetworkClient::send_server(MessageType messageType, std::string message)
 	(*tmp) = length;
 	memcpy(data + 5, message.c_str(), message.length());
 	send(_sockfd, data, sizeof(char) + sizeof(int) + message.length(), 0);
+	return 0;
 }
 
 void NetworkClient::disconnect()
 {
-	close(_sockfd);
+	closesocket(_sockfd);
 }
