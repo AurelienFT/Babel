@@ -12,6 +12,7 @@
 #include <strings.h>
 #include <netdb.h>
 
+#include "Audio.hpp"
 
 namespace Babel {
     namespace VoIpNetwork {
@@ -22,6 +23,8 @@ namespace Babel {
             int _sock = -1;
             int _port;
 
+            Audio _audio;
+
             struct sockaddr_in _otherClientData{};
 
             std::atomic_bool _runnig;
@@ -31,13 +34,13 @@ namespace Babel {
             void sendLoop();
             void recvLoop();
         protected:
-            static const int MAX_SEND_BUFF_LEN = 512;
+            static const int MAX_SEND_BUFF_LEN = 8000;
             size_t _sendBuffLen = 0;
-            uint8_t _sendBuff[MAX_SEND_BUFF_LEN];
+            sendData _sendBuff;
 
-            static const int MAX_RECV_BUFF_LEN = 512;
+            static const int MAX_RECV_BUFF_LEN = 20000;
             size_t _recvBuffLen = 0;
-            uint8_t _recvBuff[MAX_RECV_BUFF_LEN];
+            sendData _recvBuff;
 
             virtual void feedSendBuffer();
             virtual void prossesRecvData();

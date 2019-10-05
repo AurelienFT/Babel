@@ -14,6 +14,8 @@
 #include <vector>
 
 #define SAMPLE_RATE 		(8000)
+#define ENCODE_RATE			(80)
+#define ENCODE_NUMBER 		(100)
 #define FRAMES_PER_BUFFER 	(512)
 #define NUM_SECONDS     	(1)
 #define NUM_CHANNELS    	(2)
@@ -22,11 +24,13 @@
 static int gNumNoInputs = 0;
 
 typedef struct {
-   int frameIndex;
+   int frameIndexR;
+   int frameIndexL;
    int maxFrameIndex;
    bool toSend;
    bool toRecv;
    float recordedSamples[SIZE_FLOAT_ARRAY * sizeof(float)];
+   float listenedSamples[SIZE_FLOAT_ARRAY * sizeof(float)];
 } audioData;
 
 typedef struct {
