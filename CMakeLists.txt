@@ -52,6 +52,7 @@ set(
         Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
         Client/Sources/Network/VoIpClient.cpp
+        Client/Sources/Audio/Audio.cpp
 )
 
 add_executable(
@@ -62,7 +63,7 @@ if(UNIX)
 	target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
 endif()
 
-target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
+target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Audio Client/Sources/Network Interface)
 
 if (WIN32)
 
@@ -79,7 +80,7 @@ if (WIN32)
 endif()
 
 if (UNIX)
-	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus pthread)
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus pthread asound jack)
 endif()
 
 set(
