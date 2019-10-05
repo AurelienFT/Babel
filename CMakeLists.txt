@@ -159,6 +159,8 @@ add_executable(
         VoIp_Client_Test
       "Client/Sources/Network/VoIpClient.cpp"
       "Client/Sources/Network/VoIpClient.hpp"
+      "Client/Sources/Audio/Audio.cpp"
         Client/Sources/Network/VoIpMainTest.cpp)
-target_link_libraries(VoIp_Client_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_include_directories(VoIp_Client_Test PRIVATE Client/Sources/Audio/ ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
+target_link_libraries(VoIp_Client_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 target_compile_options(VoIp_Client_Test PRIVATE "-g3")

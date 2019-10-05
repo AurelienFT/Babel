@@ -15,9 +15,10 @@ Audio::Audio()
 
 	_audioData.maxFrameIndex = SAMPLE_RATE * NUM_SECONDS;
 	_totalFrames = _audioData.maxFrameIndex;
-	_audioData.frameIndex = 0;
+	_audioData.frameIndexL = 0;
+	_audioData.frameIndexR = 0;
+	_audioData.toRecv = true;
 	_audioData.toSend = false;
-	_audioData.toSend = true;
 	_numSamples = _totalFrames * NUM_CHANNELS;
 	int numBytes = _numSamples * sizeof(float);
 	for (int i = 0; i < _numSamples; i++)
@@ -51,10 +52,10 @@ static int recordCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 	long i = 0;
 	audioData *data = (audioData *)userData;
 	const float *rptr = (const float *)inputBuffer;
-	float *wptr = &data->recordedSamples[data->frameIndex * NUM_CHANNELS];
+	float *wptr = &data->recordedSamples[data->frameIndexR * NUM_CHANNELS];
 	long framesToCalc = 0;
 	int finished = 0;
-	unsigned long framesLeft = data->maxFrameIndex - data->frameIndex;
+	unsigned long framesLeft = data->maxFrameIndex - data->frameIndexR;
 
 	if (framesLeft < framesPerBuffer) {
 		framesToCalc = framesLeft;
@@ -76,9 +77,9 @@ static int recordCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 				*wptr++ = *rptr++; /* right */
 		}
 	}
-	data->frameIndex += framesToCalc;
-	if (data->frameIndex == data->maxFrameIndex) {
-		data->frameIndex = 0;
+	data->frameIndexR += framesToCalc;
+	if (data->frameIndexR == data->maxFrameIndex) {
+		data->frameIndexR = 0;
 		data->toSend = true;
 		finished = paContinue;
 	}
@@ -88,11 +89,11 @@ static int recordCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 static int listenCallback(const void *inputBuffer, void *outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo *timeInfo, PaStreamCallbackFlags statusFlags, void *userData)
 {
 	audioData *data = (audioData *)userData;
-	float *rptr = &data->recordedSamples[data->frameIndex * NUM_CHANNELS];
+	float *rptr = &data->listenedSamples[data->frameIndexL * NUM_CHANNELS];
 	float *wptr = (float *)outputBuffer;
 	unsigned int i = 0;
 	int finished = 0;
-	unsigned int framesLeft = data->maxFrameIndex - data->frameIndex;
+	unsigned int framesLeft = data->maxFrameIndex - data->frameIndexL;
 
 	if (framesLeft < framesPerBuffer) {
 		for (i = 0; i < framesLeft; i++) {
@@ -105,16 +106,16 @@ static int listenCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 			if (NUM_CHANNELS == 2)
 				*wptr++ = 0;
 		}
-		data->frameIndex = 0;
+		data->frameIndexL = 0;
 		data->toRecv = true;
-		finished = paContinue;;
+		finished = paContinue;
 	} else {
 		for (i = 0; i < framesPerBuffer; i++) {
 			*wptr++ = *rptr++;
 			if (NUM_CHANNELS == 2)
 				*wptr++ = *rptr++;
 		}
-		data->frameIndex += framesPerBuffer;
+		data->frameIndexL += framesPerBuffer;
 		finished = paContinue;
 	}
 	return finished;
@@ -161,7 +162,7 @@ audioData Audio::getAudioData()
 
 void Audio::resetAudioData()
 {
-	_audioData.frameIndex = 0;
+	_audioData.frameIndexL = 0;
 }
 
 void Audio::setAudioData(audioData &data)
@@ -172,7 +173,7 @@ void Audio::setAudioData(audioData &data)
 void Audio::addAudioData(float *data, const int &index)
 {
 	for (auto i = 0; i < SIZE_FLOAT_ARRAY; i++) {
-		_audioData.recordedSamples[i + index] = data[i];
+		_audioData.listenedSamples[i + index] = data[i];
 	}
 }
 
@@ -192,7 +193,7 @@ audioData Audio::Listen()
 {
 	PaError err = paNoError;
 
-	_audioData.frameIndex = 0;
+	_audioData.frameIndexL = 0;
 	err = Pa_OpenStream(&_streamOutput, NULL, &_outputParameters, SAMPLE_RATE, FRAMES_PER_BUFFER, paClipOff, listenCallback, &_audioData);
 	if (err != paNoError)
 		throw std::exception();
@@ -203,7 +204,7 @@ audioData Audio::Listen()
 
 void Audio::Listen(audioData &data)
 {
-	data.frameIndex = 0;
+	data.frameIndexL = 0;
 	PaError err = paNoError;
 	err = Pa_OpenStream(&_streamOutput, NULL, &_outputParameters, SAMPLE_RATE, FRAMES_PER_BUFFER, paClipOff, listenCallback, &data);
 	if (err != paNoError)
