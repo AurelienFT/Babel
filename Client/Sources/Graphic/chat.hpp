@@ -6,6 +6,7 @@
 #include <QTextEdit>
 #include <QPushButton>
 #include "message.hpp"
+#include "VoIpClient.hpp"
 #include <QList>
 #include <QObject>
 
@@ -19,7 +20,7 @@ namespace Babel {
 
             public:
 
-                chat();
+                chat(std::string friendToAdd);
                 QVBoxLayout *getChatLayout();
                 void setChatVLayout();
                 void setChatScroll();
@@ -31,6 +32,9 @@ namespace Babel {
                 void sendMessage(QList<QPair<QString, QString>> mList);
                 void setMessage(QList<message>listMessage);
                 void clearLayout(QLayout *layout);
+                void setFriend(std::string friendToAdd) {
+                    _currentFriend = friendToAdd;
+                }
 
             public slots:
 
@@ -52,6 +56,8 @@ namespace Babel {
                 QPushButton *c_chatSend = new QPushButton("SEND");
                 QPushButton *c_chatResponse = new QPushButton("REP");
                 QList<message>c_listMessage;
+                std::string _currentFriend = "";
+                VoIpNetwork::VoIpClient *_clientAudio;
         };
     }
 }

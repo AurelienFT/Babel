@@ -5,12 +5,32 @@
 ** TestMain
 */
 
+#ifdef __linux__
+	#include <sys/socket.h> 
+	#include <netinet/in.h> 
+	#include <sys/time.h>
+	#include <limits.h>
+	#include <unistd.h>
+	#include <arpa/inet.h>
+	#define INVALID_SOCKET -1
+	#define SOCKET_ERROR -1
+	#define closesocket(s) close(s)
+	typedef int SOCKET;
+	typedef struct sockaddr_in SOCKADDR_IN;
+	typedef struct sockaddr SOCKADDR;
+#endif
+
+#ifdef _WIN64
+	#include <WinSock2.h>
+#endif
+
+#ifdef _WIN32
+	#include <WinSock2.h>
+#endif
+
 #include <iostream>
-#include <unistd.h>
 #include <stdio.h>
-#include <sys/socket.h>
 #include <stdlib.h>
-#include <netinet/in.h>
 #include <string.h>
 #include <opus.h>
 #include "Audio.hpp"
@@ -19,7 +39,6 @@
 int main(int ac, char **av)
 {
 	Audio audio;
-	audioData temp;
 	int sockfd;
 	struct sockaddr_in servaddr, cliaddr;
 
@@ -53,7 +72,7 @@ int main(int ac, char **av)
 		if (audio.getRecvStatus()) {
 			sendData recved;
 			audio.resetAudioData();
-			recv(sockfd, &recved, sizeof(recved), MSG_WAITALL);
+			recv(sockfd, (char*)&recved, sizeof(recved), MSG_WAITALL);
 
 			float tmp[160];
 			for (auto i = 0; i < 100; i++) {

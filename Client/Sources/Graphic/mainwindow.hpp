@@ -12,6 +12,7 @@
 #include "home.hpp"
 #include "login.hpp"
 #include "QStackedWidget"
+#include "VoIpClient.hpp"
 
 
 namespace Babel {
@@ -40,6 +41,7 @@ namespace Babel {
                 login _loginPage;
                 int _windowIndex = 0;
                 QTimer *_timer;
+                VoIpNetwork::VoIpClient *_clientAudio;
         };
     }
 }

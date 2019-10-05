@@ -5,7 +5,7 @@ Babel::Graphic::conversation::conversation()
 {
     conversationLayout = new QHBoxLayout();
     conversationFriend = new friendList();
-    conversationChat = new chat();
+    conversationChat = new chat(_currentFriend.toStdString());
     setConversation();
 }
 
@@ -72,4 +72,9 @@ void Babel::Graphic::conversation::getMessage(int index) //fonction pour recevoi
         conversationChat->setMessage(ml);
     if (index == 2)
         conversationChat->setMessage(ml2);
+    if (conversationFriend->_listFriend.length() - 1 < index)
+        _currentFriend = "";
+    else
+        _currentFriend = conversationFriend->_listFriend[index];
+        conversationChat->setFriend(_currentFriend.toStdString());
  }

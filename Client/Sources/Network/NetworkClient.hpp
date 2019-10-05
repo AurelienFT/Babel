@@ -8,6 +8,34 @@
 #ifndef NETWORKCLIENT_HPP_
 #define NETWORKCLIENT_HPP_
 
+#ifdef __linux__
+	#include <sys/socket.h> 
+	#include <netinet/in.h> 
+	#include <sys/time.h>
+	#include <unistd.h>
+	#include <netdb.h>
+	#include <arpa/inet.h>
+	#include <strings.h>
+	#include <unistd.h>
+	#define INVALID_SOCKET -1
+	#define SOCKET_ERROR -1
+	#define closesocket(s) close(s)
+	typedef int SOCKET;
+	typedef struct sockaddr_in SOCKADDR_IN;
+	typedef struct sockaddr SOCKADDR;
+#endif
+
+#ifdef _WIN64
+	#include <WinSock2.h>
+	#include <windows.h>
+#endif
+
+#ifdef _WIN32
+	#include <WinSock2.h>
+	#include <windows.h>
+#endif
+
+#include <string>
 #include <list>
 #include <future>
 #include <mutex>
@@ -16,7 +44,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <strings.h>
-#include "NetworkInterface.hpp"
+#include "Interface/NetworkInterface.hpp"
 #define PORT 1337
 #define SERVER_ADDRESS "127.0.0.1"
 

@@ -1,9 +1,11 @@
 #include "chat.hpp"
 #include "message.hpp"
 #include "iostream"
+#include "Interface/NetworkInterface.hpp"
+#include "NetworkClient.hpp"
 #include <QDebug>
 
-Babel::Graphic::chat::chat()
+Babel::Graphic::chat::chat(std::string currentFriend) : _currentFriend(currentFriend)
 {
     setChatWidget();
 }
@@ -68,16 +70,13 @@ void Babel::Graphic::chat::clearLayout(QLayout *layout)
     QLayoutItem *item;
 
     while((item = layout->takeAt(0))) {
-        std::cout << "coucou" << std::endl;
         if (item->layout()) {
             clearLayout(item->layout());
             delete item->layout();
         }
         if (item->widget()) {
-            std::cout << "coucou1" << std::endl;
             delete item->widget();
         }
-        std::cout << "coucou2" << std::endl;
     }
 }
 
@@ -142,11 +141,29 @@ void Babel::Graphic::chat::sendResponse()
 
 void Babel::Graphic::chat::changeStateCall()
 {
+    if (_currentFriend == "") {
+        std::cerr << "Click on friend before" << std::endl;
+    }
     if (c_stateCall == 0) {
+        NetworkClient::instance()->send_server(MessageType::CALL, _currentFriend);
+        MessageType code = NetworkClient::instance()->receive_messageCode();
+        if (code != MessageType::OK) {
+            std::cerr << "Error friend not connected" << std::endl;
+            return;
+        }
+        std::string reponse = NetworkClient::instance()->getReponse();
         c_chatCall->setStyleSheet("background-color: #e3191e;color: white;font-weight: bold");
         c_chatCall->setText("HANG UP");
         c_stateCall = 1;
+        int port = std::stoi(reponse);
+        _clientAudio = new VoIpNetwork::VoIpClient(SERVER_ADDRESS, port);
+        std::cout << "port = " << port << std::endl;
+        std::cout << "IL EST CONNECTE MAGGLE" << std::endl;
+        _clientAudio->recvOtherClientData();
+        _clientAudio->startTransmition();
     } else if (c_stateCall == 1) {
+        _clientAudio->stop();
+        delete _clientAudio;
         c_chatCall->setStyleSheet("background-color: #2c9f32;color: white;font-weight: bold");
         c_chatCall->setText("CALL");
         c_stateCall = 0;

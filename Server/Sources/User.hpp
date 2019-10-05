@@ -40,10 +40,21 @@ class User : public Babel::Network::NetworkClient {
 	     * @return ID of the user
 	     */
 	    int getID() const;
+
+	    void setDataWaiting(std::string dataWaiting) {
+		    _dataWaiting = dataWaiting;
+	    }
+
+	    std::string getDataWaiting() {
+		    std::string tmp = _dataWaiting;
+		    _dataWaiting = "";
+		    return (tmp);
+	    }
 	protected:
 	private:
 		bool _logged = false;
-		int _id;
+		int _id = -1;
+		std::string _dataWaiting = "";
 };
 
 #endif /* !USER_HPP_ */
