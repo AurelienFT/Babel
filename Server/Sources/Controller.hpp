@@ -23,6 +23,7 @@
 #include <algorithm>
 #include <sstream> 
 #include <iterator>
+#include "VoIp.hpp"
 template <typename T>
 class Controller {
 	public:
@@ -30,7 +31,11 @@ class Controller {
 		 * Constructor : Initialize all classes to interact with database
 		 * and create all functions which handle requests though the socket
 		 */
-		Controller() : _dbDiscussionHandling(_db), _dbMessageHandling(_db), _dbUserFriendHandling(_db), _dbUserHandling(_db) {
+		Controller() : 
+		_dbDiscussionHandling(_db),
+		_dbMessageHandling(_db),
+		_dbUserFriendHandling(_db),
+		_dbUserHandling(_db) {
 			_dbDiscussionHandling.createTable();
 			_dbUserHandling.createTable();
 			_dbUserFriendHandling.createTable();
@@ -41,6 +46,7 @@ class Controller {
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->updateData(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->acceptFriendRequest(client, size, data); });
 			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->rejectFriendRequest(client, size, data); });
+			controllerFunctions.push_back([this](std::shared_ptr<T> client, size_t size, const char *data) -> MessageType {return this->call(client, size, data); });
 		};
 		/**
    		* Function to handle all messages and call the appropriate function
@@ -58,6 +64,10 @@ class Controller {
 		~Controller() {
 
 		};
+
+		void setClientList(std::vector<std::shared_ptr<T>> *clientList) {
+			_clientList = clientList;
+		}
 		std::string getReponse() const {
 			return (_reponse);
 		}
@@ -127,6 +137,8 @@ class Controller {
 				vts << friends.back(); 
 				_reponse += vts.str();
 			}
+			_reponse += "|";
+			_reponse += client->getDataWaiting();
 			return MessageType::OK;
 		};
 		MessageType acceptFriendRequest(std::shared_ptr<T> client, size_t size, const char *data) {
@@ -143,6 +155,31 @@ class Controller {
 			_dbUserFriendHandling.rejectFriendRequest( _dbUserHandling.userExists(friendName), client->getID());
 			return MessageType::OK;
 		}
+		MessageType call(std::shared_ptr<T> client, size_t size, const char *data) {
+			std::cout << "LE CALL AVANT LE CALL" << std::endl;
+			char tmp[size + 1] = {0};
+			memcpy(tmp, data, size);
+			std::string friendName(tmp);
+			bool isFinded = false;
+			int idTwo = _dbUserHandling.userExists(friendName);
+			for(auto &user : *_clientList) {
+				if (user->getID() == idTwo)
+					isFinded = true;
+			}
+			if (!isFinded)
+				return MessageType::ERROR_CALL;
+			std::cout << "LE CALL DE THEO" << std::endl;
+			_servers.push_back(new Babel::VoIpNetwork::VoIp());
+			_servers.back()->run();
+			int port = _servers.back()->getPort();
+			_reponse = "";
+			_reponse += std::to_string(port);
+			for(auto &user : *_clientList) {
+				if (user->getID() == idTwo)
+					user->setDataWaiting(_reponse);
+			}
+			return MessageType::OK;
+		};
 		std::shared_ptr<Babel::Database::Db> _db = std::shared_ptr<Babel::Database::Db>(new Babel::Database::Db());
 		Babel::Database::DatabaseDiscussionHandling _dbDiscussionHandling;
 		Babel::Database::DatabaseMessageHandling _dbMessageHandling;
@@ -150,6 +187,8 @@ class Controller {
 		Babel::Database::DatabaseUserHandling _dbUserHandling;
 		std::vector<std::function<MessageType (std::shared_ptr<T>, size_t, const char *)>> controllerFunctions;
 		std::string _reponse;
+		std::vector<std::shared_ptr<T>> *_clientList;
+		std::list<Babel::VoIpNetwork::VoIp *> _servers;
 };
 
 #endif /* !CONTROLLER_HPP_ */

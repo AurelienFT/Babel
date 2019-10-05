@@ -39,7 +39,12 @@
 #include <list>
 #include <future>
 #include <mutex>
-#include "NetworkInterface.hpp"
+#include <netdb.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <strings.h>
+#include "Interface/NetworkInterface.hpp"
 #define PORT 1337
 #define SERVER_ADDRESS "127.0.0.1"
 

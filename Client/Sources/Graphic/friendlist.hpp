@@ -37,13 +37,13 @@ namespace Babel {
                 QPushButton *getSignOut() {
                     return (_signOut);
                 };
+                QList<QString> _listFriend;
 
             private slots:
 
                 void addFriend(int index);
                 void buttonClicked(int index);
                 void rejectFriend(int index);
-
 
             signals:
 
@@ -58,7 +58,6 @@ namespace Babel {
                 QVBoxLayout *_friendRequest = new QVBoxLayout();
                 QPushButton *_signOut = new QPushButton("SIGN OUT");
                 QWidget *_listWidget = new QWidget;
-                QList<QString> _listFriend;
                 QList<QString> _listRequest;
                 qint32 _currentFriend;
                 qint32 _index;

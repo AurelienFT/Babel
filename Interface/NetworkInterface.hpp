@@ -16,8 +16,10 @@ enum class MessageType : char
 	UPDATE_DATA = 3,
 	ACCEPT_FRIEND_REQUEST = 4,
 	REJECT_FRIEND_REQUEST = 5,
+	CALL = 6,
 	ERROR_LOGIN = -1,
 	ERROR_ADD_FRIEND = -2,
+	ERROR_CALL = -3,
 	OK = 127,
 };
 

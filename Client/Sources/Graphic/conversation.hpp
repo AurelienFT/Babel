@@ -32,6 +32,8 @@ namespace Babel {
                 QHBoxLayout *conversationLayout;
                 chat *conversationChat;
                 friendList *conversationFriend;
+                int _index = -1;
+                QString _currentFriend;
         };
     }
 }

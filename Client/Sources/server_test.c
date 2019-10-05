@@ -52,7 +52,7 @@ int main(void)
     si_me.sin_family = AF_INET;
     si_me.sin_port = htons(PORT);
     si_me.sin_addr.s_addr = htonl(INADDR_ANY);
-    if (bind(sock, (struct sockaddr *) (&si_me), sizeof(si_me)) == -1)
+    if (bind(sock, reinterpret_cast<const sockaddr *> (&si_me), sizeof(si_me)) == -1)
         diep("bind");
 
     while (1) {

@@ -43,13 +43,14 @@ set(
         Client/Sources/Graphic/message.cpp
         Client/Sources/Graphic/home.cpp
         Client/Sources/Graphic/conversation.cpp
-	    Client/Sources/Graphic/friendrequest.cpp
+	Client/Sources/Graphic/friendrequest.cpp
         Client/Sources/Graphic/login.cpp
         Client/Sources/Graphic/loginform.cpp
         Client/Sources/Graphic/loginregister.cpp
         Client/Sources/Graphic/managefriend.cpp
         Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
+        Client/Sources/Network/VoIpClient.cpp
 )
 
 add_executable(
@@ -71,34 +72,36 @@ if (WIN32)
 	)
 
 	foreach(DLL ${DLLS})
-	file (COPY ${DLL} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+	        file (COPY ${DLL} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 	endforeach()
-	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus wsock32 ws2_32)
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus wsock32 ws2_32 Threads::Threads)
 endif()
 
 if (UNIX)
-	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus)
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus pthread)
 endif()
 
 set(
-    SERVER_SOURCES_FILES
-    "Server/Sources/Network/VoIpServer.cpp"
-    "Server/Sources/Network/VoIpServer.hpp"
-    "Server/Sources/Network/NetworkClient.cpp"
-    "Server/Sources/Network/NetworkClient.hpp"
-    "Server/Sources/Network/MainServer.hpp"
-    "Server/Sources/Main.cpp"
-    "Server/Sources/Database/DatabaseMessageHandling.cpp"
-    "Server/Sources/User.cpp"
-    "Server/Sources/Database/DatabaseDiscussionHandling.cpp"
-    "Server/Sources/Database/DatabaseUserHandling.cpp"
-    "Server/Sources/Database/DatabaseUserDiscussionHandling.cpp"
-    "Server/Sources/Database/DatabaseUserFriendHandling.cpp"
+        SERVER_SOURCES_FILES
+        "Server/Sources/Network/VoIpServer.cpp"
+        "Server/Sources/Network/VoIpServer.hpp"
+        "Server/Sources/Network/NetworkClient.cpp"
+        "Server/Sources/Network/NetworkClient.hpp"
+        "Server/Sources/Network/MainServer.hpp"
+        "Server/Sources/Main.cpp"
+        "Server/Sources/Database/DatabaseMessageHandling.cpp"
+        "Server/Sources/User.cpp"
+        "Server/Sources/Database/DatabaseDiscussionHandling.cpp"
+        "Server/Sources/Database/DatabaseUserHandling.cpp"
+        "Server/Sources/Database/DatabaseUserDiscussionHandling.cpp"
+        "Server/Sources/Database/DatabaseUserFriendHandling.cpp"
+        "Server/Sources/Network/VoIp.cpp" 
+        "Server/Sources/Network/VoIp.hpp"
 )
 
 add_executable(
-    babel_server
-    ${SERVER_SOURCES_FILES}
+        babel_server
+        ${SERVER_SOURCES_FILES}
 )
 
 target_include_directories(babel_server PRIVATE ${CONAN_INCLUDE_DIRS_SQLITE3} "Server/Sources" "Server/Sources/Database" "Server/Sources/Network" "Interface")
@@ -107,9 +110,9 @@ if (UNIX)
 	target_compile_options(babel_server PRIVATE "-g3")
 endif()
 add_executable(
-    my_audiotest
-    "Client/Sources/Audio/Audio.cpp"
-    "Client/Sources/Audio/TestMain.cpp"
+        my_audiotest
+        "Client/Sources/Audio/Audio.cpp"
+        "Client/Sources/Audio/TestMain.cpp"
 )
 
 target_include_directories(my_audiotest PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
@@ -117,9 +120,9 @@ target_link_libraries(my_audiotest pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportau
 target_compile_options(my_audiotest PRIVATE "-g3")
 
 add_executable(
-    audiotest_client
-    "Client/Sources/Audio/Audio.cpp"
-    "Client/Sources/Audio/TestMainClient.cpp"
+        audiotest_client
+        "Client/Sources/Audio/Audio.cpp"
+        "Client/Sources/Audio/TestMainClient.cpp"
 )
 
 target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
@@ -127,9 +130,9 @@ target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libpo
 target_compile_options(audiotest_client PRIVATE "-g3")
 
 add_executable(
-    audiotest_server
-    "Client/Sources/Audio/Audio.cpp"
-    "Client/Sources/Audio/TestMainServer.cpp"
+        audiotest_server
+        "Client/Sources/Audio/Audio.cpp"
+        "Client/Sources/Audio/TestMainServer.cpp"
 )
 
 target_include_directories(audiotest_server PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
@@ -141,3 +144,20 @@ if (WIN32)
 	target_link_libraries(audiotest_server ${CONAN_LIB_DIRS_PORTAUDIO}/portaudio_x64.lib ${CONAN_LIB_DIRS_OPUS}/opus.lib Threads::Threads)
 endif()
 target_compile_options(audiotest_server PRIVATE "-g3")
+
+add_executable(
+        VoIp_Server_Test
+        "Server/Sources/Network/VoIp.cpp"
+        "Server/Sources/Network/VoIp.hpp"
+        "Server/Sources/Network/VoIpMain.cpp"
+)
+target_link_libraries(VoIp_Server_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_compile_options(VoIp_Server_Test PRIVATE "-g3")
+
+add_executable(
+        VoIp_Client_Test
+      "Client/Sources/Network/VoIpClient.cpp"
+      "Client/Sources/Network/VoIpClient.hpp"
+        Client/Sources/Network/VoIpMainTest.cpp)
+target_link_libraries(VoIp_Client_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_compile_options(VoIp_Client_Test PRIVATE "-g3")
