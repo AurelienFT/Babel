@@ -26,6 +26,7 @@ class MainServer
 {
 private:
     std::vector<std::shared_ptr<T>> clientList;
+    Controller<T> controller;
 
 public:
     /**
@@ -48,6 +49,7 @@ public:
 
         if (listen(_sd, 10) == -1)
             throw std::runtime_error("Listen error");
+        controller.setClientList(&clientList);
     }
     /**
      * Handle the main loop of the server.
@@ -102,7 +104,6 @@ private:
     int _sd = -1;
 
     bool _running = true;
-    Controller<T> controller;
     struct pollfd *buildpollfdset()
     {
         size_t size = clientList.size();

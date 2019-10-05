@@ -24,7 +24,7 @@ void Babel::Graphic::MainWindow::update()
     std::string reponse = NetworkClient::instance()->getReponse();
     std::string tmp; 
     std::string friendRequest = reponse.substr(0, reponse.find(";"));
-    std::string friends = reponse.substr(reponse.find(";") + 1, reponse.length());
+    std::string friends = reponse.substr(reponse.find(";") + 1, reponse.find("|") - 1);
     std::stringstream ss1(friendRequest);
     std::stringstream ss2(friends);
     std::vector<std::string> usersFriendRequest;
@@ -36,6 +36,15 @@ void Babel::Graphic::MainWindow::update()
         userFriends.push_back(tmp);
     _homePage.getConversation()->getFriendList()->setListFriendRequest(usersFriendRequest);
     _homePage.getConversation()->getFriendList()->update(userFriends);
+    std::string portString = reponse.substr(reponse.find("|") + 1, reponse.length());
+    std::cout << portString << std::endl;
+    if (!portString.length() < 1) {
+        std::cout << "on cree l'uadio" << std::endl;
+		int port = std::stoi(portString);
+        _clientAudio = new VoIpNetwork::VoIpClient(SERVER_ADDRESS, port);
+        _clientAudio->recvOtherClientData();
+        _clientAudio->startTransmition();
+    }
 }
 
 void Babel::Graphic::MainWindow::slotDisplayFen()
@@ -50,7 +59,7 @@ void Babel::Graphic::MainWindow::slotDisplayFen()
         _windowStack->setCurrentIndex(_windowIndex);
         QTimer *_timer = new QTimer(this);
         connect(_timer, SIGNAL(timeout()), this, SLOT(update()));
-        _timer->start(1000);
+        _timer->start(500);
     } else {
         std::cout << "error login" << std::endl;
     }
