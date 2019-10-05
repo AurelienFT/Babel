@@ -1,6 +1,11 @@
 project(babel)
 cmake_minimum_required(VERSION 3.11)
 
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+#set(CMAKE_PREFIX_PATH "/Qt/5.13.1/mingw73_64/lib/cmake/Qt5")
+
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 if (WIN32)
 	set (CMAKE_PREFIX_PATH "/Qt/5.13.1/msvc2017_64/lib/cmake/Qt5")
@@ -21,10 +26,6 @@ endif()
 message(Qt5::Widgets)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -51,6 +52,7 @@ set(
         Client/Sources/Network/NetworkClient.cpp
         Client/Sources/Main.cpp
         Client/Sources/Network/VoIpClient.cpp
+        Client/Sources/Audio/Audio.cpp
 )
 
 add_executable(
@@ -61,7 +63,7 @@ if(UNIX)
 	target_compile_options(babel_client PRIVATE "-fPIC" "-g3")
 endif()
 
-target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Network Interface)
+target_include_directories(babel_client PRIVATE ${CONAN_INCLUDE_DIRS_QT} Client/Sources/Graphic Client/Sources/Audio Client/Sources/Network Interface)
 
 if (WIN32)
 
@@ -78,7 +80,7 @@ if (WIN32)
 endif()
 
 if (UNIX)
-	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus pthread)
+	target_link_libraries(babel_client PRIVATE ${CONAN_LIBS} Qt5::Core Qt5::Widgets Qt5::DBus pthread asound jack)
 endif()
 
 set(
@@ -125,7 +127,7 @@ add_executable(
         "Client/Sources/Audio/TestMainClient.cpp"
 )
 
-target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
+target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
 target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 target_compile_options(audiotest_client PRIVATE "-g3")
 
@@ -158,6 +160,8 @@ add_executable(
         VoIp_Client_Test
       "Client/Sources/Network/VoIpClient.cpp"
       "Client/Sources/Network/VoIpClient.hpp"
+      "Client/Sources/Audio/Audio.cpp"
         Client/Sources/Network/VoIpMainTest.cpp)
-target_link_libraries(VoIp_Client_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
+target_include_directories(VoIp_Client_Test PRIVATE Client/Sources/Audio/ ${CONAN_INCLUDE_DIRS_PORTAUDIO} ${CONAN_LIB_DIRS_OPUS})
+target_link_libraries(VoIp_Client_Test pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 target_compile_options(VoIp_Client_Test PRIVATE "-g3")
