@@ -18,20 +18,47 @@ namespace Babel {
             Q_OBJECT
 
             public:
-
+            /**
+                *constructor : build a login object
+            */
                 login();
+            /**
+                *destructor : build a login object
+            */
+                ~login() = default;
+            /**
+                *get the login main widget
+                @return _loginWidget;
+            */
                 customWidget *getLoginWidget() const;
+            /**
+                *set the login bar
+            */
                 void setLoginBar();
+            /**
+                *set the login widget
+            */
                 void setLoginWidget();
+            /**
+                *set the login vertical layout
+            */
                 void setLoginVLayout();
+            /**
+                *set the login horizontal layout
+            */
                 void setLoginHLayout();
                 loginForm *form = new loginForm();
                 loginRegister *formRegister = new loginRegister();
 
 
             private slots:
-
+            /**
+                *set the layout
+            */
                 void setLoginLayout();
+            /**
+                *go to the login widget
+            */
                 void goToLogin();
 
             private:

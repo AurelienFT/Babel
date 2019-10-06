@@ -7,13 +7,18 @@ class customLayout : public QVBoxLayout
 {
 
 public:
-
+    /**
+        *constructor : build a customLayout object 
+    */
     customLayout();
+    /**
+        *destructor : destroy a customLayout object
+    */
+   ~customLayout();
 
 private:
 
-    QString *title;
-
+    QString _title;
 };
 
 #endif // CUSTOMLAYOUT_H

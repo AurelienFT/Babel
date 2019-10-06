@@ -20,27 +20,48 @@ namespace Babel {
             Q_OBJECT
 
             public:
-
+            /**
+                *constructor : build a home object
+            */
                 home();
+            /**
+                *destructor : destroy a home object
+            */
+                ~home() = default;
+            /**
+                *getter the home widget
+                @return _homeWidget
+            */
                 customWidget *getHomeWidget() const;
+            /**
+                *set home
+            */
                 void setHome();
+            /**
+                *set home bar
+            */
                 void setHomeBar();
+            /**
+                *getter conversation object
+            */
                 conversation *getConversation() const {
-                    return (conversationStatut);
+                    return (_conversationStatut);
                 };
 
             private slots:
-
+            /**
+                *set the home layout
+            */
                 void setHomeLayout();
 
             private :
 
-                QVBoxLayout *homeLayout;
-                customWidget *homeWidget;
-                QTabBar *homeBar;
-                conversation *conversationStatut;
-                ManageFriend * h_friendStatut = new ManageFriend();
-                QStackedWidget *h_stack = new QStackedWidget();
+                QVBoxLayout *_homeLayout;
+                customWidget *_homeWidget;
+                QTabBar *_homeBar;
+                conversation *_conversationStatut;
+                ManageFriend * _friendStatut = new ManageFriend();
+                QStackedWidget *_stack = new QStackedWidget();
         };
     }
 }
