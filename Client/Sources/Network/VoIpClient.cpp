@@ -3,21 +3,17 @@
 //
 
 #include <string>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <stdexcept>
 #include <cstring>
 #include <iostream>
-#include <unistd.h>
 #include <fcntl.h>
-#include <opus.h>
-
+#include "Encoding.hpp"
 #include "Server/Sources/Network/VoIp.hpp"
 #include "VoIpClient.hpp"
 
 Babel::VoIpNetwork::VoIpClient::VoIpClient(const std::string &ip, int port) : _port(port)
 {
+#ifdef __linux__
     sockaddr_in dst{};
     if (inet_pton(AF_INET, ip.c_str(), &dst.sin_addr) <= 0)
         throw std::runtime_error(std::strerror(errno));
@@ -28,23 +24,28 @@ Babel::VoIpNetwork::VoIpClient::VoIpClient(const std::string &ip, int port) : _p
     uint8_t data = VOIP_CODE::NEW_VOIP_CLIENT_CONNECTED;
     sendto(_sock, (const void *) &data, sizeof(data), 0,
         reinterpret_cast<const sockaddr *>(&dst), sizeof(dst));
+#endif
 }
 
 void Babel::VoIpNetwork::VoIpClient::recvOtherClientData()
 {
+#ifdef __linux__
     sockaddr_in recvaddr{};
     socklen_t recvlen = sizeof(sockaddr_in);
     recvfrom(_sock, &_otherClientData, sizeof(_otherClientData), 0, reinterpret_cast<sockaddr *>(&recvaddr), &recvlen);
+#endif
 
     std::cout << "exit" << std::endl;
 }
 
 void Babel::VoIpNetwork::VoIpClient::startTransmition()
 {
+#ifdef __linux__
     int flags = fcntl(_sock,F_GETFL,0);
     if (flags == -1)
         throw std::runtime_error(std::strerror(errno));
     fcntl(_sock, F_SETFL, flags | O_NONBLOCK);
+#endif
     
     _runnig = true;
     _sendThread = std::thread(&VoIpClient::sendLoop, this);
@@ -77,7 +78,8 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 {
     float *data;
     int err;
-    OpusEncoder* enc = opus_encoder_create(SAMPLE_RATE, NUM_CHANNELS, OPUS_APPLICATION_VOIP, &err);
+    Encoding enc;
+    enc.encode_create(SAMPLE_RATE, NUM_CHANNELS, OPUS_APPLICATION_VOIP, &err);
 
     _audio.Record();
 
@@ -92,7 +94,7 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 			for (auto i = 0; i < ENCODE_NUMBER; i++) {
 				
 				_sendBuff.cuts[i] = total;
-				int size = opus_encode_float(enc, data + (ENCODE_RATE *i), ENCODE_RATE, temp, 4000);
+				int size = enc.encode_float(data + (ENCODE_RATE *i), ENCODE_RATE, temp, 4000);
 				
 				for (auto j = 0; j < size; j++, total++) {
 					_sendBuff.data[total] = temp[j];
@@ -100,8 +102,10 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 			}
 			_sendBuff.cuts[ENCODE_NUMBER] = total;
             _sendBuffLen = sizeof(_sendBuff);
+#ifdef __linux__
             sendto(_sock, &_sendBuff, _sendBuffLen, 0, reinterpret_cast<const sockaddr *>(&_otherClientData),
             sizeof(_otherClientData));
+#endif
 
 			_audio.resetSendStatus();
 		}
@@ -111,13 +115,16 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 
 void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
 {
+#ifdef __linux__
     struct sockaddr_in fromAddr{};
     socklen_t len = sizeof(fromAddr);
+#endif
     int ret = 0;
     int err = 0;
 
     float data[SIZE_FLOAT_ARRAY * sizeof(float)];
-	OpusDecoder *rec = opus_decoder_create(SAMPLE_RATE, NUM_CHANNELS, &err);
+	Encoding dec;
+    dec.decode_create(SAMPLE_RATE, NUM_CHANNELS, &err);
 
 	_audio.Listen();
 	while (_audio.isListening())
@@ -125,6 +132,7 @@ void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
 
 		if (_audio.getRecvStatus()) {
 			_audio.resetAudioData();
+#ifdef __linux__
             int tmp1 = recvfrom(_sock, (char*)&_recvBuff, MAX_RECV_BUFF_LEN, 0, reinterpret_cast<sockaddr *>(&fromAddr), &len);
             if (tmp1 < sizeof(sendData)) {
                 continue;
@@ -132,9 +140,10 @@ void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
             if (tmp1 == -1) {
                 continue;
             }
+#endif
 			float tmp[160];
 			for (auto i = 0; i < ENCODE_NUMBER; i++) {
-				opus_decode_float(rec, _recvBuff.data + _recvBuff.cuts[i], _recvBuff.cuts[i + 1] - _recvBuff.cuts[i], tmp, ENCODE_RATE, 0);
+				dec.decode_float(_recvBuff.data + _recvBuff.cuts[i], _recvBuff.cuts[i + 1] - _recvBuff.cuts[i], tmp, ENCODE_RATE, 0);
 				
 				for (auto j = 0; j < ENCODE_RATE * NUM_CHANNELS; j++) {
 					data[j + i * ENCODE_RATE] = tmp[j];
@@ -149,5 +158,7 @@ void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
 
 Babel::VoIpNetwork::VoIpClient::~VoIpClient()
 {
+#ifdef __linux__
     close(_sock);
+#endif
 }

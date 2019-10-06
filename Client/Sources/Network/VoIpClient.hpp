@@ -5,12 +5,15 @@
 #ifndef BABEL_VOIPCLIENT_HPP
 #define BABEL_VOIPCLIENT_HPP
 
+#ifdef __linux__
+	#include <sys/socket.h>
+	#include <netinet/in.h>
+	#include <arpa/inet.h>
+	#include <unistd.h>
+	#include <strings.h>
+#endif
+
 #include <thread>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <strings.h>
-#include <netdb.h>
 
 #include "Audio.hpp"
 
@@ -25,7 +28,9 @@ namespace Babel {
 
             Audio _audio;
 
+#ifdef __linux__
             struct sockaddr_in _otherClientData{};
+#endif
 
             std::atomic_bool _runnig;
             std::thread _sendThread{};

@@ -129,10 +129,14 @@ add_executable(
 
 target_include_directories(audiotest_client PRIVATE ${CONAN_INCLUDE_DIRS_PORTAUDIO})
 <<<<<<< HEAD
+<<<<<<< HEAD
 target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread)
 =======
 target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
 >>>>>>> 6d58c5f2f6972296608a522aee686e918574f48b
+=======
+target_link_libraries(audiotest_client pthread ${CONAN_LIB_DIRS_PORTAUDIO}/libportaudio.a asound jack pthread ${CONAN_LIB_DIRS_OPUS}/libopus.a)
+>>>>>>> 26-linking-sound-on-the-client
 target_compile_options(audiotest_client PRIVATE "-g3")
 
 add_executable(
