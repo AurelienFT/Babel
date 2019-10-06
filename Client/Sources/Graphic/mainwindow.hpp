@@ -24,14 +24,27 @@ namespace Babel {
             Q_OBJECT
 
             public:
-
+            /**
+                *constructor : build a mainWindow object
+            */
                 MainWindow(QWidget *parent = nullptr);
+            /**
+                *destructor : destroy a mainWindow object
+            */
                 ~MainWindow();
 
             public slots:
-
+            /**
+                *change the view of the window
+            */
                 void slotDisplayFen();
+            /**
+                *update the window
+            */
                 void update();
+            /**
+                *signout manager
+            */
                 void signOut();
 
             private:

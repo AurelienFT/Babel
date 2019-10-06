@@ -14,18 +14,41 @@ namespace Babel {
             Q_OBJECT
 
             public:
-
-                explicit customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32>, QString txt, QWidget *parent = nullptr);
+            /**
+                *constructor : build a customWidget object 
+                @param color color of the widget
+                @param size size of the widget
+                @param pos pos of the widget 
+                @param txt txt in widget
+                @param parent parent of the widget
+            */
+                explicit customWidget(QList<qint32> color, QPair<qint32, qint32> size, QPair<qint32, qint32> pos, QString txt, QWidget *parent = nullptr);
+            /**
+                *destructor : destroy a customWidget object
+            */
+                ~customWidget() = default;
+            /**
+                *set the color of the widget
+                @param color color of the widget
+            */
                 void setColorWidget(QList<qint32> color);
+            /**
+                *set the size of the widget
+                @param size size of the widget
+            */
                 void setSizeWidget(QPair<qint32, qint32> size);
+            /**
+                *set the pos of the widget
+                @param pos pos of the widget
+            */
                 void setPosWidget(QPair<qint32, qint32> pos);
-                void setClicked(bool click);
 
             protected:
-
+            /**
+                *overload of the method paintEvent
+                @param event event
+            */
                 void paintEvent(QPaintEvent *event);
-                void mousePressEvent(QMouseEvent *event);
-                void mouseReleaseEvent(QMouseEvent *event);
 
             private:
 

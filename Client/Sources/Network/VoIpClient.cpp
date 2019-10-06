@@ -39,7 +39,6 @@ void Babel::VoIpNetwork::VoIpClient::recvOtherClientData()
     socklen_t recvlen = sizeof(sockaddr_in);
     recvfrom(_sock, &_otherClientData, sizeof(_otherClientData), 0, reinterpret_cast<sockaddr *>(&recvaddr), &recvlen);
 #endif
-
     std::cout << "exit" << std::endl;
 }
 
@@ -74,8 +73,9 @@ void Babel::VoIpNetwork::VoIpClient::recvLoop()
 void Babel::VoIpNetwork::VoIpClient::stop()
 {
     _runnig = false;
-    _sendThread.detach();
-    _recvThread.detach();
+    _audio.stopStream();
+    _sendThread.join();
+    _recvThread.join();
 }
 
 // Replace by code
@@ -88,7 +88,7 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 
     _audio.Record();
 
-	while (_audio.isRecording()) {
+	while (_audio.isRecording() && _runnig) {
 		if (_audio.getSendStatus()) {
 
 			data = _audio.getAudioData().recordedSamples;
@@ -132,7 +132,7 @@ void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
     dec.decode_create(SAMPLE_RATE, NUM_CHANNELS, &err);
 
 	_audio.Listen();
-	while (_audio.isListening())
+	while (_audio.isListening() && _runnig)
 	{
 
 		if (_audio.getRecvStatus()) {

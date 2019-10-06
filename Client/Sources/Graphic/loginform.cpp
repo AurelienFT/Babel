@@ -14,56 +14,56 @@ void Babel::Graphic::loginForm::setFormWidget() // Set the form widget
     setFormHLayout();
     setFormCLayout();
 
-    formWidget = new customWidget(color, size, pos, nullptr, nullptr);
-    formWidget->setMinimumSize(800, 500);
-    formWidget->setLayout(formLayout);
+    _formWidget = new customWidget(color, size, pos, nullptr, nullptr);
+    _formWidget->setMinimumSize(800, 500);
+    _formWidget->setLayout(_formLayout);
 }
 
 void Babel::Graphic::loginForm::setFormCLayout() // Set the container Layout
 {
-    formLayout->addStretch();
-    formLayout->addLayout(formForm);
-    formLayout->addStretch();
-    formLayout->addLayout(Horizontal);
+    _formLayout->addStretch();
+    _formLayout->addLayout(_formForm);
+    _formLayout->addStretch();
+    _formLayout->addLayout(_Horizontal);
 }
 
 void Babel::Graphic::loginForm::setFormVLayout() // Set the vertical layout
 {
-    formLogin->setMaximumSize(700, 50);
-    formPassword->setMaximumSize(700, 50);
-    formForm->addRow("Login :",formLogin);
-    formForm->addRow("Password :",formPassword);
+    _formLogin->setMaximumSize(700, 50);
+    _formPassword->setMaximumSize(700, 50);
+    _formForm->addRow("Login :", _formLogin);
+    _formForm->addRow("Password :", _formPassword);
 }
 
 void Babel::Graphic::loginForm::setFormHLayout() // Set the horizontal Layout
 {
-    validate->setMinimumSize(200,50);
-    validate->setStyleSheet("background-color: #ffffff;");
-    Horizontal->addStretch();
-    Horizontal->addWidget(validate);
-    Horizontal->addStretch();
+    _validate->setMinimumSize(200,50);
+    _validate->setStyleSheet("background-color: #ffffff;");
+    _Horizontal->addStretch();
+    _Horizontal->addWidget(_validate);
+    _Horizontal->addStretch();
 }
 
 // Getter /
 
-QWidget *Babel::Graphic::loginForm::getFormWidget() const {
-
-    return (formWidget);
+QWidget *Babel::Graphic::loginForm::getFormWidget() const 
+{
+    return (_formWidget);
 }
 
-QPushButton &Babel::Graphic::loginForm::getValidateButton()
+QPushButton &Babel::Graphic::loginForm::getValidateButton() const
 {
-    return (*validate);
+    return (*_validate);
 }
 
 QString Babel::Graphic::loginForm::getPassword() const
 {
-    return (formPassword->text());
+    return (_formPassword->text());
 }
 
 QString Babel::Graphic::loginForm::getLogin() const
 {
-    return (formLogin->text());
+    return (_formLogin->text());
 }
 
 

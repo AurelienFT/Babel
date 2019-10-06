@@ -74,6 +74,10 @@ public:
 	*	start listening stream
 	*/
 	audioData Listen();
+	/**
+	*	stop stream
+	*/
+	void stopStream();
 protected:
 private:
 	PaStreamParameters _inputParameters;
