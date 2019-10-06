@@ -41,7 +41,7 @@
 #include <mutex>
 #include "Interface/NetworkInterface.hpp"
 #define PORT 1337
-#define SERVER_ADDRESS "127.0.0.1"
+#define SERVER_ADDRESS "51.68.45.179"
 
 class NetworkClient
 {

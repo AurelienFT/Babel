@@ -13,18 +13,23 @@
 
 Babel::VoIpNetwork::VoIpClient::VoIpClient(const std::string &ip, int port) : _port(port)
 {
-#ifdef __linux__
-    sockaddr_in dst{};
+	SOCKADDR_IN dst{};
     if (inet_pton(AF_INET, ip.c_str(), &dst.sin_addr) <= 0)
         throw std::runtime_error(std::strerror(errno));
-    dst.sin_port = htons(_port);
+	dst.sin_port = htons(_port);
     _sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if (_sock == -1)
         throw std::runtime_error(std::strerror(errno));
     uint8_t data = VOIP_CODE::NEW_VOIP_CLIENT_CONNECTED;
-    sendto(_sock, (const void *) &data, sizeof(data), 0,
+#ifdef __linux__
+	sendto(_sock, (const void *) &data, sizeof(data), 0,
         reinterpret_cast<const sockaddr *>(&dst), sizeof(dst));
 #endif
+#ifdef _WIN64
+	sendto(_sock, (const char *)&data, sizeof(data), 0,
+		reinterpret_cast<const sockaddr *>(&dst), sizeof(dst));
+#endif
+
 }
 
 void Babel::VoIpNetwork::VoIpClient::recvOtherClientData()
