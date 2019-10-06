@@ -8,6 +8,8 @@
 #ifndef IENCODING_HPP_
 #define IENCODING_HPP_
 
+namespace Babel {
+namespace audio {
 class IEncoding {
 	public:
 		IEncoding() = default;
@@ -22,5 +24,7 @@ class IEncoding {
 	protected:
 	private:
 };
+}
+}
 
 #endif /* !IENCODING_HPP_ */

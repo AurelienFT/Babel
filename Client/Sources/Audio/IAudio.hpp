@@ -35,6 +35,8 @@ typedef struct {
 	int32_t cuts[101];
 } sendData;
 
+namespace Babel {
+namespace audio {
 class IAudio
 {
 public:
@@ -56,9 +58,10 @@ public:
 
 	virtual void Record() = 0;
 	virtual audioData Listen() = 0;
-	virtual void Listen(audioData &data) = 0;
 protected:
 private:
 };
+}
+}
 
 #endif /* !IAUDIO_HPP_ */

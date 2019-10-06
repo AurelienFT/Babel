@@ -83,7 +83,7 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 {
     float *data;
     int err;
-    Encoding enc;
+    Babel::audio::Encoding enc;
     enc.encode_create(SAMPLE_RATE, NUM_CHANNELS, OPUS_APPLICATION_VOIP, &err);
 
     _audio.Record();
@@ -99,7 +99,7 @@ void Babel::VoIpNetwork::VoIpClient::feedSendBuffer()
 			for (auto i = 0; i < ENCODE_NUMBER; i++) {
 				
 				_sendBuff.cuts[i] = total;
-				int size = enc.encode_float(data + (ENCODE_RATE *i), ENCODE_RATE, temp, 4000);
+				int size = enc.encode_float(data + (ENCODE_RATE *i), ENCODE_RATE, temp, SIZE_FLOAT_ARRAY / ENCODE_NUMBER);
 				
 				for (auto j = 0; j < size; j++, total++) {
 					_sendBuff.data[total] = temp[j];
@@ -128,7 +128,7 @@ void Babel::VoIpNetwork::VoIpClient::prossesRecvData()
     int err = 0;
 
     float data[SIZE_FLOAT_ARRAY * sizeof(float)];
-	Encoding dec;
+	Babel::audio::Encoding dec;
     dec.decode_create(SAMPLE_RATE, NUM_CHANNELS, &err);
 
 	_audio.Listen();

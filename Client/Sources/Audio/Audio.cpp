@@ -9,7 +9,7 @@
 #include <iostream>
 #include "Audio.hpp"
 
-Audio::Audio()
+Babel::audio::Audio::Audio()
 {
 	PaError err;
 
@@ -121,63 +121,63 @@ static int listenCallback(const void *inputBuffer, void *outputBuffer, unsigned 
 	return finished;
 }
 
-bool Audio::isRecording()
+bool Babel::audio::Audio::isRecording()
 {
 	if (Pa_IsStreamActive(_streamInput) == 1)
 		return true;
 	return false;
 }
 
-bool Audio::isListening()
+bool Babel::audio::Audio::isListening()
 {
 	if (Pa_IsStreamActive(_streamOutput) == 1)
 		return true;
 	return false;
 }
 
-bool Audio::getSendStatus()
+bool Babel::audio::Audio::getSendStatus()
 {
 	return _audioData.toSend;
 }
 
-bool Audio::getRecvStatus()
+bool Babel::audio::Audio::getRecvStatus()
 {
 	return _audioData.toRecv;
 }
 
-void Audio::resetRecvStatus()
+void Babel::audio::Audio::resetRecvStatus()
 {
 	_audioData.toRecv = false;
 }
 
-void Audio::resetSendStatus()
+void Babel::audio::Audio::resetSendStatus()
 {
 	_audioData.toSend = false;
 }
 
-audioData Audio::getAudioData()
+audioData Babel::audio::Audio::getAudioData()
 {
 	return _audioData;
 }
 
-void Audio::resetAudioData()
+void Babel::audio::Audio::resetAudioData()
 {
 	_audioData.frameIndexL = 0;
 }
 
-void Audio::setAudioData(audioData &data)
+void Babel::audio::Audio::setAudioData(audioData &data)
 {
 	_audioData = data;
 }
 
-void Audio::addAudioData(float *data, const int &index)
+void Babel::audio::Audio::addAudioData(float *data, const int &index)
 {
 	for (auto i = 0; i < SIZE_FLOAT_ARRAY; i++) {
 		_audioData.listenedSamples[i + index] = data[i];
 	}
 }
 
-void Audio::Record()
+void Babel::audio::Audio::Record()
 {
 	PaError err = paNoError;
 
@@ -189,7 +189,7 @@ void Audio::Record()
 		throw std::exception();
 }
 
-audioData Audio::Listen()
+audioData Babel::audio::Audio::Listen()
 {
 	PaError err = paNoError;
 
@@ -202,18 +202,6 @@ audioData Audio::Listen()
 		throw std::exception();
 }
 
-void Audio::Listen(audioData &data)
-{
-	data.frameIndexL = 0;
-	PaError err = paNoError;
-	err = Pa_OpenStream(&_streamOutput, NULL, &_outputParameters, SAMPLE_RATE, FRAMES_PER_BUFFER, paClipOff, listenCallback, &data);
-	if (err != paNoError)
-		throw std::exception();
-	err = Pa_StartStream(_streamOutput);
-	if (err != paNoError)
-		throw std::exception();
-}
-
-Audio::~Audio()
+Babel::audio::Audio::~Audio()
 {
 }

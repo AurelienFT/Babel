@@ -46,7 +46,7 @@ namespace Babel {
             int _sock = -1;
             int _port;
 
-            Audio _audio;
+            Babel::audio::Audio _audio;
 
 #ifdef __linux__
             struct sockaddr_in _otherClientData{};
