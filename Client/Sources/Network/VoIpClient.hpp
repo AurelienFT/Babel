@@ -61,11 +61,11 @@ namespace Babel {
         protected:
             static const int MAX_SEND_BUFF_LEN = 8000;
             size_t _sendBuffLen = 0;
-            sendData _sendBuff;
+            sendData _sendBuff{};
 
             static const int MAX_RECV_BUFF_LEN = 20000;
             size_t _recvBuffLen = 0;
-            sendData _recvBuff;
+            sendData _recvBuff{};
 
             virtual void feedSendBuffer();
             virtual void prossesRecvData();

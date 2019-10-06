@@ -77,7 +77,6 @@ int main(int ac, char **av)
 			float tmp[160];
 			for (auto i = 0; i < 100; i++) {
 				opus_decode_float(rec, recved.data + recved.cuts[i], recved.cuts[i + 1] - recved.cuts[i], tmp, 80, 0);
-				
 				for (auto j = 0; j < 160; j++) {
 					data[j + i * 80] = tmp[j];
 				}

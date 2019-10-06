@@ -217,3 +217,9 @@ void Audio::Listen(audioData &data)
 Audio::~Audio()
 {
 }
+
+void Audio::stopStream()
+{
+	Pa_CloseStream(_streamInput);
+	Pa_CloseStream(_streamOutput);
+}

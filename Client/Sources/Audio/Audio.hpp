@@ -34,6 +34,7 @@ public:
 	void Record();
 	audioData Listen();
 	void Listen(audioData &data);
+	void stopStream();
 protected:
 private:
 	PaStreamParameters _inputParameters;
