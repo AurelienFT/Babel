@@ -19,57 +19,57 @@ void Babel::Graphic::ManageFriend::setFormWidget()
     setFormHLayout();
     setFormCLayout();
 
-    formWidget = new customWidget(color, size, pos, nullptr, nullptr);
-    formWidget->setMinimumSize(800, 500);
+    _formWidget = new customWidget(color, size, pos, nullptr, nullptr);
+    _formWidget->setMinimumSize(800, 500);
     h->addStretch();
-    h->addLayout(formLayout);
+    h->addLayout(_formLayout);
     h->addStretch();
     v->addStretch();
     v->addLayout(h);
     v->addStretch();
-    formWidget->setLayout(v);
+    _formWidget->setLayout(v);
 }
 
 void Babel::Graphic::ManageFriend::setFormCLayout()
 {
-    formLayout->addStretch();
-    formLayout->addLayout(formForm);
-    formLayout->addStretch();
-    formLayout->addLayout(Horizontal);
+    _formLayout->addStretch();
+    _formLayout->addLayout(_formForm);
+    _formLayout->addStretch();
+    _formLayout->addLayout(_Horizontal);
 }
 
 void Babel::Graphic::ManageFriend::setFormVLayout()
 {
-    formLogin->setMaximumSize(700, 50);
-    formPassword->setMaximumSize(700, 50);
-    formLogin->setText("Name");
-    formForm->addRow("",formLogin);
+    _formLogin->setMaximumSize(700, 50);
+    _formPassword->setMaximumSize(700, 50);
+    _formLogin->setText("Name");
+    _formForm->addRow("", _formLogin);
 }
 
 void Babel::Graphic::ManageFriend::setFormHLayout()
 {
-    add->setMinimumSize(200,50);
-    add->setStyleSheet("background-color: #ffffff;");
-    remove->setMinimumSize(200,50);
-    remove->setStyleSheet("background-color: #ffffff;");
+    _add->setMinimumSize(200,50);
+    _add->setStyleSheet("background-color: #ffffff;");
+    _remove->setMinimumSize(200,50);
+    _remove->setStyleSheet("background-color: #ffffff;");
 
-    Horizontal->addStretch();
-    Horizontal->addWidget(add);
-    Horizontal->addWidget(remove);
-    Horizontal->addStretch();
-    connect(add, SIGNAL(clicked()), this, SLOT(addFriend()));
-    connect(remove, SIGNAL(clicked()), this, SLOT(removeFriend()));
+    _Horizontal->addStretch();
+    _Horizontal->addWidget(_add);
+    _Horizontal->addWidget(_remove);
+    _Horizontal->addStretch();
+    connect(_add, SIGNAL(clicked()), this, SLOT(addFriend()));
+    connect(_remove, SIGNAL(clicked()), this, SLOT(removeFriend()));
 }
 
 QWidget *Babel::Graphic::ManageFriend::getFormWidget() const
 {
 
-    return (formWidget);
+    return (_formWidget);
 }
 
 void Babel::Graphic::ManageFriend::addFriend()
 {
-    std::string friendName = formLogin->displayText().toStdString();
+    std::string friendName = _formLogin->displayText().toStdString();
     NetworkClient::instance()->send_server(MessageType::ADD_FRIEND, friendName);
     MessageType returnType = NetworkClient::instance()->receive_messageCode();
     if (returnType == MessageType::OK) {

@@ -6,10 +6,10 @@ Babel::Graphic::home::home()
     QPair<qint32, qint32> size(1920, 1080);
     QPair<qint32, qint32> pos(0, 0);
 
-    homeLayout = new QVBoxLayout(nullptr);
-    homeWidget = new customWidget(color, size, pos, nullptr, nullptr);
-    homeBar = new QTabBar(nullptr);
-    conversationStatut = new conversation();
+    _homeLayout = new QVBoxLayout(nullptr);
+    _homeWidget = new customWidget(color, size, pos, nullptr, nullptr);
+    _homeBar = new QTabBar(nullptr);
+    _conversationStatut = new conversation();
     setHome();
 }
 
@@ -17,37 +17,36 @@ void Babel::Graphic::home::setHome()
 {
     QWidget *conversation = new QWidget();
 
-    conversation->setLayout(conversationStatut->getConversationLayout());
-    h_stack->addWidget(conversation);
-    h_stack->addWidget(h_friendStatut->getFormWidget());
+    conversation->setLayout(_conversationStatut->getConversationLayout());
+    _stack->addWidget(conversation);
+    _stack->addWidget(_friendStatut->getFormWidget());
     setHomeBar();
-    homeLayout->addWidget(homeBar);
-    homeLayout->addWidget(h_stack);
-    homeWidget->setLayout(homeLayout);
+    _homeLayout->addWidget(_homeBar);
+    _homeLayout->addWidget(_stack);
+    _homeWidget->setLayout(_homeLayout);
 }
 
 void Babel::Graphic::home::setHomeBar()
 {
 
-    homeBar->addTab("Conversations");
-    homeBar->addTab("Friends");
-    homeBar->addTab("Profil");
-    homeBar->setDrawBase(false);
-    homeBar->setStyleSheet("QTabBar::tab { max-width: 0px; height : 28px; border: 1px; color: #ffffff; background-color: #36393f; font-weight: bold}"
+    _homeBar->addTab("Conversations");
+    _homeBar->addTab("Friends");
+    _homeBar->addTab("Profil");
+    _homeBar->setDrawBase(false);
+    _homeBar->setStyleSheet("QTabBar::tab { max-width: 0px; height : 28px; border: 1px; color: #ffffff; background-color: #36393f; font-weight: bold}"
                            "QTabBar::tab:selected { max-width: 0px; height : 30px; border: 0px; color: #ffffff; background-color: #f26522}" );
-    connect(homeBar, SIGNAL(currentChanged(int)), this, SLOT(setHomeLayout()));
+    connect(_homeBar, SIGNAL(currentChanged(int)), this, SLOT(setHomeLayout()));
 }
 
 Babel::Graphic::customWidget *Babel::Graphic::home::getHomeWidget() const
 {
-    return (homeWidget);
+    return (_homeWidget);
 }
 
 void Babel::Graphic::home::setHomeLayout() // Change le contenu de la fenêtre de login en fonction de la TabBar//
 {
-    std::cout << "coucou34" << std::endl;
-    if (homeBar->currentIndex() == 0)
-        h_stack->setCurrentIndex(0);
-    else if (homeBar->currentIndex() == 1)
-        h_stack->setCurrentIndex(1);
+    if (_homeBar->currentIndex() == 0)
+        _stack->setCurrentIndex(0);
+    else if (_homeBar->currentIndex() == 1)
+        _stack->setCurrentIndex(1);
 }

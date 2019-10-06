@@ -18,26 +18,60 @@ namespace Babel {
             Q_OBJECT
 
         public:
-
+        /**
+            *constructor : build a loginForm object
+        */
             loginForm();
+        /**
+            *destructor : destroy a loginForm object
+        */
+            ~loginForm() = default;
+        /**
+            *get form widget
+            @return _formForm
+        */
             QWidget *getFormWidget() const;
-            QPushButton &getValidateButton();
+        /**
+            *get validate button
+            @return  *_validate
+        */
+            QPushButton &getValidateButton() const ;
+        /**
+            *get password 
+            @return password 
+        */
             QString getPassword() const;
+        /**
+            *get login
+            @return login 
+        */
             QString getLogin() const;
+        /**
+            *set form widget 
+        */
             void setFormWidget();
+        /**
+            *set container layout 
+        */
             void setFormCLayout();
+        /**
+            *set vertical layout  
+        */
             void setFormVLayout();
+        /**
+            *set horizontal layout  
+        */
             void setFormHLayout();
 
         private:
 
-            QVBoxLayout *formLayout = new QVBoxLayout;
-            QHBoxLayout *Horizontal = new QHBoxLayout;
-            customWidget *formWidget;
-            QFormLayout *formForm = new QFormLayout;
-            QLineEdit *formLogin= new QLineEdit;
-            QLineEdit *formPassword= new QLineEdit;
-            QPushButton *validate = new QPushButton("Validate");
+            QVBoxLayout *_formLayout = new QVBoxLayout;
+            QHBoxLayout *_Horizontal = new QHBoxLayout;
+            customWidget *_formWidget;
+            QFormLayout *_formForm = new QFormLayout;
+            QLineEdit *_formLogin= new QLineEdit;
+            QLineEdit *_formPassword= new QLineEdit;
+            QPushButton *_validate = new QPushButton("Validate");
         };
     }
 }
