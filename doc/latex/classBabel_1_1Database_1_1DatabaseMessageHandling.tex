@@ -1,0 +1,108 @@
+\hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling}{}\section{Babel\+:\+:Database\+:\+:Database\+Message\+Handling Class Reference}
+\label{classBabel_1_1Database_1_1DatabaseMessageHandling}\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+
+
+{\ttfamily \#include $<$Database\+Message\+Handling.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_abbbb6940ab5d814d743318a6c80675ae}{Database\+Message\+Handling} (std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$ database)
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_aa50d5b43b313897aaded49e7ffbee224}{$\sim$\+Database\+Message\+Handling} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_ad8d704d5fe51d6745a950339528d6b6b}{create\+Table} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_aa75b9f9b24f81d2eb37ec0a54f60ea86}{add\+Message} (const int \&sender, const int \&group, const std\+::string \&message\+Data)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_a29572ed82c38b3335436fbf09bacf25b}{delete\+Message} (const int \&message\+Id)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_a910b7dfbf08dede9bc52e7aed49d83a2}{get\+All\+Message} (const int \&group)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseMessageHandling_a531b0d53d4ff761134c487adb2bdbba8}{get\+Range\+Message} (const int \&group, const int \&number\+Of\+Message)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_abbbb6940ab5d814d743318a6c80675ae}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_abbbb6940ab5d814d743318a6c80675ae}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!Database\+Message\+Handling@{Database\+Message\+Handling}}
+\index{Database\+Message\+Handling@{Database\+Message\+Handling}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{Database\+Message\+Handling()}{DatabaseMessageHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+Message\+Handling\+::\+Database\+Message\+Handling (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$}]{database }\end{DoxyParamCaption})}
+
+Constructor\+: Take the database pointer to interact with the Discussion table 
+\begin{DoxyParams}{Parameters}
+{\em database} & Pointer to the database \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_aa50d5b43b313897aaded49e7ffbee224}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_aa50d5b43b313897aaded49e7ffbee224}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!````~Database\+Message\+Handling@{$\sim$\+Database\+Message\+Handling}}
+\index{````~Database\+Message\+Handling@{$\sim$\+Database\+Message\+Handling}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{$\sim$\+Database\+Message\+Handling()}{~DatabaseMessageHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+Message\+Handling\+::$\sim$\+Database\+Message\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_aa75b9f9b24f81d2eb37ec0a54f60ea86}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_aa75b9f9b24f81d2eb37ec0a54f60ea86}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!add\+Message@{add\+Message}}
+\index{add\+Message@{add\+Message}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{add\+Message()}{addMessage()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Message\+Handling\+::add\+Message (\begin{DoxyParamCaption}\item[{const int \&}]{sender,  }\item[{const int \&}]{group,  }\item[{const std\+::string \&}]{message\+Data }\end{DoxyParamCaption})}
+
+Enter a message in the Message table 
+\begin{DoxyParams}{Parameters}
+{\em sender} & Sender ID \\
+\hline
+{\em group} & Group ID \\
+\hline
+{\em message\+Data} & Content of the message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_ad8d704d5fe51d6745a950339528d6b6b}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_ad8d704d5fe51d6745a950339528d6b6b}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{create\+Table()}{createTable()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Message\+Handling\+::create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create the Message table \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_a29572ed82c38b3335436fbf09bacf25b}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_a29572ed82c38b3335436fbf09bacf25b}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!delete\+Message@{delete\+Message}}
+\index{delete\+Message@{delete\+Message}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{delete\+Message()}{deleteMessage()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Message\+Handling\+::delete\+Message (\begin{DoxyParamCaption}\item[{const int \&}]{message\+Id }\end{DoxyParamCaption})}
+
+Delete a message in the Message table 
+\begin{DoxyParams}{Parameters}
+{\em message\+Id} & ID of the message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_a910b7dfbf08dede9bc52e7aed49d83a2}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_a910b7dfbf08dede9bc52e7aed49d83a2}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!get\+All\+Message@{get\+All\+Message}}
+\index{get\+All\+Message@{get\+All\+Message}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{get\+All\+Message()}{getAllMessage()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Message\+Handling\+::get\+All\+Message (\begin{DoxyParamCaption}\item[{const int \&}]{group }\end{DoxyParamCaption})}
+
+Get all message of a group (W\+IP) 
+\begin{DoxyParams}{Parameters}
+{\em group} & Group ID of the message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseMessageHandling_a531b0d53d4ff761134c487adb2bdbba8}\label{classBabel_1_1Database_1_1DatabaseMessageHandling_a531b0d53d4ff761134c487adb2bdbba8}} 
+\index{Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}!get\+Range\+Message@{get\+Range\+Message}}
+\index{get\+Range\+Message@{get\+Range\+Message}!Babel\+::\+Database\+::\+Database\+Message\+Handling@{Babel\+::\+Database\+::\+Database\+Message\+Handling}}
+\subsubsection{\texorpdfstring{get\+Range\+Message()}{getRangeMessage()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Message\+Handling\+::get\+Range\+Message (\begin{DoxyParamCaption}\item[{const int \&}]{group,  }\item[{const int \&}]{number\+Of\+Message }\end{DoxyParamCaption})}
+
+Get a range of messages of a group (W\+IP) 
+\begin{DoxyParams}{Parameters}
+{\em group} & Group ID of the message \\
+\hline
+{\em number\+Of\+Message} & number of message to get \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseMessageHandling_8hpp}{Database\+Message\+Handling.\+hpp}\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseMessageHandling_8cpp}{Database\+Message\+Handling.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,128 @@
+\hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling}{}\section{Babel\+:\+:Database\+:\+:Database\+User\+Handling Class Reference}
+\label{classBabel_1_1Database_1_1DatabaseUserHandling}\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+
+
+{\ttfamily \#include $<$Database\+User\+Handling.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a2d96ea5163d60bfb811d76c94bd3a9c5}{Database\+User\+Handling} (std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$ database)
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a6f7e868435c61dfe61530b79aff5d8bc}{$\sim$\+Database\+User\+Handling} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a40d154b5566be2fbe256b73bb4b1298b}{create\+Table} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a042cde852c992def282d1a1d1dd9852b}{add\+User} (const std\+::string \&username, const std\+::string \&password)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_aa50ebfb9d50954f228772f0a9132aabb}{delete\+User} (const int \&user)
+\item 
+int \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a3bbd5ae39cfdc6f7e37eabdd8dab624d}{user\+Exists} (const std\+::string \&username, const std\+::string \&password)
+\item 
+int \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a9dcfc77a907122ae9d1e45fa415e1002}{user\+Exists} (const std\+::string \&username)
+\item 
+std\+::string \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_a25fb3f6cf468ac2020437c0970ecf3d4}{get\+Username} (const int \&user)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserHandling_ae1f2d2a9c0981e124b5025e6f437769e}{get\+User\+Infos} (const int \&user)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a2d96ea5163d60bfb811d76c94bd3a9c5}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a2d96ea5163d60bfb811d76c94bd3a9c5}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!Database\+User\+Handling@{Database\+User\+Handling}}
+\index{Database\+User\+Handling@{Database\+User\+Handling}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{Database\+User\+Handling()}{DatabaseUserHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+User\+Handling\+::\+Database\+User\+Handling (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$}]{database }\end{DoxyParamCaption})}
+
+Constructor \+: Take a database pointer to interact the table \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a6f7e868435c61dfe61530b79aff5d8bc}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a6f7e868435c61dfe61530b79aff5d8bc}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!````~Database\+User\+Handling@{$\sim$\+Database\+User\+Handling}}
+\index{````~Database\+User\+Handling@{$\sim$\+Database\+User\+Handling}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{$\sim$\+Database\+User\+Handling()}{~DatabaseUserHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+User\+Handling\+::$\sim$\+Database\+User\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a042cde852c992def282d1a1d1dd9852b}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a042cde852c992def282d1a1d1dd9852b}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!add\+User@{add\+User}}
+\index{add\+User@{add\+User}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{add\+User()}{addUser()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Handling\+::add\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+Add user to the table \hyperlink{classUser}{User} 
+\begin{DoxyParams}{Parameters}
+{\em username} & Username of the user to add \\
+\hline
+{\em password} & Password of the user to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a40d154b5566be2fbe256b73bb4b1298b}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a40d154b5566be2fbe256b73bb4b1298b}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{create\+Table()}{createTable()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Handling\+::create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create the \hyperlink{classUser}{User} table if not exist \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_aa50ebfb9d50954f228772f0a9132aabb}\label{classBabel_1_1Database_1_1DatabaseUserHandling_aa50ebfb9d50954f228772f0a9132aabb}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!delete\+User@{delete\+User}}
+\index{delete\+User@{delete\+User}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{delete\+User()}{deleteUser()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Handling\+::delete\+User (\begin{DoxyParamCaption}\item[{const int \&}]{user }\end{DoxyParamCaption})}
+
+Delete user from the table \hyperlink{classUser}{User} 
+\begin{DoxyParams}{Parameters}
+{\em user} & ID of the user to delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_ae1f2d2a9c0981e124b5025e6f437769e}\label{classBabel_1_1Database_1_1DatabaseUserHandling_ae1f2d2a9c0981e124b5025e6f437769e}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!get\+User\+Infos@{get\+User\+Infos}}
+\index{get\+User\+Infos@{get\+User\+Infos}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{get\+User\+Infos()}{getUserInfos()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Handling\+::get\+User\+Infos (\begin{DoxyParamCaption}\item[{const int \&}]{user }\end{DoxyParamCaption})}
+
+W\+IP \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a25fb3f6cf468ac2020437c0970ecf3d4}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a25fb3f6cf468ac2020437c0970ecf3d4}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!get\+Username@{get\+Username}}
+\index{get\+Username@{get\+Username}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{get\+Username()}{getUsername()}}
+{\footnotesize\ttfamily std\+::string Babel\+::\+Database\+::\+Database\+User\+Handling\+::get\+Username (\begin{DoxyParamCaption}\item[{const int \&}]{user }\end{DoxyParamCaption})}
+
+Get username by ID user 
+\begin{DoxyParams}{Parameters}
+{\em user} & ID of the user \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a3bbd5ae39cfdc6f7e37eabdd8dab624d}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a3bbd5ae39cfdc6f7e37eabdd8dab624d}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!user\+Exists@{user\+Exists}}
+\index{user\+Exists@{user\+Exists}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{user\+Exists()}{userExists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Babel\+::\+Database\+::\+Database\+User\+Handling\+::user\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+Check if user exist in user db 
+\begin{DoxyParams}{Parameters}
+{\em username} & Username of user to find \\
+\hline
+{\em password} & Password of user to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+client id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserHandling_a9dcfc77a907122ae9d1e45fa415e1002}\label{classBabel_1_1Database_1_1DatabaseUserHandling_a9dcfc77a907122ae9d1e45fa415e1002}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}!user\+Exists@{user\+Exists}}
+\index{user\+Exists@{user\+Exists}!Babel\+::\+Database\+::\+Database\+User\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Handling}}
+\subsubsection{\texorpdfstring{user\+Exists()}{userExists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Babel\+::\+Database\+::\+Database\+User\+Handling\+::user\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username }\end{DoxyParamCaption})}
+
+Check if user exist in user db 
+\begin{DoxyParams}{Parameters}
+{\em username} & Username of user to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+client id 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseUserHandling_8hpp}{Database\+User\+Handling.\+hpp}\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseUserHandling_8cpp}{Database\+User\+Handling.\+cpp}\end{DoxyCompactItemize}

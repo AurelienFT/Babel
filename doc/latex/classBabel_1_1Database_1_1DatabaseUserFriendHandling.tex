@@ -1,0 +1,167 @@
+\hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling}{}\section{Babel\+:\+:Database\+:\+:Database\+User\+Friend\+Handling Class Reference}
+\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling}\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+
+
+{\ttfamily \#include $<$Database\+User\+Friend\+Handling.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ae3b7b606b14c0909cd910cd40072aefd}{Database\+User\+Friend\+Handling} (std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$ database)
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_afd0185ac08caed7694b5c05196882998}{$\sim$\+Database\+User\+Friend\+Handling} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a6586290bbfe7dfe6906f05277ee7be2b}{create\+Table} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a1c2ac28c5b7280b8729b69b17996a056}{add\+Friend\+Ship} (const int \&first, const int \&second, const bool \&is\+Accepted)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a3336a26154efbdbbd52a642121702295}{delete\+Friend\+Ship} (const int \&id)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_af7cc5f7f383fb5750149f1a20f53bebf}{get\+All\+Friends\+Request} (const int \&id)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_adac3fe3ddc5369d9d285164504db0473}{accept\+Friend\+Request} (const int \&id1, const int \&id2)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a8ea2097e590e629a0a1aea31c1260600}{reject\+Friend\+Request} (const int \&id1, const int \&id2)
+\item 
+int \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a5447e835948344c871e7f47fb66f26c0}{get\+Friend\+Ship\+ID} (const int \&id1, const int \&id2)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a2bed1d6913f15db98bc4ebadf0135310}{get\+Friend\+Ship\+Infos} (const int \&id)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ab891f2703d81522227d57dce7f69100b}{get\+All\+Friends\+Of} (const int \&user)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ae3b7b606b14c0909cd910cd40072aefd}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ae3b7b606b14c0909cd910cd40072aefd}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!Database\+User\+Friend\+Handling@{Database\+User\+Friend\+Handling}}
+\index{Database\+User\+Friend\+Handling@{Database\+User\+Friend\+Handling}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{Database\+User\+Friend\+Handling()}{DatabaseUserFriendHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::\+Database\+User\+Friend\+Handling (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$}]{database }\end{DoxyParamCaption})}
+
+Constructor \+: Take a database pointer to interact with the table 
+\begin{DoxyParams}{Parameters}
+{\em database} & Pointer to the database \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_afd0185ac08caed7694b5c05196882998}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_afd0185ac08caed7694b5c05196882998}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!````~Database\+User\+Friend\+Handling@{$\sim$\+Database\+User\+Friend\+Handling}}
+\index{````~Database\+User\+Friend\+Handling@{$\sim$\+Database\+User\+Friend\+Handling}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{$\sim$\+Database\+User\+Friend\+Handling()}{~DatabaseUserFriendHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::$\sim$\+Database\+User\+Friend\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_adac3fe3ddc5369d9d285164504db0473}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_adac3fe3ddc5369d9d285164504db0473}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!accept\+Friend\+Request@{accept\+Friend\+Request}}
+\index{accept\+Friend\+Request@{accept\+Friend\+Request}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{accept\+Friend\+Request()}{acceptFriendRequest()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::accept\+Friend\+Request (\begin{DoxyParamCaption}\item[{const int \&}]{id1,  }\item[{const int \&}]{id2 }\end{DoxyParamCaption})}
+
+Change status of a frienship to accepted 
+\begin{DoxyParams}{Parameters}
+{\em id1} & ID of the first friend \\
+\hline
+{\em id2} & ID of the second friend \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a1c2ac28c5b7280b8729b69b17996a056}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a1c2ac28c5b7280b8729b69b17996a056}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!add\+Friend\+Ship@{add\+Friend\+Ship}}
+\index{add\+Friend\+Ship@{add\+Friend\+Ship}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{add\+Friend\+Ship()}{addFriendShip()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::add\+Friend\+Ship (\begin{DoxyParamCaption}\item[{const int \&}]{first,  }\item[{const int \&}]{second,  }\item[{const bool \&}]{is\+Accepted }\end{DoxyParamCaption})}
+
+Add a friendship between two users 
+\begin{DoxyParams}{Parameters}
+{\em first} & First user ID \\
+\hline
+{\em second} & Second user ID \\
+\hline
+{\em is\+Accepted} & Friend request is accepted by the second user \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a6586290bbfe7dfe6906f05277ee7be2b}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a6586290bbfe7dfe6906f05277ee7be2b}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{create\+Table()}{createTable()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create a table User\+Friend in the database \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a3336a26154efbdbbd52a642121702295}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a3336a26154efbdbbd52a642121702295}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!delete\+Friend\+Ship@{delete\+Friend\+Ship}}
+\index{delete\+Friend\+Ship@{delete\+Friend\+Ship}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{delete\+Friend\+Ship()}{deleteFriendShip()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::delete\+Friend\+Ship (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption})}
+
+Delete a friendship 
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the friendship to delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ab891f2703d81522227d57dce7f69100b}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_ab891f2703d81522227d57dce7f69100b}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!get\+All\+Friends\+Of@{get\+All\+Friends\+Of}}
+\index{get\+All\+Friends\+Of@{get\+All\+Friends\+Of}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{get\+All\+Friends\+Of()}{getAllFriendsOf()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::get\+All\+Friends\+Of (\begin{DoxyParamCaption}\item[{const int \&}]{user }\end{DoxyParamCaption})}
+
+Get all friends of a user (W\+IP) 
+\begin{DoxyParams}{Parameters}
+{\em user} & ID of the user \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_af7cc5f7f383fb5750149f1a20f53bebf}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_af7cc5f7f383fb5750149f1a20f53bebf}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!get\+All\+Friends\+Request@{get\+All\+Friends\+Request}}
+\index{get\+All\+Friends\+Request@{get\+All\+Friends\+Request}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{get\+All\+Friends\+Request()}{getAllFriendsRequest()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::get\+All\+Friends\+Request (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption})}
+
+Get all the friend request of a user 
+\begin{DoxyParams}{Parameters}
+{\em ID} & client to find all friend request of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+all ID of user who sent a friend request to the user id in parameters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a5447e835948344c871e7f47fb66f26c0}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a5447e835948344c871e7f47fb66f26c0}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!get\+Friend\+Ship\+ID@{get\+Friend\+Ship\+ID}}
+\index{get\+Friend\+Ship\+ID@{get\+Friend\+Ship\+ID}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{get\+Friend\+Ship\+I\+D()}{getFriendShipID()}}
+{\footnotesize\ttfamily int Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::get\+Friend\+Ship\+ID (\begin{DoxyParamCaption}\item[{const int \&}]{id1,  }\item[{const int \&}]{id2 }\end{DoxyParamCaption})}
+
+Get ID of a friendship 
+\begin{DoxyParams}{Parameters}
+{\em id1} & ID of the first friend \\
+\hline
+{\em id2} & ID of the second friend \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a2bed1d6913f15db98bc4ebadf0135310}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a2bed1d6913f15db98bc4ebadf0135310}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!get\+Friend\+Ship\+Infos@{get\+Friend\+Ship\+Infos}}
+\index{get\+Friend\+Ship\+Infos@{get\+Friend\+Ship\+Infos}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{get\+Friend\+Ship\+Infos()}{getFriendShipInfos()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::get\+Friend\+Ship\+Infos (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption})}
+
+Get infos about a friendship (W\+IP) 
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the frienship \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a8ea2097e590e629a0a1aea31c1260600}\label{classBabel_1_1Database_1_1DatabaseUserFriendHandling_a8ea2097e590e629a0a1aea31c1260600}} 
+\index{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}!reject\+Friend\+Request@{reject\+Friend\+Request}}
+\index{reject\+Friend\+Request@{reject\+Friend\+Request}!Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling@{Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling}}
+\subsubsection{\texorpdfstring{reject\+Friend\+Request()}{rejectFriendRequest()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+User\+Friend\+Handling\+::reject\+Friend\+Request (\begin{DoxyParamCaption}\item[{const int \&}]{id1,  }\item[{const int \&}]{id2 }\end{DoxyParamCaption})}
+
+Delete a friend request 
+\begin{DoxyParams}{Parameters}
+{\em id1} & ID of the first friend \\
+\hline
+{\em id2} & ID of the second friend \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseUserFriendHandling_8hpp}{Database\+User\+Friend\+Handling.\+hpp}\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseUserFriendHandling_8cpp}{Database\+User\+Friend\+Handling.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient}{}\section{Babel\+:\+:Vo\+Ip\+Network\+:\+:Vo\+Ip\+Client Class Reference}
+\label{classBabel_1_1VoIpNetwork_1_1VoIpClient}\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+
+
+{\ttfamily \#include $<$Vo\+Ip\+Client.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_aeab5520c1bdd081222c65ac24bae918b}{Vo\+Ip\+Client} (const std\+::string \&ip, int port)
+\item 
+void \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9c2b2864481f421ca30e164ba85f22b9}{recv\+Other\+Client\+Data} ()
+\item 
+void \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9f731999c08bd9af846ab0e17f4bc74b}{start\+Transmition} ()
+\item 
+void \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a38c1cc61effda4fb37b518ab1bafe89e}{stop} ()
+\item 
+virtual \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a7e576b7e84dfc08b4cc08bdf03751265}{$\sim$\+Vo\+Ip\+Client} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_aef58221ea1af2b37717d7e5efeb6b691}{feed\+Send\+Buffer} ()
+\item 
+virtual void \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_aa59cc4e1450ec4ff1f4f90fdddef7ed2}{prosses\+Recv\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a17ffd7c249da536bf277e2dba4bda41b}{\+\_\+send\+Buff\+Len} = 0
+\item 
+\hyperlink{structsendData}{send\+Data} \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_af5450afac47bf3c9096e769aee3d714f}{\+\_\+send\+Buff} \{\}
+\item 
+size\+\_\+t \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a0df6cd8820df05bc9188f8b21951030e}{\+\_\+recv\+Buff\+Len} = 0
+\item 
+\hyperlink{structsendData}{send\+Data} \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3c9d4953044497cb8c06d74e90cb37ff}{\+\_\+recv\+Buff} \{\}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3ce6329bede722147d4e5ce8eedcdad7}{M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN} = 8000
+\item 
+static const int \hyperlink{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3b1f411e3b18c63c8f65dbc4e3f45358}{M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN} = 20000
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_aeab5520c1bdd081222c65ac24bae918b}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_aeab5520c1bdd081222c65ac24bae918b}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!Vo\+Ip\+Client@{Vo\+Ip\+Client}}
+\index{Vo\+Ip\+Client@{Vo\+Ip\+Client}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{Vo\+Ip\+Client()}{VoIpClient()}}
+{\footnotesize\ttfamily Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+Vo\+Ip\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a7e576b7e84dfc08b4cc08bdf03751265}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a7e576b7e84dfc08b4cc08bdf03751265}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!````~Vo\+Ip\+Client@{$\sim$\+Vo\+Ip\+Client}}
+\index{````~Vo\+Ip\+Client@{$\sim$\+Vo\+Ip\+Client}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{$\sim$\+Vo\+Ip\+Client()}{~VoIpClient()}}
+{\footnotesize\ttfamily Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::$\sim$\+Vo\+Ip\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_aef58221ea1af2b37717d7e5efeb6b691}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_aef58221ea1af2b37717d7e5efeb6b691}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!feed\+Send\+Buffer@{feed\+Send\+Buffer}}
+\index{feed\+Send\+Buffer@{feed\+Send\+Buffer}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{feed\+Send\+Buffer()}{feedSendBuffer()}}
+{\footnotesize\ttfamily void Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::feed\+Send\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_aa59cc4e1450ec4ff1f4f90fdddef7ed2}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_aa59cc4e1450ec4ff1f4f90fdddef7ed2}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!prosses\+Recv\+Data@{prosses\+Recv\+Data}}
+\index{prosses\+Recv\+Data@{prosses\+Recv\+Data}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{prosses\+Recv\+Data()}{prossesRecvData()}}
+{\footnotesize\ttfamily void Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::prosses\+Recv\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9c2b2864481f421ca30e164ba85f22b9}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9c2b2864481f421ca30e164ba85f22b9}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!recv\+Other\+Client\+Data@{recv\+Other\+Client\+Data}}
+\index{recv\+Other\+Client\+Data@{recv\+Other\+Client\+Data}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{recv\+Other\+Client\+Data()}{recvOtherClientData()}}
+{\footnotesize\ttfamily void Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::recv\+Other\+Client\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9f731999c08bd9af846ab0e17f4bc74b}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a9f731999c08bd9af846ab0e17f4bc74b}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!start\+Transmition@{start\+Transmition}}
+\index{start\+Transmition@{start\+Transmition}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{start\+Transmition()}{startTransmition()}}
+{\footnotesize\ttfamily void Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::start\+Transmition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a38c1cc61effda4fb37b518ab1bafe89e}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a38c1cc61effda4fb37b518ab1bafe89e}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!stop@{stop}}
+\index{stop@{stop}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3c9d4953044497cb8c06d74e90cb37ff}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3c9d4953044497cb8c06d74e90cb37ff}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!\+\_\+recv\+Buff@{\+\_\+recv\+Buff}}
+\index{\+\_\+recv\+Buff@{\+\_\+recv\+Buff}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+recv\+Buff}{\_recvBuff}}
+{\footnotesize\ttfamily \hyperlink{structsendData}{send\+Data} Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+\_\+recv\+Buff \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a0df6cd8820df05bc9188f8b21951030e}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a0df6cd8820df05bc9188f8b21951030e}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!\+\_\+recv\+Buff\+Len@{\+\_\+recv\+Buff\+Len}}
+\index{\+\_\+recv\+Buff\+Len@{\+\_\+recv\+Buff\+Len}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+recv\+Buff\+Len}{\_recvBuffLen}}
+{\footnotesize\ttfamily size\+\_\+t Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+\_\+recv\+Buff\+Len = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_af5450afac47bf3c9096e769aee3d714f}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_af5450afac47bf3c9096e769aee3d714f}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!\+\_\+send\+Buff@{\+\_\+send\+Buff}}
+\index{\+\_\+send\+Buff@{\+\_\+send\+Buff}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+send\+Buff}{\_sendBuff}}
+{\footnotesize\ttfamily \hyperlink{structsendData}{send\+Data} Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+\_\+send\+Buff \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a17ffd7c249da536bf277e2dba4bda41b}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a17ffd7c249da536bf277e2dba4bda41b}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!\+\_\+send\+Buff\+Len@{\+\_\+send\+Buff\+Len}}
+\index{\+\_\+send\+Buff\+Len@{\+\_\+send\+Buff\+Len}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+send\+Buff\+Len}{\_sendBuffLen}}
+{\footnotesize\ttfamily size\+\_\+t Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+\_\+send\+Buff\+Len = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3b1f411e3b18c63c8f65dbc4e3f45358}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3b1f411e3b18c63c8f65dbc4e3f45358}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}}
+\index{M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}{MAX\_RECV\_BUFF\_LEN}}
+{\footnotesize\ttfamily const int Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+M\+A\+X\+\_\+\+R\+E\+C\+V\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN = 20000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3ce6329bede722147d4e5ce8eedcdad7}\label{classBabel_1_1VoIpNetwork_1_1VoIpClient_a3ce6329bede722147d4e5ce8eedcdad7}} 
+\index{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}!M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}}
+\index{M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}!Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client@{Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}{MAX\_SEND\_BUFF\_LEN}}
+{\footnotesize\ttfamily const int Babel\+::\+Vo\+Ip\+Network\+::\+Vo\+Ip\+Client\+::\+M\+A\+X\+\_\+\+S\+E\+N\+D\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN = 8000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/\+Sources/\+Network/\hyperlink{VoIpClient_8hpp}{Vo\+Ip\+Client.\+hpp}\item 
+Client/\+Sources/\+Network/\hyperlink{VoIpClient_8cpp}{Vo\+Ip\+Client.\+cpp}\end{DoxyCompactItemize}

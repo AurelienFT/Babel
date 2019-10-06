@@ -1,0 +1,94 @@
+\hypertarget{classNetworkClient}{}\section{Network\+Client Class Reference}
+\label{classNetworkClient}\index{Network\+Client@{Network\+Client}}
+
+
+{\ttfamily \#include $<$Network\+Client.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetworkClient_a0b95f7c2259c75cf108d5dc9021f3b0f}{Network\+Client} (const \hyperlink{classNetworkClient}{Network\+Client} \&)=delete
+\item 
+\hyperlink{classNetworkClient}{Network\+Client} \& \hyperlink{classNetworkClient_a81d168b19e4fb79372b8129690946f73}{operator=} (const \hyperlink{classNetworkClient}{Network\+Client} \&)=delete
+\item 
+void \hyperlink{classNetworkClient_a31ca2c82cc998bc0bccd1252705a86bd}{connection} ()
+\item 
+int \hyperlink{classNetworkClient_afd8376b194f595c16119c695fd875028}{send\+\_\+server} (\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} message\+Type, std\+::string message)
+\item 
+\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} \hyperlink{classNetworkClient_a7d56a3333337b04ec557f0655bebcb28}{receive\+\_\+message\+Code} ()
+\item 
+std\+::string \hyperlink{classNetworkClient_af565bdc7544ed059d3bc2756d1c227d4}{get\+Reponse} () const
+\item 
+void \hyperlink{classNetworkClient_a7f69f5c30fd349d670fae18598737b86}{disconnect} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classNetworkClient}{Network\+Client} $\ast$ \hyperlink{classNetworkClient_a1fbd2083ac90e4399ad733a0d10ce060}{instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNetworkClient_a0b95f7c2259c75cf108d5dc9021f3b0f}\label{classNetworkClient_a0b95f7c2259c75cf108d5dc9021f3b0f}} 
+\index{Network\+Client@{Network\+Client}!Network\+Client@{Network\+Client}}
+\index{Network\+Client@{Network\+Client}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{Network\+Client()}{NetworkClient()}}
+{\footnotesize\ttfamily Network\+Client\+::\+Network\+Client (\begin{DoxyParamCaption}\item[{const \hyperlink{classNetworkClient}{Network\+Client} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Do not allow copy constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetworkClient_a31ca2c82cc998bc0bccd1252705a86bd}\label{classNetworkClient_a31ca2c82cc998bc0bccd1252705a86bd}} 
+\index{Network\+Client@{Network\+Client}!connection@{connection}}
+\index{connection@{connection}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{connection()}{connection()}}
+{\footnotesize\ttfamily void Network\+Client\+::connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classNetworkClient_a7f69f5c30fd349d670fae18598737b86}\label{classNetworkClient_a7f69f5c30fd349d670fae18598737b86}} 
+\index{Network\+Client@{Network\+Client}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Network\+Client\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classNetworkClient_af565bdc7544ed059d3bc2756d1c227d4}\label{classNetworkClient_af565bdc7544ed059d3bc2756d1c227d4}} 
+\index{Network\+Client@{Network\+Client}!get\+Reponse@{get\+Reponse}}
+\index{get\+Reponse@{get\+Reponse}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{get\+Reponse()}{getReponse()}}
+{\footnotesize\ttfamily std\+::string Network\+Client\+::get\+Reponse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classNetworkClient_a1fbd2083ac90e4399ad733a0d10ce060}\label{classNetworkClient_a1fbd2083ac90e4399ad733a0d10ce060}} 
+\index{Network\+Client@{Network\+Client}!instance@{instance}}
+\index{instance@{instance}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \hyperlink{classNetworkClient}{Network\+Client}$\ast$ Network\+Client\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Get singleton instance This implementation is thread-\/safe using C++11 memory model \begin{DoxyReturn}{Returns}
+A \hyperlink{classNetworkClient}{Network\+Client} raw pointer to the current instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNetworkClient_a81d168b19e4fb79372b8129690946f73}\label{classNetworkClient_a81d168b19e4fb79372b8129690946f73}} 
+\index{Network\+Client@{Network\+Client}!operator=@{operator=}}
+\index{operator=@{operator=}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classNetworkClient}{Network\+Client}\& Network\+Client\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classNetworkClient}{Network\+Client} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Do not allow assignation operator \begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNetworkClient_a7d56a3333337b04ec557f0655bebcb28}\label{classNetworkClient_a7d56a3333337b04ec557f0655bebcb28}} 
+\index{Network\+Client@{Network\+Client}!receive\+\_\+message\+Code@{receive\+\_\+message\+Code}}
+\index{receive\+\_\+message\+Code@{receive\+\_\+message\+Code}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{receive\+\_\+message\+Code()}{receive\_messageCode()}}
+{\footnotesize\ttfamily \hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} Network\+Client\+::receive\+\_\+message\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classNetworkClient_afd8376b194f595c16119c695fd875028}\label{classNetworkClient_afd8376b194f595c16119c695fd875028}} 
+\index{Network\+Client@{Network\+Client}!send\+\_\+server@{send\+\_\+server}}
+\index{send\+\_\+server@{send\+\_\+server}!Network\+Client@{Network\+Client}}
+\subsubsection{\texorpdfstring{send\+\_\+server()}{send\_server()}}
+{\footnotesize\ttfamily int Network\+Client\+::send\+\_\+server (\begin{DoxyParamCaption}\item[{\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type}}]{message\+Type,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/\+Sources/\+Network/\hyperlink{Client_2Sources_2Network_2NetworkClient_8hpp}{Network\+Client.\+hpp}\item 
+Client/\+Sources/\+Network/\hyperlink{Client_2Sources_2Network_2NetworkClient_8cpp}{Network\+Client.\+cpp}\end{DoxyCompactItemize}

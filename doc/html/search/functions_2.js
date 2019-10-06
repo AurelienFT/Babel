@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['databasediscussionhandling',['DatabaseDiscussionHandling',['../classBabel_1_1Database_1_1DatabaseDiscussionHandling.html#ad0f6b33adad16b679ff11005d09f0eac',1,'Babel::Database::DatabaseDiscussionHandling']]],
+  ['databasemessagehandling',['DatabaseMessageHandling',['../classBabel_1_1Database_1_1DatabaseMessageHandling.html#abbbb6940ab5d814d743318a6c80675ae',1,'Babel::Database::DatabaseMessageHandling']]],
+  ['databaseuserdiscussionhandling',['DatabaseUserDiscussionHandling',['../classBabel_1_1Database_1_1DatabaseUserDiscussionHandling.html#a5d54f847bf50ca48f0d2a2ea58182b20',1,'Babel::Database::DatabaseUserDiscussionHandling']]],
+  ['databaseuserfriendhandling',['DatabaseUserFriendHandling',['../classBabel_1_1Database_1_1DatabaseUserFriendHandling.html#ae3b7b606b14c0909cd910cd40072aefd',1,'Babel::Database::DatabaseUserFriendHandling']]],
+  ['databaseuserhandling',['DatabaseUserHandling',['../classBabel_1_1Database_1_1DatabaseUserHandling.html#a2d96ea5163d60bfb811d76c94bd3a9c5',1,'Babel::Database::DatabaseUserHandling']]],
+  ['db',['Db',['../classBabel_1_1Database_1_1Db.html#a636b51cded7df2a547cb3e92eae2c9aa',1,'Babel::Database::Db']]],
+  ['decode_5fcreate',['decode_create',['../classBabel_1_1audio_1_1Encoding.html#add816037f2047989da7e72ebad6d7ab1',1,'Babel::audio::Encoding::decode_create()'],['../classBabel_1_1audio_1_1IEncoding.html#ac8c381697f95891a198e6426b573d8c9',1,'Babel::audio::IEncoding::decode_create()']]],
+  ['decode_5ffloat',['decode_float',['../classBabel_1_1audio_1_1Encoding.html#aaeab672c025f3859ba695726d6c27353',1,'Babel::audio::Encoding::decode_float()'],['../classBabel_1_1audio_1_1IEncoding.html#a3624d08fb33522dde6118f32ce84d2ed',1,'Babel::audio::IEncoding::decode_float()']]],
+  ['deletecallback',['deleteCallback',['../DatabaseMessageHandling_8cpp.html#aa3230b2fea91e2b36fae0bc09d6619a1',1,'DatabaseMessageHandling.cpp']]],
+  ['deletecallback1',['deleteCallback1',['../DatabaseDiscussionHandling_8cpp.html#a156bb0266ad5e7e2fc033e61d1e5f9e0',1,'DatabaseDiscussionHandling.cpp']]],
+  ['deletecallback2',['deleteCallback2',['../DatabaseUserDiscussionHandling_8cpp.html#add31021a1b6a84d786d5432278506b48',1,'DatabaseUserDiscussionHandling.cpp']]],
+  ['deletecallback3',['deleteCallback3',['../DatabaseUserHandling_8cpp.html#ac17408c8a318f697b30333d715ed7339',1,'DatabaseUserHandling.cpp']]],
+  ['deletecallback4',['deleteCallback4',['../DatabaseUserFriendHandling_8cpp.html#a95dd918c87c4beac15a650d51c3670f0',1,'DatabaseUserFriendHandling.cpp']]],
+  ['deletediscussion',['deleteDiscussion',['../classBabel_1_1Database_1_1DatabaseDiscussionHandling.html#a2f07cfa4efafa1db0c6014eba5380088',1,'Babel::Database::DatabaseDiscussionHandling']]],
+  ['deletefriendship',['deleteFriendShip',['../classBabel_1_1Database_1_1DatabaseUserFriendHandling.html#a3336a26154efbdbbd52a642121702295',1,'Babel::Database::DatabaseUserFriendHandling']]],
+  ['deletemessage',['deleteMessage',['../classBabel_1_1Database_1_1DatabaseMessageHandling.html#a29572ed82c38b3335436fbf09bacf25b',1,'Babel::Database::DatabaseMessageHandling']]],
+  ['deleteuser',['deleteUser',['../classBabel_1_1Database_1_1DatabaseUserHandling.html#aa50ebfb9d50954f228772f0a9132aabb',1,'Babel::Database::DatabaseUserHandling']]],
+  ['deleteuserdiscussion',['deleteUserDiscussion',['../classBabel_1_1Database_1_1DatabaseUserDiscussionHandling.html#a75e2a7a011c99b533e16724675a13f82',1,'Babel::Database::DatabaseUserDiscussionHandling']]],
+  ['disconnect',['disconnect',['../classNetworkClient.html#a7f69f5c30fd349d670fae18598737b86',1,'NetworkClient']]]
+];

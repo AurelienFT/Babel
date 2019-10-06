@@ -1,0 +1,55 @@
+\hypertarget{classBabel_1_1Database_1_1Db}{}\section{Babel\+:\+:Database\+:\+:Db Class Reference}
+\label{classBabel_1_1Database_1_1Db}\index{Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}}
+
+
+{\ttfamily \#include $<$Db.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Database_1_1Db_a636b51cded7df2a547cb3e92eae2c9aa}{Db} ()
+\item 
+\hyperlink{classBabel_1_1Database_1_1Db_ae2db80c6284b03521602816320afe0e2}{$\sim$\+Db} ()
+\item 
+int \hyperlink{classBabel_1_1Database_1_1Db_a303f2379d95fa3921a6c650fe304d9bd}{exec} (const std\+::string \&sql\+Request, sqlite3\+\_\+callback callback, void $\ast$data, const char $\ast$error\+Message)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1Db_a636b51cded7df2a547cb3e92eae2c9aa}\label{classBabel_1_1Database_1_1Db_a636b51cded7df2a547cb3e92eae2c9aa}} 
+\index{Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}!Db@{Db}}
+\index{Db@{Db}!Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}}
+\subsubsection{\texorpdfstring{Db()}{Db()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Db\+::\+Db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \+: Connect to db with sqlite3 \mbox{\Hypertarget{classBabel_1_1Database_1_1Db_ae2db80c6284b03521602816320afe0e2}\label{classBabel_1_1Database_1_1Db_ae2db80c6284b03521602816320afe0e2}} 
+\index{Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}!````~Db@{$\sim$\+Db}}
+\index{````~Db@{$\sim$\+Db}!Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}}
+\subsubsection{\texorpdfstring{$\sim$\+Db()}{~Db()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Db\+::$\sim$\+Db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1Db_a303f2379d95fa3921a6c650fe304d9bd}\label{classBabel_1_1Database_1_1Db_a303f2379d95fa3921a6c650fe304d9bd}} 
+\index{Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}!exec@{exec}}
+\index{exec@{exec}!Babel\+::\+Database\+::\+Db@{Babel\+::\+Database\+::\+Db}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily int Babel\+::\+Database\+::\+Db\+::exec (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sql\+Request,  }\item[{sqlite3\+\_\+callback}]{callback,  }\item[{void $\ast$}]{data,  }\item[{const char $\ast$}]{error\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Execute a sql\+Request on the db 
+\begin{DoxyParams}{Parameters}
+{\em sql\+Request} & S\+QL Request to execute \\
+\hline
+{\em callback} & callback called by sqlite3 wehn the S\+QL request is execute \\
+\hline
+{\em data} & Data filled in the callback \\
+\hline
+{\em error\+Message} & Filled by sqlite3 if a error happen \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Database/\hyperlink{Db_8hpp}{Db.\+hpp}\end{DoxyCompactItemize}

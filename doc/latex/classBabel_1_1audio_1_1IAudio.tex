@@ -1,0 +1,186 @@
+\hypertarget{classBabel_1_1audio_1_1IAudio}{}\section{Babel\+:\+:audio\+:\+:I\+Audio Class Reference}
+\label{classBabel_1_1audio_1_1IAudio}\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+
+
+{\ttfamily \#include $<$I\+Audio.\+hpp$>$}
+
+Inheritance diagram for Babel\+:\+:audio\+:\+:I\+Audio\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBabel_1_1audio_1_1IAudio}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1audio_1_1IAudio_a6061e3258ed8ab56528209d65d3de5c1}{I\+Audio} ()=default
+\item 
+\hyperlink{classBabel_1_1audio_1_1IAudio_a4185868653e1d68d8f8b9b5988463724}{$\sim$\+I\+Audio} ()=default
+\item 
+virtual bool \hyperlink{classBabel_1_1audio_1_1IAudio_ad6660dbdc5c0448c67d3a2265eefd9a9}{is\+Recording} ()=0
+\item 
+virtual bool \hyperlink{classBabel_1_1audio_1_1IAudio_af11d02c62648df4fdf25dd6dbc64904b}{is\+Listening} ()=0
+\item 
+virtual \hyperlink{structaudioData}{audio\+Data} \hyperlink{classBabel_1_1audio_1_1IAudio_ae80294d5441717125361d1fd0a65b9cf}{get\+Audio\+Data} ()=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_a879bde00b067128659a6108a883a10f7}{reset\+Audio\+Data} ()=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_a6bac02d16b744cd8c81e5dd67636db0f}{set\+Audio\+Data} (\hyperlink{structaudioData}{audio\+Data} \&data)=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_a9e36fb7ef439a3193cd104b340d7215c}{add\+Audio\+Data} (float $\ast$data, const int \&index)=0
+\item 
+virtual bool \hyperlink{classBabel_1_1audio_1_1IAudio_a82e0b4db1206688c792221ce253ca5cc}{get\+Send\+Status} ()=0
+\item 
+virtual bool \hyperlink{classBabel_1_1audio_1_1IAudio_a9a1da6f7226da4a5bd14a5bbd12b66dc}{get\+Recv\+Status} ()=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_ab3bd4c604b1a0e1611f280b1d27fe16b}{reset\+Recv\+Status} ()=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_a76c3b8c9e9dd82f13ec7684b453d7f2c}{reset\+Send\+Status} ()=0
+\item 
+virtual void \hyperlink{classBabel_1_1audio_1_1IAudio_a35c021d9d38ffeeec1aa8c6890e30151}{Record} ()=0
+\item 
+virtual \hyperlink{structaudioData}{audio\+Data} \hyperlink{classBabel_1_1audio_1_1IAudio_a2b7c300088982a040edc5f9f203c94df}{Listen} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a6061e3258ed8ab56528209d65d3de5c1}\label{classBabel_1_1audio_1_1IAudio_a6061e3258ed8ab56528209d65d3de5c1}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!I\+Audio@{I\+Audio}}
+\index{I\+Audio@{I\+Audio}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{I\+Audio()}{IAudio()}}
+{\footnotesize\ttfamily Babel\+::audio\+::\+I\+Audio\+::\+I\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a4185868653e1d68d8f8b9b5988463724}\label{classBabel_1_1audio_1_1IAudio_a4185868653e1d68d8f8b9b5988463724}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!````~I\+Audio@{$\sim$\+I\+Audio}}
+\index{````~I\+Audio@{$\sim$\+I\+Audio}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{$\sim$\+I\+Audio()}{~IAudio()}}
+{\footnotesize\ttfamily Babel\+::audio\+::\+I\+Audio\+::$\sim$\+I\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a9e36fb7ef439a3193cd104b340d7215c}\label{classBabel_1_1audio_1_1IAudio_a9e36fb7ef439a3193cd104b340d7215c}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!add\+Audio\+Data@{add\+Audio\+Data}}
+\index{add\+Audio\+Data@{add\+Audio\+Data}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{add\+Audio\+Data()}{addAudioData()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::add\+Audio\+Data (\begin{DoxyParamCaption}\item[{float $\ast$}]{data,  }\item[{const int \&}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a607a00b8286e3b80a4b0db7e4087671a}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_ae80294d5441717125361d1fd0a65b9cf}\label{classBabel_1_1audio_1_1IAudio_ae80294d5441717125361d1fd0a65b9cf}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!get\+Audio\+Data@{get\+Audio\+Data}}
+\index{get\+Audio\+Data@{get\+Audio\+Data}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{get\+Audio\+Data()}{getAudioData()}}
+{\footnotesize\ttfamily virtual \hyperlink{structaudioData}{audio\+Data} Babel\+::audio\+::\+I\+Audio\+::get\+Audio\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_af71d8ca6c102c890c45db9af41f70a2d}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a9a1da6f7226da4a5bd14a5bbd12b66dc}\label{classBabel_1_1audio_1_1IAudio_a9a1da6f7226da4a5bd14a5bbd12b66dc}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!get\+Recv\+Status@{get\+Recv\+Status}}
+\index{get\+Recv\+Status@{get\+Recv\+Status}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{get\+Recv\+Status()}{getRecvStatus()}}
+{\footnotesize\ttfamily virtual bool Babel\+::audio\+::\+I\+Audio\+::get\+Recv\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a9977bd57a40c49f0a03351bf1866da48}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a82e0b4db1206688c792221ce253ca5cc}\label{classBabel_1_1audio_1_1IAudio_a82e0b4db1206688c792221ce253ca5cc}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!get\+Send\+Status@{get\+Send\+Status}}
+\index{get\+Send\+Status@{get\+Send\+Status}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{get\+Send\+Status()}{getSendStatus()}}
+{\footnotesize\ttfamily virtual bool Babel\+::audio\+::\+I\+Audio\+::get\+Send\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_afb3a0176f9f575c6f13a85ca1b92f375}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_af11d02c62648df4fdf25dd6dbc64904b}\label{classBabel_1_1audio_1_1IAudio_af11d02c62648df4fdf25dd6dbc64904b}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!is\+Listening@{is\+Listening}}
+\index{is\+Listening@{is\+Listening}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{is\+Listening()}{isListening()}}
+{\footnotesize\ttfamily virtual bool Babel\+::audio\+::\+I\+Audio\+::is\+Listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a7491f94ee8a8bac6603727e29919cd12}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_ad6660dbdc5c0448c67d3a2265eefd9a9}\label{classBabel_1_1audio_1_1IAudio_ad6660dbdc5c0448c67d3a2265eefd9a9}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!is\+Recording@{is\+Recording}}
+\index{is\+Recording@{is\+Recording}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{is\+Recording()}{isRecording()}}
+{\footnotesize\ttfamily virtual bool Babel\+::audio\+::\+I\+Audio\+::is\+Recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_ae05b545cad9e1db811dc3a27bb7fd7d8}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a2b7c300088982a040edc5f9f203c94df}\label{classBabel_1_1audio_1_1IAudio_a2b7c300088982a040edc5f9f203c94df}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!Listen@{Listen}}
+\index{Listen@{Listen}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{Listen()}{Listen()}}
+{\footnotesize\ttfamily virtual \hyperlink{structaudioData}{audio\+Data} Babel\+::audio\+::\+I\+Audio\+::\+Listen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a002b91e9a4c7806f4e29fd2943a11918}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a35c021d9d38ffeeec1aa8c6890e30151}\label{classBabel_1_1audio_1_1IAudio_a35c021d9d38ffeeec1aa8c6890e30151}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!Record@{Record}}
+\index{Record@{Record}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{Record()}{Record()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a5a3398e6f3dc876748d6c35f2b8cf437}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a879bde00b067128659a6108a883a10f7}\label{classBabel_1_1audio_1_1IAudio_a879bde00b067128659a6108a883a10f7}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!reset\+Audio\+Data@{reset\+Audio\+Data}}
+\index{reset\+Audio\+Data@{reset\+Audio\+Data}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{reset\+Audio\+Data()}{resetAudioData()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::reset\+Audio\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a6b50d630ceea9a41088c3e5f8f4694f6}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_ab3bd4c604b1a0e1611f280b1d27fe16b}\label{classBabel_1_1audio_1_1IAudio_ab3bd4c604b1a0e1611f280b1d27fe16b}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!reset\+Recv\+Status@{reset\+Recv\+Status}}
+\index{reset\+Recv\+Status@{reset\+Recv\+Status}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{reset\+Recv\+Status()}{resetRecvStatus()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::reset\+Recv\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_a4d66042877979c713c9e20915b48d2d4}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a76c3b8c9e9dd82f13ec7684b453d7f2c}\label{classBabel_1_1audio_1_1IAudio_a76c3b8c9e9dd82f13ec7684b453d7f2c}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!reset\+Send\+Status@{reset\+Send\+Status}}
+\index{reset\+Send\+Status@{reset\+Send\+Status}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{reset\+Send\+Status()}{resetSendStatus()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::reset\+Send\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_ab14103faf465d65eab05f70a53d6ce67}{Babel\+::audio\+::\+Audio}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1IAudio_a6bac02d16b744cd8c81e5dd67636db0f}\label{classBabel_1_1audio_1_1IAudio_a6bac02d16b744cd8c81e5dd67636db0f}} 
+\index{Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}!set\+Audio\+Data@{set\+Audio\+Data}}
+\index{set\+Audio\+Data@{set\+Audio\+Data}!Babel\+::audio\+::\+I\+Audio@{Babel\+::audio\+::\+I\+Audio}}
+\subsubsection{\texorpdfstring{set\+Audio\+Data()}{setAudioData()}}
+{\footnotesize\ttfamily virtual void Babel\+::audio\+::\+I\+Audio\+::set\+Audio\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structaudioData}{audio\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classBabel_1_1audio_1_1Audio_aed1e83c0c55e57cf785657f3988fccd1}{Babel\+::audio\+::\+Audio}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/\+Sources/\+Audio/\hyperlink{IAudio_8hpp}{I\+Audio.\+hpp}\end{DoxyCompactItemize}

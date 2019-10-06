@@ -1,0 +1,74 @@
+\hypertarget{classBabel_1_1Network_1_1NetworkClient}{}\section{Babel\+:\+:Network\+:\+:Network\+Client Class Reference}
+\label{classBabel_1_1Network_1_1NetworkClient}\index{Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}}
+
+
+{\ttfamily \#include $<$Network\+Client.\+hpp$>$}
+
+Inheritance diagram for Babel\+:\+:Network\+:\+:Network\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBabel_1_1Network_1_1NetworkClient}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structBabel_1_1Network_1_1NetworkClient_1_1sockaddrInClient}{sockaddr\+In\+Client}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Network_1_1NetworkClient_a656979ee6f83ec94be79d682dbbc52b3}{Network\+Client} (int \hyperlink{classBabel_1_1Network_1_1NetworkClient_ae1d6dc854cbc956a4bd00d059265fb02}{fd}, struct sockaddr\+\_\+in $\ast$sockaddr\+In)
+\item 
+virtual \hyperlink{classBabel_1_1Network_1_1NetworkClient_ab82fb597494c89b4a7ba9fd0d4b659c4}{$\sim$\+Network\+Client} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classBabel_1_1Network_1_1NetworkClient_ae1d6dc854cbc956a4bd00d059265fb02}{fd}
+\item 
+int \hyperlink{classBabel_1_1Network_1_1NetworkClient_affb6a43d2d5b005e83f740ca8f3d19f5}{sockaddr\+In\+Client\+Len} = sizeof(\hyperlink{structBabel_1_1Network_1_1NetworkClient_1_1sockaddrInClient}{sockaddr\+In\+Client})
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Network_1_1NetworkClient_a656979ee6f83ec94be79d682dbbc52b3}\label{classBabel_1_1Network_1_1NetworkClient_a656979ee6f83ec94be79d682dbbc52b3}} 
+\index{Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}!Network\+Client@{Network\+Client}}
+\index{Network\+Client@{Network\+Client}!Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}}
+\subsubsection{\texorpdfstring{Network\+Client()}{NetworkClient()}}
+{\footnotesize\ttfamily Network\+Client\+::\+Network\+Client (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{struct sockaddr\+\_\+in $\ast$}]{sockaddr\+In }\end{DoxyParamCaption})}
+
+Constructor\+: Initialize the sockaddr\+\_\+in struct 
+\begin{DoxyParams}{Parameters}
+{\em fd} & socket fd \\
+\hline
+{\em sockaddr\+In} & socket structure to fill in constructor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Network_1_1NetworkClient_ab82fb597494c89b4a7ba9fd0d4b659c4}\label{classBabel_1_1Network_1_1NetworkClient_ab82fb597494c89b4a7ba9fd0d4b659c4}} 
+\index{Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}!````~Network\+Client@{$\sim$\+Network\+Client}}
+\index{````~Network\+Client@{$\sim$\+Network\+Client}!Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}}
+\subsubsection{\texorpdfstring{$\sim$\+Network\+Client()}{~NetworkClient()}}
+{\footnotesize\ttfamily Network\+Client\+::$\sim$\+Network\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classBabel_1_1Network_1_1NetworkClient_ae1d6dc854cbc956a4bd00d059265fb02}\label{classBabel_1_1Network_1_1NetworkClient_ae1d6dc854cbc956a4bd00d059265fb02}} 
+\index{Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}!fd@{fd}}
+\index{fd@{fd}!Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}}
+\subsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily int Babel\+::\+Network\+::\+Network\+Client\+::fd}
+
+File descriptor of the socket of the client. \mbox{\Hypertarget{classBabel_1_1Network_1_1NetworkClient_affb6a43d2d5b005e83f740ca8f3d19f5}\label{classBabel_1_1Network_1_1NetworkClient_affb6a43d2d5b005e83f740ca8f3d19f5}} 
+\index{Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}!sockaddr\+In\+Client\+Len@{sockaddr\+In\+Client\+Len}}
+\index{sockaddr\+In\+Client\+Len@{sockaddr\+In\+Client\+Len}!Babel\+::\+Network\+::\+Network\+Client@{Babel\+::\+Network\+::\+Network\+Client}}
+\subsubsection{\texorpdfstring{sockaddr\+In\+Client\+Len}{sockaddrInClientLen}}
+{\footnotesize\ttfamily int Babel\+::\+Network\+::\+Network\+Client\+::sockaddr\+In\+Client\+Len = sizeof(\hyperlink{structBabel_1_1Network_1_1NetworkClient_1_1sockaddrInClient}{sockaddr\+In\+Client})}
+
+Size of \hyperlink{structBabel_1_1Network_1_1NetworkClient_1_1sockaddrInClient}{sockaddr\+In\+Client} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Network/\hyperlink{Server_2Sources_2Network_2NetworkClient_8hpp}{Network\+Client.\+hpp}\item 
+Server/\+Sources/\+Network/\hyperlink{Server_2Sources_2Network_2NetworkClient_8cpp}{Network\+Client.\+cpp}\end{DoxyCompactItemize}

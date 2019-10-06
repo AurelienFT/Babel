@@ -1,0 +1,113 @@
+\hypertarget{classUser}{}\section{User Class Reference}
+\label{classUser}\index{User@{User}}
+
+
+{\ttfamily \#include $<$User.\+hpp$>$}
+
+Inheritance diagram for User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUser_ade435ecd7d7f5e673b0fb05eb42697f1}{User} (int \hyperlink{classBabel_1_1Network_1_1NetworkClient_ae1d6dc854cbc956a4bd00d059265fb02}{fd}, struct sockaddr\+\_\+in $\ast$sockaddr\+In)
+\item 
+\hyperlink{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}{$\sim$\+User} ()
+\item 
+bool \hyperlink{classUser_a58d16c117e5c0577c793364496e78e20}{is\+Logged} () const
+\item 
+void \hyperlink{classUser_ad46962bd5857b933726825a88214cd96}{login} (int id)
+\item 
+std\+::vector$<$ \hyperlink{classUser}{User} $>$ \hyperlink{classUser_ae3bf4d054a93b7d32aca8d5ccdcd1fd5}{get\+Friends} ()
+\item 
+int \hyperlink{classUser_a986c6f30aeac167bb5d311dd412cf604}{get\+ID} () const
+\item 
+void \hyperlink{classUser_a893e59448e3e3b7da39daf6caa631ade}{set\+Data\+Waiting} (std\+::string data\+Waiting)
+\item 
+std\+::string \hyperlink{classUser_a790cbfc550e023e18927801a275830a8}{get\+Data\+Waiting} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUser_ade435ecd7d7f5e673b0fb05eb42697f1}\label{classUser_ade435ecd7d7f5e673b0fb05eb42697f1}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\subsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{struct sockaddr\+\_\+in $\ast$}]{sockaddr\+In }\end{DoxyParamCaption})}
+
+Constructor \+: Initialize a client instance 
+\begin{DoxyParams}{Parameters}
+{\em fd} & socket file descriptor \\
+\hline
+{\em sockaddr\+In} & socket structure to fill \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}\label{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}} 
+\index{User@{User}!````~User@{$\sim$\+User}}
+\index{````~User@{$\sim$\+User}!User@{User}}
+\subsubsection{\texorpdfstring{$\sim$\+User()}{~User()}}
+{\footnotesize\ttfamily User\+::$\sim$\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUser_a790cbfc550e023e18927801a275830a8}\label{classUser_a790cbfc550e023e18927801a275830a8}} 
+\index{User@{User}!get\+Data\+Waiting@{get\+Data\+Waiting}}
+\index{get\+Data\+Waiting@{get\+Data\+Waiting}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Data\+Waiting()}{getDataWaiting()}}
+{\footnotesize\ttfamily std\+::string User\+::get\+Data\+Waiting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classUser_ae3bf4d054a93b7d32aca8d5ccdcd1fd5}\label{classUser_ae3bf4d054a93b7d32aca8d5ccdcd1fd5}} 
+\index{User@{User}!get\+Friends@{get\+Friends}}
+\index{get\+Friends@{get\+Friends}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Friends()}{getFriends()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classUser}{User} $>$ User\+::get\+Friends (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all the friends of a user \begin{DoxyReturn}{Returns}
+Vector with all friends 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUser_a986c6f30aeac167bb5d311dd412cf604}\label{classUser_a986c6f30aeac167bb5d311dd412cf604}} 
+\index{User@{User}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!User@{User}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily int User\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get ID of the user \begin{DoxyReturn}{Returns}
+ID of the user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUser_a58d16c117e5c0577c793364496e78e20}\label{classUser_a58d16c117e5c0577c793364496e78e20}} 
+\index{User@{User}!is\+Logged@{is\+Logged}}
+\index{is\+Logged@{is\+Logged}!User@{User}}
+\subsubsection{\texorpdfstring{is\+Logged()}{isLogged()}}
+{\footnotesize\ttfamily bool User\+::is\+Logged (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if the user is logged \begin{DoxyReturn}{Returns}
+true if logged, false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUser_ad46962bd5857b933726825a88214cd96}\label{classUser_ad46962bd5857b933726825a88214cd96}} 
+\index{User@{User}!login@{login}}
+\index{login@{login}!User@{User}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void User\+::login (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Login the user 
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the user get in the database \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUser_a893e59448e3e3b7da39daf6caa631ade}\label{classUser_a893e59448e3e3b7da39daf6caa631ade}} 
+\index{User@{User}!set\+Data\+Waiting@{set\+Data\+Waiting}}
+\index{set\+Data\+Waiting@{set\+Data\+Waiting}!User@{User}}
+\subsubsection{\texorpdfstring{set\+Data\+Waiting()}{setDataWaiting()}}
+{\footnotesize\ttfamily void User\+::set\+Data\+Waiting (\begin{DoxyParamCaption}\item[{std\+::string}]{data\+Waiting }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\hyperlink{User_8hpp}{User.\+hpp}\item 
+Server/\+Sources/\hyperlink{User_8cpp}{User.\+cpp}\end{DoxyCompactItemize}

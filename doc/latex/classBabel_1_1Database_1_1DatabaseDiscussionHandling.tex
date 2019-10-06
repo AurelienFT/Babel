@@ -1,0 +1,89 @@
+\hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling}{}\section{Babel\+:\+:Database\+:\+:Database\+Discussion\+Handling Class Reference}
+\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling}\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+
+
+{\ttfamily \#include $<$Database\+Discussion\+Handling.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ad0f6b33adad16b679ff11005d09f0eac}{Database\+Discussion\+Handling} (std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$ database)
+\item 
+\hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a89cd8d05df9723a22f05e4195446676b}{$\sim$\+Database\+Discussion\+Handling} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a6c7bbeaff0af08cdd8b6703731c008c6}{create\+Table} ()
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a634438a29f8c9b4091e4f7ee030acf80}{add\+Discussion} (const std\+::string \&discussion\+Name)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a2f07cfa4efafa1db0c6014eba5380088}{delete\+Discussion} (const int \&discussion)
+\item 
+void \hyperlink{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ab4071036b7704d7acba7c09aa77c9d89}{get\+Discussion\+Infos} (const int \&discussion)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ad0f6b33adad16b679ff11005d09f0eac}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ad0f6b33adad16b679ff11005d09f0eac}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!Database\+Discussion\+Handling@{Database\+Discussion\+Handling}}
+\index{Database\+Discussion\+Handling@{Database\+Discussion\+Handling}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{Database\+Discussion\+Handling()}{DatabaseDiscussionHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::\+Database\+Discussion\+Handling (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classBabel_1_1Database_1_1Db}{Db} $>$}]{database }\end{DoxyParamCaption})}
+
+Constructor\+: Take the database pointer to interact with the Discussion table 
+\begin{DoxyParams}{Parameters}
+{\em database} & Pointer to the database \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a89cd8d05df9723a22f05e4195446676b}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a89cd8d05df9723a22f05e4195446676b}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!````~Database\+Discussion\+Handling@{$\sim$\+Database\+Discussion\+Handling}}
+\index{````~Database\+Discussion\+Handling@{$\sim$\+Database\+Discussion\+Handling}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{$\sim$\+Database\+Discussion\+Handling()}{~DatabaseDiscussionHandling()}}
+{\footnotesize\ttfamily Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::$\sim$\+Database\+Discussion\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a634438a29f8c9b4091e4f7ee030acf80}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a634438a29f8c9b4091e4f7ee030acf80}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!add\+Discussion@{add\+Discussion}}
+\index{add\+Discussion@{add\+Discussion}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{add\+Discussion()}{addDiscussion()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::add\+Discussion (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{discussion\+Name }\end{DoxyParamCaption})}
+
+Insert a discussion in the Discussion table 
+\begin{DoxyParams}{Parameters}
+{\em discussion\+Name} & discussion name to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a6c7bbeaff0af08cdd8b6703731c008c6}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a6c7bbeaff0af08cdd8b6703731c008c6}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{create\+Table()}{createTable()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create the Discussion table if not exist \mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a2f07cfa4efafa1db0c6014eba5380088}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_a2f07cfa4efafa1db0c6014eba5380088}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!delete\+Discussion@{delete\+Discussion}}
+\index{delete\+Discussion@{delete\+Discussion}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{delete\+Discussion()}{deleteDiscussion()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::delete\+Discussion (\begin{DoxyParamCaption}\item[{const int \&}]{discussion }\end{DoxyParamCaption})}
+
+Remove a discussion from the Discussion table 
+\begin{DoxyParams}{Parameters}
+{\em discussion} & the discussion id to delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ab4071036b7704d7acba7c09aa77c9d89}\label{classBabel_1_1Database_1_1DatabaseDiscussionHandling_ab4071036b7704d7acba7c09aa77c9d89}} 
+\index{Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}!get\+Discussion\+Infos@{get\+Discussion\+Infos}}
+\index{get\+Discussion\+Infos@{get\+Discussion\+Infos}!Babel\+::\+Database\+::\+Database\+Discussion\+Handling@{Babel\+::\+Database\+::\+Database\+Discussion\+Handling}}
+\subsubsection{\texorpdfstring{get\+Discussion\+Infos()}{getDiscussionInfos()}}
+{\footnotesize\ttfamily void Babel\+::\+Database\+::\+Database\+Discussion\+Handling\+::get\+Discussion\+Infos (\begin{DoxyParamCaption}\item[{const int \&}]{discussion }\end{DoxyParamCaption})}
+
+Get disucssions infos from Discussion table 
+\begin{DoxyParams}{Parameters}
+{\em discussion} & client id \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseDiscussionHandling_8hpp}{Database\+Discussion\+Handling.\+hpp}\item 
+Server/\+Sources/\+Database/\hyperlink{DatabaseDiscussionHandling_8cpp}{Database\+Discussion\+Handling.\+cpp}\end{DoxyCompactItemize}

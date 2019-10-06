@@ -1,0 +1,134 @@
+\hypertarget{classBabel_1_1audio_1_1Encoding}{}\section{Babel\+:\+:audio\+:\+:Encoding Class Reference}
+\label{classBabel_1_1audio_1_1Encoding}\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+
+
+{\ttfamily \#include $<$Encoding.\+hpp$>$}
+
+Inheritance diagram for Babel\+:\+:audio\+:\+:Encoding\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBabel_1_1audio_1_1Encoding}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBabel_1_1audio_1_1Encoding_a2b494c5930fab88efb752c8eee1cc54d}{Encoding} ()=default
+\item 
+\hyperlink{classBabel_1_1audio_1_1Encoding_a8a577613aa9d57b24074d70dfd045433}{$\sim$\+Encoding} ()=default
+\item 
+void \hyperlink{classBabel_1_1audio_1_1Encoding_af3f5844d5d36d9abf85c9a3d7c56b3b4}{encode\+\_\+create} (int Fs, int channels, int application, int $\ast$err)
+\item 
+int \hyperlink{classBabel_1_1audio_1_1Encoding_ae6c38c4a005822b519f4f819e5fcb9ff}{encode\+\_\+float} (const float $\ast$pcm, int frame\+\_\+size, unsigned char $\ast$data, int max\+\_\+data\+\_\+bytes)
+\item 
+void \hyperlink{classBabel_1_1audio_1_1Encoding_add816037f2047989da7e72ebad6d7ab1}{decode\+\_\+create} (int Fs, int channels, int $\ast$err)
+\item 
+int \hyperlink{classBabel_1_1audio_1_1Encoding_aaeab672c025f3859ba695726d6c27353}{decode\+\_\+float} (const unsigned char $\ast$data, int len, float $\ast$pcm, int frame\+\_\+size, int decode\+\_\+fec)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_a2b494c5930fab88efb752c8eee1cc54d}\label{classBabel_1_1audio_1_1Encoding_a2b494c5930fab88efb752c8eee1cc54d}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{Encoding()}{Encoding()}}
+{\footnotesize\ttfamily Babel\+::audio\+::\+Encoding\+::\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_a8a577613aa9d57b24074d70dfd045433}\label{classBabel_1_1audio_1_1Encoding_a8a577613aa9d57b24074d70dfd045433}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!````~Encoding@{$\sim$\+Encoding}}
+\index{````~Encoding@{$\sim$\+Encoding}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{$\sim$\+Encoding()}{~Encoding()}}
+{\footnotesize\ttfamily Babel\+::audio\+::\+Encoding\+::$\sim$\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_add816037f2047989da7e72ebad6d7ab1}\label{classBabel_1_1audio_1_1Encoding_add816037f2047989da7e72ebad6d7ab1}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!decode\+\_\+create@{decode\+\_\+create}}
+\index{decode\+\_\+create@{decode\+\_\+create}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{decode\+\_\+create()}{decode\_create()}}
+{\footnotesize\ttfamily void Babel\+::audio\+::\+Encoding\+::decode\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{Fs,  }\item[{int}]{channels,  }\item[{int $\ast$}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+creating decoder 
+\begin{DoxyParams}{Parameters}
+{\em Fs} & sample\+\_\+rate \\
+\hline
+{\em channels} & number of channel \\
+\hline
+{\em err} & from opus lib \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classBabel_1_1audio_1_1IEncoding_ac8c381697f95891a198e6426b573d8c9}{Babel\+::audio\+::\+I\+Encoding}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_aaeab672c025f3859ba695726d6c27353}\label{classBabel_1_1audio_1_1Encoding_aaeab672c025f3859ba695726d6c27353}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!decode\+\_\+float@{decode\+\_\+float}}
+\index{decode\+\_\+float@{decode\+\_\+float}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{decode\+\_\+float()}{decode\_float()}}
+{\footnotesize\ttfamily int Babel\+::audio\+::\+Encoding\+::decode\+\_\+float (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{int}]{len,  }\item[{float $\ast$}]{pcm,  }\item[{int}]{frame\+\_\+size,  }\item[{int}]{decode\+\_\+fec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+encode float$\ast$ in char$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em data} & data to be decoded \\
+\hline
+{\em len} & of data \\
+\hline
+{\em pcm} & decoded \\
+\hline
+{\em frame\+\_\+size} & to be decoded \\
+\hline
+{\em decode\+\_\+fec} & from opus lib \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classBabel_1_1audio_1_1IEncoding_a3624d08fb33522dde6118f32ce84d2ed}{Babel\+::audio\+::\+I\+Encoding}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_af3f5844d5d36d9abf85c9a3d7c56b3b4}\label{classBabel_1_1audio_1_1Encoding_af3f5844d5d36d9abf85c9a3d7c56b3b4}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!encode\+\_\+create@{encode\+\_\+create}}
+\index{encode\+\_\+create@{encode\+\_\+create}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{encode\+\_\+create()}{encode\_create()}}
+{\footnotesize\ttfamily void Babel\+::audio\+::\+Encoding\+::encode\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{Fs,  }\item[{int}]{channels,  }\item[{int}]{application,  }\item[{int $\ast$}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+creating encoder 
+\begin{DoxyParams}{Parameters}
+{\em Fs} & sample\+\_\+rate \\
+\hline
+{\em channels} & number of channels \\
+\hline
+{\em application} & from opus lib \\
+\hline
+{\em err} & error code from opus lib \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classBabel_1_1audio_1_1IEncoding_a2338b60bd05e7c93f3c03963558071e2}{Babel\+::audio\+::\+I\+Encoding}.
+
+\mbox{\Hypertarget{classBabel_1_1audio_1_1Encoding_ae6c38c4a005822b519f4f819e5fcb9ff}\label{classBabel_1_1audio_1_1Encoding_ae6c38c4a005822b519f4f819e5fcb9ff}} 
+\index{Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}!encode\+\_\+float@{encode\+\_\+float}}
+\index{encode\+\_\+float@{encode\+\_\+float}!Babel\+::audio\+::\+Encoding@{Babel\+::audio\+::\+Encoding}}
+\subsubsection{\texorpdfstring{encode\+\_\+float()}{encode\_float()}}
+{\footnotesize\ttfamily int Babel\+::audio\+::\+Encoding\+::encode\+\_\+float (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pcm,  }\item[{int}]{frame\+\_\+size,  }\item[{unsigned char $\ast$}]{data,  }\item[{int}]{max\+\_\+data\+\_\+bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+encode float$\ast$ in char$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em pcm} & data to be encoded \\
+\hline
+{\em frame\+\_\+size} & of pcm \\
+\hline
+{\em data} & encoded \\
+\hline
+{\em max\+\_\+data\+\_\+bytes} & to be encoded \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classBabel_1_1audio_1_1IEncoding_a2b2767758f55d5b0c541ca3a28375eaf}{Babel\+::audio\+::\+I\+Encoding}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/\+Sources/\+Audio/\hyperlink{Encoding_8hpp}{Encoding.\+hpp}\end{DoxyCompactItemize}

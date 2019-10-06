@@ -1,0 +1,86 @@
+\hypertarget{classController}{}\section{Controller$<$ T $>$ Class Template Reference}
+\label{classController}\index{Controller$<$ T $>$@{Controller$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Controller.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController_ab8c23e2388776e636cc225257a93278d}{Controller} ()
+\item 
+\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} \hyperlink{classController_a0c853a94aa63fdfee093dfab9d0e71c1}{manage\+Reponse} (std\+::shared\+\_\+ptr$<$ T $>$ client, \hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} message\+Type, char $\ast$payload)
+\item 
+\hyperlink{classController_a72f857e60642c44e868c6438089054a5}{$\sim$\+Controller} ()
+\item 
+void \hyperlink{classController_ab0a4b7ba96fd7f9ba0865de7b85c8e9a}{set\+Client\+List} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ T $>$$>$ $\ast$client\+List)
+\item 
+std\+::string \hyperlink{classController_ab5985438cd9815c569dfd60a7ef77e40}{get\+Reponse} () const
+\item 
+void \hyperlink{classController_a315430280292371004d1213282e39a5f}{reset\+Reponse} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classController_ab8c23e2388776e636cc225257a93278d}\label{classController_ab8c23e2388776e636cc225257a93278d}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classController}{Controller}$<$ T $>$\+::\hyperlink{classController}{Controller} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \+: Initialize all classes to interact with database and create all functions which handle requests though the socket \mbox{\Hypertarget{classController_a72f857e60642c44e868c6438089054a5}\label{classController_a72f857e60642c44e868c6438089054a5}} 
+\index{Controller@{Controller}!````~Controller@{$\sim$\+Controller}}
+\index{````~Controller@{$\sim$\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller()}{~Controller()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classController}{Controller}$<$ T $>$\+::$\sim$\hyperlink{classController}{Controller} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_ab5985438cd9815c569dfd60a7ef77e40}\label{classController_ab5985438cd9815c569dfd60a7ef77e40}} 
+\index{Controller@{Controller}!get\+Reponse@{get\+Reponse}}
+\index{get\+Reponse@{get\+Reponse}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Reponse()}{getReponse()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::string \hyperlink{classController}{Controller}$<$ T $>$\+::get\+Reponse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classController_a0c853a94aa63fdfee093dfab9d0e71c1}\label{classController_a0c853a94aa63fdfee093dfab9d0e71c1}} 
+\index{Controller@{Controller}!manage\+Reponse@{manage\+Reponse}}
+\index{manage\+Reponse@{manage\+Reponse}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{manage\+Reponse()}{manageReponse()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type} \hyperlink{classController}{Controller}$<$ T $>$\+::manage\+Reponse (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$}]{client,  }\item[{\hyperlink{NetworkInterface_8hpp_a36cbd2fb6499765a19ee1942d46c9f1f}{Message\+Type}}]{message\+Type,  }\item[{char $\ast$}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to handle all messages and call the appropriate function 
+\begin{DoxyParams}{Parameters}
+{\em client} & The client object with all informations needed \\
+\hline
+{\em message\+Type} & Type of message sended by client \\
+\hline
+{\em payload} & Rest of the data of the packet with contains the buffer and his size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Message\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_a315430280292371004d1213282e39a5f}\label{classController_a315430280292371004d1213282e39a5f}} 
+\index{Controller@{Controller}!reset\+Reponse@{reset\+Reponse}}
+\index{reset\+Reponse@{reset\+Reponse}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{reset\+Reponse()}{resetReponse()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classController}{Controller}$<$ T $>$\+::reset\+Reponse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classController_ab0a4b7ba96fd7f9ba0865de7b85c8e9a}\label{classController_ab0a4b7ba96fd7f9ba0865de7b85c8e9a}} 
+\index{Controller@{Controller}!set\+Client\+List@{set\+Client\+List}}
+\index{set\+Client\+List@{set\+Client\+List}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{set\+Client\+List()}{setClientList()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classController}{Controller}$<$ T $>$\+::set\+Client\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ T $>$$>$ $\ast$}]{client\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/\+Sources/\hyperlink{Controller_8hpp}{Controller.\+hpp}\end{DoxyCompactItemize}

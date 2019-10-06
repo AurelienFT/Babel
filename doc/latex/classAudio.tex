@@ -1,0 +1,141 @@
+\hypertarget{classAudio}{}\section{Audio Class Reference}
+\label{classAudio}\index{Audio@{Audio}}
+
+
+{\ttfamily \#include $<$Audio.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAudio_aa9d3935a2b91ab4b825bc0cb05f245ea}{Audio} ()
+\item 
+\hyperlink{classAudio_ae8f54deecb5f48511aaab469e80294d6}{$\sim$\+Audio} ()
+\item 
+bool \hyperlink{classAudio_a871e82444419a2b5a9604d65fee23684}{is\+Recording} ()
+\item 
+bool \hyperlink{classAudio_a3daea1aa8c67413ca520fd49688c799e}{is\+Listening} ()
+\item 
+\hyperlink{structaudioData}{audio\+Data} \hyperlink{classAudio_a58f3992de74732128644d966102cd211}{get\+Audio\+Data} ()
+\item 
+void \hyperlink{classAudio_a604b771547540295ddf385556a652e38}{reset\+Audio\+Data} ()
+\item 
+void \hyperlink{classAudio_af857b4249543a018a264f852610b0b17}{set\+Audio\+Data} (\hyperlink{structaudioData}{audio\+Data} \&data)
+\item 
+void \hyperlink{classAudio_aa32f7a0d28f33b6c7b40849b7bed17ec}{add\+Audio\+Data} (float $\ast$data, const int \&index)
+\item 
+bool \hyperlink{classAudio_a397b2ca56d953632f183d5a6d62f564f}{get\+Send\+Status} ()
+\item 
+bool \hyperlink{classAudio_a5017e5dd1eb6695e880535054e05d1e6}{get\+Recv\+Status} ()
+\item 
+void \hyperlink{classAudio_af44fb4e83b466e7be6f9d5b137c35fbe}{reset\+Recv\+Status} ()
+\item 
+void \hyperlink{classAudio_a73bbc82c0b6532c9d7ca41c755c3ceac}{reset\+Send\+Status} ()
+\item 
+void \hyperlink{classAudio_a43d80bf049a368b27573974f8e5489a0}{Record} ()
+\item 
+\hyperlink{structaudioData}{audio\+Data} \hyperlink{classAudio_a4fba3b2f9ea1e28f90b338a7cccd4d89}{Listen} ()
+\item 
+void \hyperlink{classAudio_a9eead377be9b7fbab2c49fa90007ebc1}{Listen} (\hyperlink{structaudioData}{audio\+Data} \&data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAudio_aa9d3935a2b91ab4b825bc0cb05f245ea}\label{classAudio_aa9d3935a2b91ab4b825bc0cb05f245ea}} 
+\index{Audio@{Audio}!Audio@{Audio}}
+\index{Audio@{Audio}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{Audio()}{Audio()}}
+{\footnotesize\ttfamily Audio\+::\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_ae8f54deecb5f48511aaab469e80294d6}\label{classAudio_ae8f54deecb5f48511aaab469e80294d6}} 
+\index{Audio@{Audio}!````~Audio@{$\sim$\+Audio}}
+\index{````~Audio@{$\sim$\+Audio}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{$\sim$\+Audio()}{~Audio()}}
+{\footnotesize\ttfamily Audio\+::$\sim$\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAudio_aa32f7a0d28f33b6c7b40849b7bed17ec}\label{classAudio_aa32f7a0d28f33b6c7b40849b7bed17ec}} 
+\index{Audio@{Audio}!add\+Audio\+Data@{add\+Audio\+Data}}
+\index{add\+Audio\+Data@{add\+Audio\+Data}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{add\+Audio\+Data()}{addAudioData()}}
+{\footnotesize\ttfamily void Audio\+::add\+Audio\+Data (\begin{DoxyParamCaption}\item[{float $\ast$}]{data,  }\item[{const int \&}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a58f3992de74732128644d966102cd211}\label{classAudio_a58f3992de74732128644d966102cd211}} 
+\index{Audio@{Audio}!get\+Audio\+Data@{get\+Audio\+Data}}
+\index{get\+Audio\+Data@{get\+Audio\+Data}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{get\+Audio\+Data()}{getAudioData()}}
+{\footnotesize\ttfamily \hyperlink{structaudioData}{audio\+Data} Audio\+::get\+Audio\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a5017e5dd1eb6695e880535054e05d1e6}\label{classAudio_a5017e5dd1eb6695e880535054e05d1e6}} 
+\index{Audio@{Audio}!get\+Recv\+Status@{get\+Recv\+Status}}
+\index{get\+Recv\+Status@{get\+Recv\+Status}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{get\+Recv\+Status()}{getRecvStatus()}}
+{\footnotesize\ttfamily bool Audio\+::get\+Recv\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a397b2ca56d953632f183d5a6d62f564f}\label{classAudio_a397b2ca56d953632f183d5a6d62f564f}} 
+\index{Audio@{Audio}!get\+Send\+Status@{get\+Send\+Status}}
+\index{get\+Send\+Status@{get\+Send\+Status}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{get\+Send\+Status()}{getSendStatus()}}
+{\footnotesize\ttfamily bool Audio\+::get\+Send\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a3daea1aa8c67413ca520fd49688c799e}\label{classAudio_a3daea1aa8c67413ca520fd49688c799e}} 
+\index{Audio@{Audio}!is\+Listening@{is\+Listening}}
+\index{is\+Listening@{is\+Listening}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{is\+Listening()}{isListening()}}
+{\footnotesize\ttfamily bool Audio\+::is\+Listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a871e82444419a2b5a9604d65fee23684}\label{classAudio_a871e82444419a2b5a9604d65fee23684}} 
+\index{Audio@{Audio}!is\+Recording@{is\+Recording}}
+\index{is\+Recording@{is\+Recording}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{is\+Recording()}{isRecording()}}
+{\footnotesize\ttfamily bool Audio\+::is\+Recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a4fba3b2f9ea1e28f90b338a7cccd4d89}\label{classAudio_a4fba3b2f9ea1e28f90b338a7cccd4d89}} 
+\index{Audio@{Audio}!Listen@{Listen}}
+\index{Listen@{Listen}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{Listen()}{Listen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structaudioData}{audio\+Data} Audio\+::\+Listen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a9eead377be9b7fbab2c49fa90007ebc1}\label{classAudio_a9eead377be9b7fbab2c49fa90007ebc1}} 
+\index{Audio@{Audio}!Listen@{Listen}}
+\index{Listen@{Listen}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{Listen()}{Listen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Audio\+::\+Listen (\begin{DoxyParamCaption}\item[{\hyperlink{structaudioData}{audio\+Data} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a43d80bf049a368b27573974f8e5489a0}\label{classAudio_a43d80bf049a368b27573974f8e5489a0}} 
+\index{Audio@{Audio}!Record@{Record}}
+\index{Record@{Record}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{Record()}{Record()}}
+{\footnotesize\ttfamily void Audio\+::\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a604b771547540295ddf385556a652e38}\label{classAudio_a604b771547540295ddf385556a652e38}} 
+\index{Audio@{Audio}!reset\+Audio\+Data@{reset\+Audio\+Data}}
+\index{reset\+Audio\+Data@{reset\+Audio\+Data}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{reset\+Audio\+Data()}{resetAudioData()}}
+{\footnotesize\ttfamily void Audio\+::reset\+Audio\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_af44fb4e83b466e7be6f9d5b137c35fbe}\label{classAudio_af44fb4e83b466e7be6f9d5b137c35fbe}} 
+\index{Audio@{Audio}!reset\+Recv\+Status@{reset\+Recv\+Status}}
+\index{reset\+Recv\+Status@{reset\+Recv\+Status}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{reset\+Recv\+Status()}{resetRecvStatus()}}
+{\footnotesize\ttfamily void Audio\+::reset\+Recv\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_a73bbc82c0b6532c9d7ca41c755c3ceac}\label{classAudio_a73bbc82c0b6532c9d7ca41c755c3ceac}} 
+\index{Audio@{Audio}!reset\+Send\+Status@{reset\+Send\+Status}}
+\index{reset\+Send\+Status@{reset\+Send\+Status}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{reset\+Send\+Status()}{resetSendStatus()}}
+{\footnotesize\ttfamily void Audio\+::reset\+Send\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAudio_af857b4249543a018a264f852610b0b17}\label{classAudio_af857b4249543a018a264f852610b0b17}} 
+\index{Audio@{Audio}!set\+Audio\+Data@{set\+Audio\+Data}}
+\index{set\+Audio\+Data@{set\+Audio\+Data}!Audio@{Audio}}
+\subsubsection{\texorpdfstring{set\+Audio\+Data()}{setAudioData()}}
+{\footnotesize\ttfamily void Audio\+::set\+Audio\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structaudioData}{audio\+Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/\+Sources/\+Audio/\hyperlink{Audio_8hpp}{Audio.\+hpp}\item 
+Client/\+Sources/\+Audio/\hyperlink{Audio_8cpp}{Audio.\+cpp}\end{DoxyCompactItemize}

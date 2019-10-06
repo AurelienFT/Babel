@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['fd',['fd',['../classBabel_1_1Network_1_1NetworkClient.html#ae1d6dc854cbc956a4bd00d059265fb02',1,'Babel::Network::NetworkClient']]],
+  ['feature_5ftests_2ec',['feature_tests.c',['../feature__tests_8c.html',1,'']]],
+  ['feature_5ftests_2ecxx',['feature_tests.cxx',['../feature__tests_8cxx.html',1,'']]],
+  ['features',['features',['../feature__tests_8c.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.c'],['../feature__tests_8cxx.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.cxx']]],
+  ['feedsendbuffer',['feedSendBuffer',['../classBabel_1_1VoIpNetwork_1_1VoIpClient.html#aef58221ea1af2b37717d7e5efeb6b691',1,'Babel::VoIpNetwork::VoIpClient']]],
+  ['form',['form',['../classBabel_1_1Graphic_1_1login.html#addde64c3881ad4b65ffbe2ccfbf11d13',1,'Babel::Graphic::login']]],
+  ['formregister',['formRegister',['../classBabel_1_1Graphic_1_1login.html#a3dba6799011fb1d05dad52a689e72534',1,'Babel::Graphic::login']]],
+  ['frameindexl',['frameIndexL',['../structaudioData.html#a77ae41741248611b009f6b8ff4b76682',1,'audioData']]],
+  ['frameindexr',['frameIndexR',['../structaudioData.html#af63786604a8510d4374fe0f95f4683fd',1,'audioData']]],
+  ['frames_5fper_5fbuffer',['FRAMES_PER_BUFFER',['../IAudio_8hpp.html#af4f62216aa14e0407faa6631e9ec4c62',1,'IAudio.hpp']]],
+  ['friend',['friend',['../classfriend.html',1,'friend'],['../classfriend.html#aa1e54798f29b7ed4c3b8e62388c87d89',1,'friend::friend()']]],
+  ['friend_2ecpp',['friend.cpp',['../friend_8cpp.html',1,'']]],
+  ['friend_2ehpp',['friend.hpp',['../friend_8hpp.html',1,'']]],
+  ['friendlist',['friendList',['../classBabel_1_1Graphic_1_1friendList.html',1,'Babel::Graphic::friendList'],['../classBabel_1_1Graphic_1_1friendList.html#a67f40fb95c728fa710de30f0272e0c41',1,'Babel::Graphic::friendList::friendList()']]],
+  ['friendlist_2ecpp',['friendlist.cpp',['../friendlist_8cpp.html',1,'']]],
+  ['friendlist_2ehpp',['friendlist.hpp',['../friendlist_8hpp.html',1,'']]],
+  ['friendrequest',['friendRequest',['../classBabel_1_1Graphic_1_1friendRequest.html',1,'Babel::Graphic::friendRequest'],['../classBabel_1_1Graphic_1_1friendRequest.html#aee61e0e5915afa3981bade2402d5d1f8',1,'Babel::Graphic::friendRequest::friendRequest()']]],
+  ['friendrequest_2ecpp',['friendrequest.cpp',['../friendrequest_8cpp.html',1,'']]],
+  ['friendrequest_2ehpp',['friendrequest.hpp',['../friendrequest_8hpp.html',1,'']]]
+];
