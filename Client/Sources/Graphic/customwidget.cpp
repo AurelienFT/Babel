@@ -41,16 +41,3 @@ void Babel::Graphic::customWidget::paintEvent(QPaintEvent *event)
         w_painter.drawText(QRectF(0, 0, w_size.first, w_size.second), Qt::AlignCenter | Qt::AlignTop, w_txt);
     }
 }
-
-void  Babel::Graphic::customWidget::mousePressEvent(QMouseEvent *event)
-{
-
-//    w_click = true;
-//    repaint();
-}
-
-void Babel::Graphic::customWidget::mouseReleaseEvent(QMouseEvent *event)
-{
-//    w_click = false;
-//    repaint();
-}

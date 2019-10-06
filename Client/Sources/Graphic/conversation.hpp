@@ -15,23 +15,44 @@ namespace Babel {
             Q_OBJECT
 
             public:
-
+            /**
+                *constructor : build a conversation object 
+            */
                 conversation();
+            /**
+                *destructor : destroy a conversation object 
+            */
+                ~conversation() = default;
+            /**
+                *return the main layout of conversation object
+            */
                 QHBoxLayout *getConversationLayout() const;
+            /**
+                *init a conversation object
+            */
                 void setConversation();
-                friendList *getFriendList() const {
-                    return (conversationFriend);
+            /**
+                *return the object conversation
+                @return  a conversation object
+            */
+            
+                friendList *getFriendList() const 
+                {
+                    return (_conversationFriend);
                 };
 
             private slots:
-
+            /**
+                *slot to get the message 
+                @param index index of the contact
+            */
                 void getMessage(int index);
 
             private:
 
-                QHBoxLayout *conversationLayout;
-                chat *conversationChat;
-                friendList *conversationFriend;
+                QHBoxLayout *_conversationLayout;
+                chat *_conversationChat;
+                friendList *_conversationFriend;
                 int _index = -1;
                 QString _currentFriend;
         };
