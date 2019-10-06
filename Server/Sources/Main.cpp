@@ -16,9 +16,13 @@
 
 int main(int ac, char **av)
 {
-    Babel::Network::MainServer<User> mainServer(1337);
+    try {
+        Babel::Network::MainServer<User> mainServer(1337);
 
-    mainServer.run();
-
-    return 0;
+        mainServer.run();
+        return 0;
+    } catch (std::exception &e) {
+        std::cerr << "Error in server " << std::endl;
+        return (84);
+    }
 }

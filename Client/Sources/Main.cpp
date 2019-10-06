@@ -13,10 +13,15 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    NetworkClient::instance()->connection();
-    Babel::Graphic::MainWindow w;
-    w.showMaximized();
-    w.show();
-    return a.exec();
+    try {
+        QApplication a(argc, argv);
+        NetworkClient::instance()->connection();
+        Babel::Graphic::MainWindow w;
+        w.showMaximized();
+        w.show();
+        return a.exec();
+    } catch (std::exception &e) {
+        std::cerr << "Error in client" << std::endl;
+        return (84);
+    }
 }
