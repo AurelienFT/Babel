@@ -2,8 +2,12 @@
 // Created by theo.zapata on 10/1/19.
 //
 
-#include <sys/socket.h>
-#include <netinet/in.h>
+#ifdef __linux__
+	#include <sys/socket.h>
+	#include <netinet/in.h>
+	#include <arpa/inet.h>
+	#include <unistd.h>
+#endif
 #include <cstring>
 #include <iostream>
 #include "VoIp.hpp"

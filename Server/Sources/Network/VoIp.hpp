@@ -4,8 +4,9 @@
 
 #ifndef BABEL_VOIP_HPP
 #define BABEL_VOIP_HPP
-
-#include <netinet/in.h>
+#ifdef __linux__
+	#include <netinet/in.h>
+#endif
 #include <thread>
 #include <atomic>
 
@@ -28,12 +29,16 @@ namespace Babel {
 
             int _sock = 0;
 
+#ifdef __linux__
             struct sockaddr_in sockAddrInClientList[VOIP_MAX_CLIENT_NUMBER] = {};
             socklen_t sockAddrInClientLenList[VOIP_MAX_CLIENT_NUMBER] = {sizeof(*sockAddrInClientList)};
+#endif
 
             void threadLoop();
+#ifdef __linux__
             bool isNewClient(const struct sockaddr_in *newClient, socklen_t newClientLen);
             void addClient(const struct sockaddr_in *newClient, socklen_t newClientLen);
+#endif
             void sendDialingDataToClient();
         public:
             explicit VoIp();

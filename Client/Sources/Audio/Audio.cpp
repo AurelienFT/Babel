@@ -6,8 +6,8 @@
 */
 
 #include <stdio.h>
-#include "Audio.hpp"
 #include <iostream>
+#include "Audio.hpp"
 
 Audio::Audio()
 {
