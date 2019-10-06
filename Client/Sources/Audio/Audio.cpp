@@ -206,7 +206,7 @@ Babel::audio::Audio::~Audio()
 {
 }
 
-void Audio::stopStream()
+void Babel::audio::Audio::stopStream()
 {
 	Pa_CloseStream(_streamInput);
 	Pa_CloseStream(_streamOutput);

@@ -113,6 +113,16 @@ int selectAllIDFriend(void *ids_to_fill, int argc, char **argv, char **azColName
     return 0;
 }
 
+int selectFirstAllIDFriend(void *ids_to_fill, int argc, char **argv, char
+**azColName)
+{
+    std::vector<int> *ids = (std::vector<int> *) ids_to_fill;
+
+    if (std::atoi(argv[4]) == 1)
+        ids->push_back(std::atoi(argv[2]));
+    return 0;
+}
+
 
 std::vector<int> Babel::Database::DatabaseUserFriendHandling::getAllFriendsRequest(const int &id)
 {
@@ -191,8 +201,15 @@ std::vector<int> Babel::Database::DatabaseUserFriendHandling::getAllFriendsOf(co
     std::string errorMessage = "ouais";
     std::vector<int> ids;
 
-    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE FIRST = ") + std::to_string(user) +
-    std::string(" OR SECOND = ") + std::to_string(user) + std::string(";");
+    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE FIRST = ") + std::to_string(user) + std::string(";");
+
+    if (_database->exec(sqlRequest, selectFirstAllIDFriend, &ids, errorMessage
+    .c_str())) {
+        //error message
+        exit(0);
+    }
+
+    sqlRequest = std::string("SELECT * FROM USER_FRIENDSHIP WHERE SECOND = ") + std::to_string(user) + std::string(";");
 
     if (_database->exec(sqlRequest, selectAllIDFriend, &ids, errorMessage.c_str())) {
         //error message
